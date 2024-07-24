@@ -1,0 +1,21 @@
+"用户"
+type User {
+    "用户ID"
+    id: ID!
+    "用户名"
+    name: String!
+    "电子邮箱"
+    email: String
+    "联系方式"
+    phoneNumbers: [String!]
+    "用户类型"
+    userType: UserType!
+}
+
+"用户类型"
+enum UserType {
+    "普通用户"
+    REGULAR
+    "会员"
+    VIP
+}

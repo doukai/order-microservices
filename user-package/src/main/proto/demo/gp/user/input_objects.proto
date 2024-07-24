@@ -1,0 +1,478 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "demo.gp.user.dto.inputObjectType.grpc";
+
+package demo.gp.user;
+
+import "demo/gp/user/enums.proto";
+import "io/graphoenix/core/enums.proto";
+import "io/graphoenix/core/input_objects.proto";
+import "google/protobuf/timestamp.proto";
+
+message UserExpression {
+    io.graphoenix.core.StringExpression id = 1;
+    io.graphoenix.core.StringExpression name = 2;
+    io.graphoenix.core.StringExpression email = 3;
+    io.graphoenix.core.StringExpression phone_numbers = 4;
+    UserTypeExpression user_type = 5;
+    bool include_deprecated = 6;
+    io.graphoenix.core.IntExpression version = 7;
+    io.graphoenix.core.IntExpression realm_id = 8;
+    io.graphoenix.core.StringExpression create_user_id = 9;
+    io.graphoenix.core.StringExpression create_time = 10;
+    io.graphoenix.core.StringExpression update_user_id = 11;
+    io.graphoenix.core.StringExpression update_time = 12;
+    io.graphoenix.core.StringExpression create_group_id = 13;
+    io.graphoenix.core.StringExpression intro_typename = 14;
+    UserPhoneNumbersRelationExpression user_phone_numbers_relation = 15;
+    bool not = 16;
+    io.graphoenix.core.Conditional cond = 17;
+    repeated UserExpression exs = 18;
+}
+message UserInput {
+    string id = 1;
+    string name = 2;
+    string email = 3;
+    repeated string phone_numbers = 4;
+    UserType user_type = 5;
+    bool is_deprecated = 6;
+    int32 version = 7;
+    int32 realm_id = 8;
+    string create_user_id = 9;
+    google.protobuf.Timestamp create_time = 10;
+    string update_user_id = 11;
+    google.protobuf.Timestamp update_time = 12;
+    string create_group_id = 13;
+    string intro_typename = 14;
+    repeated UserPhoneNumbersRelationInput user_phone_numbers_relation = 15;
+    UserExpression where = 16;
+}
+message UserOrderBy {
+    io.graphoenix.core.Sort id = 1;
+    io.graphoenix.core.Sort name = 2;
+    io.graphoenix.core.Sort email = 3;
+    io.graphoenix.core.Sort user_type = 4;
+    io.graphoenix.core.Sort is_deprecated = 5;
+    io.graphoenix.core.Sort version = 6;
+    io.graphoenix.core.Sort realm_id = 7;
+    io.graphoenix.core.Sort create_user_id = 8;
+    io.graphoenix.core.Sort create_time = 9;
+    io.graphoenix.core.Sort update_user_id = 10;
+    io.graphoenix.core.Sort update_time = 11;
+    io.graphoenix.core.Sort create_group_id = 12;
+    io.graphoenix.core.Sort intro_typename = 13;
+}
+message UserPhoneNumbersRelationExpression {
+    io.graphoenix.core.StringExpression id = 1;
+    io.graphoenix.core.StringExpression user_ref = 2;
+    UserExpression user = 3;
+    io.graphoenix.core.StringExpression phone_numbers_ref = 4;
+    bool include_deprecated = 5;
+    io.graphoenix.core.IntExpression version = 6;
+    io.graphoenix.core.IntExpression realm_id = 7;
+    io.graphoenix.core.StringExpression create_user_id = 8;
+    io.graphoenix.core.StringExpression create_time = 9;
+    io.graphoenix.core.StringExpression update_user_id = 10;
+    io.graphoenix.core.StringExpression update_time = 11;
+    io.graphoenix.core.StringExpression create_group_id = 12;
+    io.graphoenix.core.StringExpression intro_typename = 13;
+    bool not = 14;
+    io.graphoenix.core.Conditional cond = 15;
+    repeated UserPhoneNumbersRelationExpression exs = 16;
+}
+message UserPhoneNumbersRelationInput {
+    string id = 1;
+    string user_ref = 2;
+    UserInput user = 3;
+    string phone_numbers_ref = 4;
+    bool is_deprecated = 5;
+    int32 version = 6;
+    int32 realm_id = 7;
+    string create_user_id = 8;
+    google.protobuf.Timestamp create_time = 9;
+    string update_user_id = 10;
+    google.protobuf.Timestamp update_time = 11;
+    string create_group_id = 12;
+    string intro_typename = 13;
+    UserPhoneNumbersRelationExpression where = 14;
+}
+message UserPhoneNumbersRelationOrderBy {
+    io.graphoenix.core.Sort id = 1;
+    io.graphoenix.core.Sort user_ref = 2;
+    io.graphoenix.core.Sort phone_numbers_ref = 3;
+    io.graphoenix.core.Sort is_deprecated = 4;
+    io.graphoenix.core.Sort version = 5;
+    io.graphoenix.core.Sort realm_id = 6;
+    io.graphoenix.core.Sort create_user_id = 7;
+    io.graphoenix.core.Sort create_time = 8;
+    io.graphoenix.core.Sort update_user_id = 9;
+    io.graphoenix.core.Sort update_time = 10;
+    io.graphoenix.core.Sort create_group_id = 11;
+    io.graphoenix.core.Sort intro_typename = 12;
+}
+message UserTypeExpression {
+    io.graphoenix.core.Operator opr = 1;
+    UserType val = 2;
+    repeated UserType arr = 3;
+}
+message UserQueryArguments {
+    io.graphoenix.core.StringExpression id = 1;
+    io.graphoenix.core.StringExpression name = 2;
+    io.graphoenix.core.StringExpression email = 3;
+    io.graphoenix.core.StringExpression phone_numbers = 4;
+    UserTypeExpression user_type = 5;
+    bool include_deprecated = 6;
+    io.graphoenix.core.IntExpression version = 7;
+    io.graphoenix.core.IntExpression realm_id = 8;
+    io.graphoenix.core.StringExpression create_user_id = 9;
+    io.graphoenix.core.StringExpression create_time = 10;
+    io.graphoenix.core.StringExpression update_user_id = 11;
+    io.graphoenix.core.StringExpression update_time = 12;
+    io.graphoenix.core.StringExpression create_group_id = 13;
+    io.graphoenix.core.StringExpression intro_typename = 14;
+    UserPhoneNumbersRelationExpression user_phone_numbers_relation = 15;
+    repeated string group_by = 16;
+    bool not = 17;
+    io.graphoenix.core.Conditional cond = 18;
+    repeated UserExpression exs = 19;
+}
+message UserListQueryArguments {
+    io.graphoenix.core.StringExpression id = 1;
+    io.graphoenix.core.StringExpression name = 2;
+    io.graphoenix.core.StringExpression email = 3;
+    io.graphoenix.core.StringExpression phone_numbers = 4;
+    UserTypeExpression user_type = 5;
+    bool include_deprecated = 6;
+    io.graphoenix.core.IntExpression version = 7;
+    io.graphoenix.core.IntExpression realm_id = 8;
+    io.graphoenix.core.StringExpression create_user_id = 9;
+    io.graphoenix.core.StringExpression create_time = 10;
+    io.graphoenix.core.StringExpression update_user_id = 11;
+    io.graphoenix.core.StringExpression update_time = 12;
+    io.graphoenix.core.StringExpression create_group_id = 13;
+    io.graphoenix.core.StringExpression intro_typename = 14;
+    UserPhoneNumbersRelationExpression user_phone_numbers_relation = 15;
+    UserOrderBy order_by = 16;
+    repeated string group_by = 17;
+    bool not = 18;
+    io.graphoenix.core.Conditional cond = 19;
+    repeated UserExpression exs = 20;
+    int32 first = 21;
+    int32 last = 22;
+    int32 offset = 23;
+    string after = 24;
+    string before = 25;
+}
+message UserConnectionQueryArguments {
+    io.graphoenix.core.StringExpression id = 1;
+    io.graphoenix.core.StringExpression name = 2;
+    io.graphoenix.core.StringExpression email = 3;
+    io.graphoenix.core.StringExpression phone_numbers = 4;
+    UserTypeExpression user_type = 5;
+    bool include_deprecated = 6;
+    io.graphoenix.core.IntExpression version = 7;
+    io.graphoenix.core.IntExpression realm_id = 8;
+    io.graphoenix.core.StringExpression create_user_id = 9;
+    io.graphoenix.core.StringExpression create_time = 10;
+    io.graphoenix.core.StringExpression update_user_id = 11;
+    io.graphoenix.core.StringExpression update_time = 12;
+    io.graphoenix.core.StringExpression create_group_id = 13;
+    io.graphoenix.core.StringExpression intro_typename = 14;
+    UserPhoneNumbersRelationExpression user_phone_numbers_relation = 15;
+    UserOrderBy order_by = 16;
+    repeated string group_by = 17;
+    bool not = 18;
+    io.graphoenix.core.Conditional cond = 19;
+    repeated UserExpression exs = 20;
+    int32 first = 21;
+    int32 last = 22;
+    int32 offset = 23;
+    string after = 24;
+    string before = 25;
+}
+message UserPhoneNumbersRelationQueryArguments {
+    io.graphoenix.core.StringExpression id = 1;
+    io.graphoenix.core.StringExpression user_ref = 2;
+    UserExpression user = 3;
+    io.graphoenix.core.StringExpression phone_numbers_ref = 4;
+    bool include_deprecated = 5;
+    io.graphoenix.core.IntExpression version = 6;
+    io.graphoenix.core.IntExpression realm_id = 7;
+    io.graphoenix.core.StringExpression create_user_id = 8;
+    io.graphoenix.core.StringExpression create_time = 9;
+    io.graphoenix.core.StringExpression update_user_id = 10;
+    io.graphoenix.core.StringExpression update_time = 11;
+    io.graphoenix.core.StringExpression create_group_id = 12;
+    io.graphoenix.core.StringExpression intro_typename = 13;
+    repeated string group_by = 14;
+    bool not = 15;
+    io.graphoenix.core.Conditional cond = 16;
+    repeated UserPhoneNumbersRelationExpression exs = 17;
+}
+message UserPhoneNumbersRelationListQueryArguments {
+    io.graphoenix.core.StringExpression id = 1;
+    io.graphoenix.core.StringExpression user_ref = 2;
+    UserExpression user = 3;
+    io.graphoenix.core.StringExpression phone_numbers_ref = 4;
+    bool include_deprecated = 5;
+    io.graphoenix.core.IntExpression version = 6;
+    io.graphoenix.core.IntExpression realm_id = 7;
+    io.graphoenix.core.StringExpression create_user_id = 8;
+    io.graphoenix.core.StringExpression create_time = 9;
+    io.graphoenix.core.StringExpression update_user_id = 10;
+    io.graphoenix.core.StringExpression update_time = 11;
+    io.graphoenix.core.StringExpression create_group_id = 12;
+    io.graphoenix.core.StringExpression intro_typename = 13;
+    UserPhoneNumbersRelationOrderBy order_by = 14;
+    repeated string group_by = 15;
+    bool not = 16;
+    io.graphoenix.core.Conditional cond = 17;
+    repeated UserPhoneNumbersRelationExpression exs = 18;
+    int32 first = 19;
+    int32 last = 20;
+    int32 offset = 21;
+    string after = 22;
+    string before = 23;
+}
+message UserPhoneNumbersRelationConnectionQueryArguments {
+    io.graphoenix.core.StringExpression id = 1;
+    io.graphoenix.core.StringExpression user_ref = 2;
+    UserExpression user = 3;
+    io.graphoenix.core.StringExpression phone_numbers_ref = 4;
+    bool include_deprecated = 5;
+    io.graphoenix.core.IntExpression version = 6;
+    io.graphoenix.core.IntExpression realm_id = 7;
+    io.graphoenix.core.StringExpression create_user_id = 8;
+    io.graphoenix.core.StringExpression create_time = 9;
+    io.graphoenix.core.StringExpression update_user_id = 10;
+    io.graphoenix.core.StringExpression update_time = 11;
+    io.graphoenix.core.StringExpression create_group_id = 12;
+    io.graphoenix.core.StringExpression intro_typename = 13;
+    UserPhoneNumbersRelationOrderBy order_by = 14;
+    repeated string group_by = 15;
+    bool not = 16;
+    io.graphoenix.core.Conditional cond = 17;
+    repeated UserPhoneNumbersRelationExpression exs = 18;
+    int32 first = 19;
+    int32 last = 20;
+    int32 offset = 21;
+    string after = 22;
+    string before = 23;
+}
+message UserMutationArguments {
+    string id = 1;
+    string name = 2;
+    string email = 3;
+    repeated string phone_numbers = 4;
+    UserType user_type = 5;
+    bool is_deprecated = 6;
+    int32 version = 7;
+    int32 realm_id = 8;
+    string create_user_id = 9;
+    google.protobuf.Timestamp create_time = 10;
+    string update_user_id = 11;
+    google.protobuf.Timestamp update_time = 12;
+    string create_group_id = 13;
+    string intro_typename = 14;
+    repeated UserPhoneNumbersRelationInput user_phone_numbers_relation = 15;
+    UserInput input = 16;
+    UserExpression where = 17;
+}
+message UserListMutationArguments {
+    string id = 1;
+    string name = 2;
+    string email = 3;
+    repeated string phone_numbers = 4;
+    UserType user_type = 5;
+    bool is_deprecated = 6;
+    int32 version = 7;
+    int32 realm_id = 8;
+    string create_user_id = 9;
+    google.protobuf.Timestamp create_time = 10;
+    string update_user_id = 11;
+    google.protobuf.Timestamp update_time = 12;
+    string create_group_id = 13;
+    string intro_typename = 14;
+    repeated UserPhoneNumbersRelationInput user_phone_numbers_relation = 15;
+    repeated UserInput list = 16;
+    UserExpression where = 17;
+}
+message UserPhoneNumbersRelationMutationArguments {
+    string id = 1;
+    string user_ref = 2;
+    UserInput user = 3;
+    string phone_numbers_ref = 4;
+    bool is_deprecated = 5;
+    int32 version = 6;
+    int32 realm_id = 7;
+    string create_user_id = 8;
+    google.protobuf.Timestamp create_time = 9;
+    string update_user_id = 10;
+    google.protobuf.Timestamp update_time = 11;
+    string create_group_id = 12;
+    string intro_typename = 13;
+    UserPhoneNumbersRelationInput input = 14;
+    UserPhoneNumbersRelationExpression where = 15;
+}
+message UserPhoneNumbersRelationListMutationArguments {
+    string id = 1;
+    string user_ref = 2;
+    UserInput user = 3;
+    string phone_numbers_ref = 4;
+    bool is_deprecated = 5;
+    int32 version = 6;
+    int32 realm_id = 7;
+    string create_user_id = 8;
+    google.protobuf.Timestamp create_time = 9;
+    string update_user_id = 10;
+    google.protobuf.Timestamp update_time = 11;
+    string create_group_id = 12;
+    string intro_typename = 13;
+    repeated UserPhoneNumbersRelationInput list = 14;
+    UserPhoneNumbersRelationExpression where = 15;
+}
+message UserSubscriptionArguments {
+    io.graphoenix.core.StringExpression id = 1;
+    io.graphoenix.core.StringExpression name = 2;
+    io.graphoenix.core.StringExpression email = 3;
+    io.graphoenix.core.StringExpression phone_numbers = 4;
+    UserTypeExpression user_type = 5;
+    bool include_deprecated = 6;
+    io.graphoenix.core.IntExpression version = 7;
+    io.graphoenix.core.IntExpression realm_id = 8;
+    io.graphoenix.core.StringExpression create_user_id = 9;
+    io.graphoenix.core.StringExpression create_time = 10;
+    io.graphoenix.core.StringExpression update_user_id = 11;
+    io.graphoenix.core.StringExpression update_time = 12;
+    io.graphoenix.core.StringExpression create_group_id = 13;
+    io.graphoenix.core.StringExpression intro_typename = 14;
+    UserPhoneNumbersRelationExpression user_phone_numbers_relation = 15;
+    repeated string group_by = 16;
+    bool not = 17;
+    io.graphoenix.core.Conditional cond = 18;
+    repeated UserExpression exs = 19;
+}
+message UserListSubscriptionArguments {
+    io.graphoenix.core.StringExpression id = 1;
+    io.graphoenix.core.StringExpression name = 2;
+    io.graphoenix.core.StringExpression email = 3;
+    io.graphoenix.core.StringExpression phone_numbers = 4;
+    UserTypeExpression user_type = 5;
+    bool include_deprecated = 6;
+    io.graphoenix.core.IntExpression version = 7;
+    io.graphoenix.core.IntExpression realm_id = 8;
+    io.graphoenix.core.StringExpression create_user_id = 9;
+    io.graphoenix.core.StringExpression create_time = 10;
+    io.graphoenix.core.StringExpression update_user_id = 11;
+    io.graphoenix.core.StringExpression update_time = 12;
+    io.graphoenix.core.StringExpression create_group_id = 13;
+    io.graphoenix.core.StringExpression intro_typename = 14;
+    UserPhoneNumbersRelationExpression user_phone_numbers_relation = 15;
+    UserOrderBy order_by = 16;
+    repeated string group_by = 17;
+    bool not = 18;
+    io.graphoenix.core.Conditional cond = 19;
+    repeated UserExpression exs = 20;
+    int32 first = 21;
+    int32 last = 22;
+    int32 offset = 23;
+    string after = 24;
+    string before = 25;
+}
+message UserConnectionSubscriptionArguments {
+    io.graphoenix.core.StringExpression id = 1;
+    io.graphoenix.core.StringExpression name = 2;
+    io.graphoenix.core.StringExpression email = 3;
+    io.graphoenix.core.StringExpression phone_numbers = 4;
+    UserTypeExpression user_type = 5;
+    bool include_deprecated = 6;
+    io.graphoenix.core.IntExpression version = 7;
+    io.graphoenix.core.IntExpression realm_id = 8;
+    io.graphoenix.core.StringExpression create_user_id = 9;
+    io.graphoenix.core.StringExpression create_time = 10;
+    io.graphoenix.core.StringExpression update_user_id = 11;
+    io.graphoenix.core.StringExpression update_time = 12;
+    io.graphoenix.core.StringExpression create_group_id = 13;
+    io.graphoenix.core.StringExpression intro_typename = 14;
+    UserPhoneNumbersRelationExpression user_phone_numbers_relation = 15;
+    UserOrderBy order_by = 16;
+    repeated string group_by = 17;
+    bool not = 18;
+    io.graphoenix.core.Conditional cond = 19;
+    repeated UserExpression exs = 20;
+    int32 first = 21;
+    int32 last = 22;
+    int32 offset = 23;
+    string after = 24;
+    string before = 25;
+}
+message UserPhoneNumbersRelationSubscriptionArguments {
+    io.graphoenix.core.StringExpression id = 1;
+    io.graphoenix.core.StringExpression user_ref = 2;
+    UserExpression user = 3;
+    io.graphoenix.core.StringExpression phone_numbers_ref = 4;
+    bool include_deprecated = 5;
+    io.graphoenix.core.IntExpression version = 6;
+    io.graphoenix.core.IntExpression realm_id = 7;
+    io.graphoenix.core.StringExpression create_user_id = 8;
+    io.graphoenix.core.StringExpression create_time = 9;
+    io.graphoenix.core.StringExpression update_user_id = 10;
+    io.graphoenix.core.StringExpression update_time = 11;
+    io.graphoenix.core.StringExpression create_group_id = 12;
+    io.graphoenix.core.StringExpression intro_typename = 13;
+    repeated string group_by = 14;
+    bool not = 15;
+    io.graphoenix.core.Conditional cond = 16;
+    repeated UserPhoneNumbersRelationExpression exs = 17;
+}
+message UserPhoneNumbersRelationListSubscriptionArguments {
+    io.graphoenix.core.StringExpression id = 1;
+    io.graphoenix.core.StringExpression user_ref = 2;
+    UserExpression user = 3;
+    io.graphoenix.core.StringExpression phone_numbers_ref = 4;
+    bool include_deprecated = 5;
+    io.graphoenix.core.IntExpression version = 6;
+    io.graphoenix.core.IntExpression realm_id = 7;
+    io.graphoenix.core.StringExpression create_user_id = 8;
+    io.graphoenix.core.StringExpression create_time = 9;
+    io.graphoenix.core.StringExpression update_user_id = 10;
+    io.graphoenix.core.StringExpression update_time = 11;
+    io.graphoenix.core.StringExpression create_group_id = 12;
+    io.graphoenix.core.StringExpression intro_typename = 13;
+    UserPhoneNumbersRelationOrderBy order_by = 14;
+    repeated string group_by = 15;
+    bool not = 16;
+    io.graphoenix.core.Conditional cond = 17;
+    repeated UserPhoneNumbersRelationExpression exs = 18;
+    int32 first = 19;
+    int32 last = 20;
+    int32 offset = 21;
+    string after = 22;
+    string before = 23;
+}
+message UserPhoneNumbersRelationConnectionSubscriptionArguments {
+    io.graphoenix.core.StringExpression id = 1;
+    io.graphoenix.core.StringExpression user_ref = 2;
+    UserExpression user = 3;
+    io.graphoenix.core.StringExpression phone_numbers_ref = 4;
+    bool include_deprecated = 5;
+    io.graphoenix.core.IntExpression version = 6;
+    io.graphoenix.core.IntExpression realm_id = 7;
+    io.graphoenix.core.StringExpression create_user_id = 8;
+    io.graphoenix.core.StringExpression create_time = 9;
+    io.graphoenix.core.StringExpression update_user_id = 10;
+    io.graphoenix.core.StringExpression update_time = 11;
+    io.graphoenix.core.StringExpression create_group_id = 12;
+    io.graphoenix.core.StringExpression intro_typename = 13;
+    UserPhoneNumbersRelationOrderBy order_by = 14;
+    repeated string group_by = 15;
+    bool not = 16;
+    io.graphoenix.core.Conditional cond = 17;
+    repeated UserPhoneNumbersRelationExpression exs = 18;
+    int32 first = 19;
+    int32 last = 20;
+    int32 offset = 21;
+    string after = 22;
+    string before = 23;
+}

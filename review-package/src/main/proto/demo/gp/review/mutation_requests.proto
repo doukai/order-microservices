@@ -1,0 +1,94 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "demo.gp.review.grpc";
+
+package demo.gp.review;
+
+import "demo/gp/review/enums.proto";
+import "demo/gp/review/objects.proto";
+import "demo/gp/review/interfaces.proto";
+import "demo/gp/review/input_objects.proto";
+import "demo/gp/user/input_objects.proto";
+import "google/protobuf/timestamp.proto";
+
+message MutationReviewRequest {
+    optional string selection_set = 1;
+    optional string arguments = 2;
+    string id = 3;
+    string content = 4;
+    float rating = 5;
+    demo.gp.user.UserInput user = 6;
+    bool is_deprecated = 7;
+    int32 version = 8;
+    int32 realm_id = 9;
+    string create_user_id = 10;
+    google.protobuf.Timestamp create_time = 11;
+    string update_user_id = 12;
+    google.protobuf.Timestamp update_time = 13;
+    string create_group_id = 14;
+    string intro_typename = 15;
+    repeated ReviewUserRelationInput review_user_relation = 16;
+    ReviewInput input = 17;
+    ReviewExpression where = 18;
+}
+message MutationReviewListRequest {
+    optional string selection_set = 1;
+    optional string arguments = 2;
+    string id = 3;
+    string content = 4;
+    float rating = 5;
+    demo.gp.user.UserInput user = 6;
+    bool is_deprecated = 7;
+    int32 version = 8;
+    int32 realm_id = 9;
+    string create_user_id = 10;
+    google.protobuf.Timestamp create_time = 11;
+    string update_user_id = 12;
+    google.protobuf.Timestamp update_time = 13;
+    string create_group_id = 14;
+    string intro_typename = 15;
+    repeated ReviewUserRelationInput review_user_relation = 16;
+    repeated ReviewInput list = 17;
+    ReviewExpression where = 18;
+}
+message MutationReviewUserRelationRequest {
+    optional string selection_set = 1;
+    optional string arguments = 2;
+    string id = 3;
+    string review_ref = 4;
+    ReviewInput review = 5;
+    int32 user_ref = 6;
+    demo.gp.user.UserInput user = 7;
+    bool is_deprecated = 8;
+    int32 version = 9;
+    int32 realm_id = 10;
+    string create_user_id = 11;
+    google.protobuf.Timestamp create_time = 12;
+    string update_user_id = 13;
+    google.protobuf.Timestamp update_time = 14;
+    string create_group_id = 15;
+    string intro_typename = 16;
+    ReviewUserRelationInput input = 17;
+    ReviewUserRelationExpression where = 18;
+}
+message MutationReviewUserRelationListRequest {
+    optional string selection_set = 1;
+    optional string arguments = 2;
+    string id = 3;
+    string review_ref = 4;
+    ReviewInput review = 5;
+    int32 user_ref = 6;
+    demo.gp.user.UserInput user = 7;
+    bool is_deprecated = 8;
+    int32 version = 9;
+    int32 realm_id = 10;
+    string create_user_id = 11;
+    google.protobuf.Timestamp create_time = 12;
+    string update_user_id = 13;
+    google.protobuf.Timestamp update_time = 14;
+    string create_group_id = 15;
+    string intro_typename = 16;
+    repeated ReviewUserRelationInput list = 17;
+    ReviewUserRelationExpression where = 18;
+}

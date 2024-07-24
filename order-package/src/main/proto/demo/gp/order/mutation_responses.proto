@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "demo.gp.order.grpc";
+
+package demo.gp.order;
+
+import "demo/gp/order/enums.proto";
+import "demo/gp/order/objects.proto";
+import "demo/gp/order/interfaces.proto";
+import "demo/gp/order/input_objects.proto";
+import "demo/gp/review/input_objects.proto";
+import "demo/gp/user/input_objects.proto";
+import "google/protobuf/timestamp.proto";
+
+message MutationProductResponse {
+    Product product = 1;
+}
+message MutationProductListResponse {
+    repeated Product product_list = 1;
+}
+message MutationOrderResponse {
+    Order order = 1;
+}
+message MutationOrderListResponse {
+    repeated Order order_list = 1;
+}
+message MutationOrderItemResponse {
+    OrderItem order_item = 1;
+}
+message MutationOrderItemListResponse {
+    repeated OrderItem order_item_list = 1;
+}
+message MutationOrderOrderItemRelationResponse {
+    OrderOrderItemRelation order_order_item_relation = 1;
+}
+message MutationOrderOrderItemRelationListResponse {
+    repeated OrderOrderItemRelation order_order_item_relation_list = 1;
+}
+message MutationOrderItemProductRelationResponse {
+    OrderItemProductRelation order_item_product_relation = 1;
+}
+message MutationOrderItemProductRelationListResponse {
+    repeated OrderItemProductRelation order_item_product_relation_list = 1;
+}
+message MutationProductReviewRelationResponse {
+    ProductReviewRelation product_review_relation = 1;
+}
+message MutationProductReviewRelationListResponse {
+    repeated ProductReviewRelation product_review_relation_list = 1;
+}
+message MutationOrderUserRelationResponse {
+    OrderUserRelation order_user_relation = 1;
+}
+message MutationOrderUserRelationListResponse {
+    repeated OrderUserRelation order_user_relation_list = 1;
+}

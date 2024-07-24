@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "demo.gp.review.grpc";
+
+package demo.gp.review;
+
+import "demo/gp/review/enums.proto";
+import "demo/gp/review/objects.proto";
+import "demo/gp/review/interfaces.proto";
+import "demo/gp/review/input_objects.proto";
+import "io/graphoenix/core/enums.proto";
+import "io/graphoenix/core/input_objects.proto";
+import "demo/gp/user/input_objects.proto";
+
+message QueryReviewResponse {
+    Review review = 1;
+}
+message QueryReviewListResponse {
+    repeated Review review_list = 1;
+}
+message QueryReviewConnectionResponse {
+    ReviewConnection review_connection = 1;
+}
+message QueryReviewUserRelationResponse {
+    ReviewUserRelation review_user_relation = 1;
+}
+message QueryReviewUserRelationListResponse {
+    repeated ReviewUserRelation review_user_relation_list = 1;
+}
+message QueryReviewUserRelationConnectionResponse {
+    ReviewUserRelationConnection review_user_relation_connection = 1;
+}

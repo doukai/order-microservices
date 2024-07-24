@@ -1,0 +1,11 @@
+"评论"
+type Review {
+    "评论ID"
+    id: ID!
+    "评论内容"
+    content: String
+    "评分"
+    rating: Float!
+    "评论人"
+    user: User!
+}

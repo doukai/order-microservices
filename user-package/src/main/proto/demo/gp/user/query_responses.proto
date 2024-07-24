@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "demo.gp.user.grpc";
+
+package demo.gp.user;
+
+import "demo/gp/user/enums.proto";
+import "demo/gp/user/objects.proto";
+import "demo/gp/user/interfaces.proto";
+import "demo/gp/user/input_objects.proto";
+import "io/graphoenix/core/enums.proto";
+import "io/graphoenix/core/input_objects.proto";
+
+message QueryUserResponse {
+    User user = 1;
+}
+message QueryUserListResponse {
+    repeated User user_list = 1;
+}
+message QueryUserConnectionResponse {
+    UserConnection user_connection = 1;
+}
+message QueryUserPhoneNumbersRelationResponse {
+    UserPhoneNumbersRelation user_phone_numbers_relation = 1;
+}
+message QueryUserPhoneNumbersRelationListResponse {
+    repeated UserPhoneNumbersRelation user_phone_numbers_relation_list = 1;
+}
+message QueryUserPhoneNumbersRelationConnectionResponse {
+    UserPhoneNumbersRelationConnection user_phone_numbers_relation_connection = 1;
+}

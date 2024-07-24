@@ -1,0 +1,171 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "demo.gp.review.grpc";
+
+package demo.gp.review;
+
+import "demo/gp/review/enums.proto";
+import "demo/gp/review/objects.proto";
+import "demo/gp/review/interfaces.proto";
+import "demo/gp/review/input_objects.proto";
+import "io/graphoenix/core/enums.proto";
+import "io/graphoenix/core/input_objects.proto";
+import "demo/gp/user/input_objects.proto";
+
+message QueryReviewRequest {
+    optional string selection_set = 1;
+    optional string arguments = 2;
+    io.graphoenix.core.StringExpression id = 3;
+    io.graphoenix.core.StringExpression content = 4;
+    io.graphoenix.core.FloatExpression rating = 5;
+    demo.gp.user.UserExpression user = 6;
+    bool include_deprecated = 7;
+    io.graphoenix.core.IntExpression version = 8;
+    io.graphoenix.core.IntExpression realm_id = 9;
+    io.graphoenix.core.StringExpression create_user_id = 10;
+    io.graphoenix.core.StringExpression create_time = 11;
+    io.graphoenix.core.StringExpression update_user_id = 12;
+    io.graphoenix.core.StringExpression update_time = 13;
+    io.graphoenix.core.StringExpression create_group_id = 14;
+    io.graphoenix.core.StringExpression intro_typename = 15;
+    ReviewUserRelationExpression review_user_relation = 16;
+    repeated string group_by = 17;
+    bool not = 18;
+    io.graphoenix.core.Conditional cond = 19;
+    repeated ReviewExpression exs = 20;
+}
+message QueryReviewListRequest {
+    optional string selection_set = 1;
+    optional string arguments = 2;
+    io.graphoenix.core.StringExpression id = 3;
+    io.graphoenix.core.StringExpression content = 4;
+    io.graphoenix.core.FloatExpression rating = 5;
+    demo.gp.user.UserExpression user = 6;
+    bool include_deprecated = 7;
+    io.graphoenix.core.IntExpression version = 8;
+    io.graphoenix.core.IntExpression realm_id = 9;
+    io.graphoenix.core.StringExpression create_user_id = 10;
+    io.graphoenix.core.StringExpression create_time = 11;
+    io.graphoenix.core.StringExpression update_user_id = 12;
+    io.graphoenix.core.StringExpression update_time = 13;
+    io.graphoenix.core.StringExpression create_group_id = 14;
+    io.graphoenix.core.StringExpression intro_typename = 15;
+    ReviewUserRelationExpression review_user_relation = 16;
+    ReviewOrderBy order_by = 17;
+    repeated string group_by = 18;
+    bool not = 19;
+    io.graphoenix.core.Conditional cond = 20;
+    repeated ReviewExpression exs = 21;
+    int32 first = 22;
+    int32 last = 23;
+    int32 offset = 24;
+    string after = 25;
+    string before = 26;
+}
+message QueryReviewConnectionRequest {
+    optional string selection_set = 1;
+    optional string arguments = 2;
+    io.graphoenix.core.StringExpression id = 3;
+    io.graphoenix.core.StringExpression content = 4;
+    io.graphoenix.core.FloatExpression rating = 5;
+    demo.gp.user.UserExpression user = 6;
+    bool include_deprecated = 7;
+    io.graphoenix.core.IntExpression version = 8;
+    io.graphoenix.core.IntExpression realm_id = 9;
+    io.graphoenix.core.StringExpression create_user_id = 10;
+    io.graphoenix.core.StringExpression create_time = 11;
+    io.graphoenix.core.StringExpression update_user_id = 12;
+    io.graphoenix.core.StringExpression update_time = 13;
+    io.graphoenix.core.StringExpression create_group_id = 14;
+    io.graphoenix.core.StringExpression intro_typename = 15;
+    ReviewUserRelationExpression review_user_relation = 16;
+    ReviewOrderBy order_by = 17;
+    repeated string group_by = 18;
+    bool not = 19;
+    io.graphoenix.core.Conditional cond = 20;
+    repeated ReviewExpression exs = 21;
+    int32 first = 22;
+    int32 last = 23;
+    int32 offset = 24;
+    string after = 25;
+    string before = 26;
+}
+message QueryReviewUserRelationRequest {
+    optional string selection_set = 1;
+    optional string arguments = 2;
+    io.graphoenix.core.StringExpression id = 3;
+    io.graphoenix.core.StringExpression review_ref = 4;
+    ReviewExpression review = 5;
+    io.graphoenix.core.IntExpression user_ref = 6;
+    demo.gp.user.UserExpression user = 7;
+    bool include_deprecated = 8;
+    io.graphoenix.core.IntExpression version = 9;
+    io.graphoenix.core.IntExpression realm_id = 10;
+    io.graphoenix.core.StringExpression create_user_id = 11;
+    io.graphoenix.core.StringExpression create_time = 12;
+    io.graphoenix.core.StringExpression update_user_id = 13;
+    io.graphoenix.core.StringExpression update_time = 14;
+    io.graphoenix.core.StringExpression create_group_id = 15;
+    io.graphoenix.core.StringExpression intro_typename = 16;
+    repeated string group_by = 17;
+    bool not = 18;
+    io.graphoenix.core.Conditional cond = 19;
+    repeated ReviewUserRelationExpression exs = 20;
+}
+message QueryReviewUserRelationListRequest {
+    optional string selection_set = 1;
+    optional string arguments = 2;
+    io.graphoenix.core.StringExpression id = 3;
+    io.graphoenix.core.StringExpression review_ref = 4;
+    ReviewExpression review = 5;
+    io.graphoenix.core.IntExpression user_ref = 6;
+    demo.gp.user.UserExpression user = 7;
+    bool include_deprecated = 8;
+    io.graphoenix.core.IntExpression version = 9;
+    io.graphoenix.core.IntExpression realm_id = 10;
+    io.graphoenix.core.StringExpression create_user_id = 11;
+    io.graphoenix.core.StringExpression create_time = 12;
+    io.graphoenix.core.StringExpression update_user_id = 13;
+    io.graphoenix.core.StringExpression update_time = 14;
+    io.graphoenix.core.StringExpression create_group_id = 15;
+    io.graphoenix.core.StringExpression intro_typename = 16;
+    ReviewUserRelationOrderBy order_by = 17;
+    repeated string group_by = 18;
+    bool not = 19;
+    io.graphoenix.core.Conditional cond = 20;
+    repeated ReviewUserRelationExpression exs = 21;
+    int32 first = 22;
+    int32 last = 23;
+    int32 offset = 24;
+    string after = 25;
+    string before = 26;
+}
+message QueryReviewUserRelationConnectionRequest {
+    optional string selection_set = 1;
+    optional string arguments = 2;
+    io.graphoenix.core.StringExpression id = 3;
+    io.graphoenix.core.StringExpression review_ref = 4;
+    ReviewExpression review = 5;
+    io.graphoenix.core.IntExpression user_ref = 6;
+    demo.gp.user.UserExpression user = 7;
+    bool include_deprecated = 8;
+    io.graphoenix.core.IntExpression version = 9;
+    io.graphoenix.core.IntExpression realm_id = 10;
+    io.graphoenix.core.StringExpression create_user_id = 11;
+    io.graphoenix.core.StringExpression create_time = 12;
+    io.graphoenix.core.StringExpression update_user_id = 13;
+    io.graphoenix.core.StringExpression update_time = 14;
+    io.graphoenix.core.StringExpression create_group_id = 15;
+    io.graphoenix.core.StringExpression intro_typename = 16;
+    ReviewUserRelationOrderBy order_by = 17;
+    repeated string group_by = 18;
+    bool not = 19;
+    io.graphoenix.core.Conditional cond = 20;
+    repeated ReviewUserRelationExpression exs = 21;
+    int32 first = 22;
+    int32 last = 23;
+    int32 offset = 24;
+    string after = 25;
+    string before = 26;
+}

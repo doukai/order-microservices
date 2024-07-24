@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "demo.gp.review.grpc";
+
+package demo.gp.review;
+
+import "demo/gp/review/enums.proto";
+import "demo/gp/review/objects.proto";
+import "demo/gp/review/interfaces.proto";
+import "demo/gp/review/input_objects.proto";
+import "demo/gp/review/mutation_requests.proto";
+import "demo/gp/review/mutation_responses.proto";
+
+service MutationService {
+    rpc Review (MutationReviewRequest) returns (MutationReviewResponse);
+    rpc ReviewList (MutationReviewListRequest) returns (MutationReviewListResponse);
+    rpc ReviewUserRelation (MutationReviewUserRelationRequest) returns (MutationReviewUserRelationResponse);
+    rpc ReviewUserRelationList (MutationReviewUserRelationListRequest) returns (MutationReviewUserRelationListResponse);
+}

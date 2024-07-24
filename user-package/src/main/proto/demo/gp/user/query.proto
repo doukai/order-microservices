@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "demo.gp.user.grpc";
+
+package demo.gp.user;
+
+import "demo/gp/user/enums.proto";
+import "demo/gp/user/objects.proto";
+import "demo/gp/user/interfaces.proto";
+import "demo/gp/user/input_objects.proto";
+import "demo/gp/user/query_requests.proto";
+import "demo/gp/user/query_responses.proto";
+
+service QueryService {
+    rpc User (QueryUserRequest) returns (QueryUserResponse);
+    rpc UserList (QueryUserListRequest) returns (QueryUserListResponse);
+    rpc UserConnection (QueryUserConnectionRequest) returns (QueryUserConnectionResponse);
+    rpc UserPhoneNumbersRelation (QueryUserPhoneNumbersRelationRequest) returns (QueryUserPhoneNumbersRelationResponse);
+    rpc UserPhoneNumbersRelationList (QueryUserPhoneNumbersRelationListRequest) returns (QueryUserPhoneNumbersRelationListResponse);
+    rpc UserPhoneNumbersRelationConnection (QueryUserPhoneNumbersRelationConnectionRequest) returns (QueryUserPhoneNumbersRelationConnectionResponse);
+}

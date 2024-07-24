@@ -1,0 +1,93 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "demo.gp.user.grpc";
+
+package demo.gp.user;
+
+import "demo/gp/user/enums.proto";
+import "demo/gp/user/objects.proto";
+import "demo/gp/user/interfaces.proto";
+import "demo/gp/user/input_objects.proto";
+import "google/protobuf/timestamp.proto";
+
+message MutationUserRequest {
+    optional string selection_set = 1;
+    optional string arguments = 2;
+    string id = 3;
+    string name = 4;
+    string email = 5;
+    repeated string phone_numbers = 6;
+    UserType user_type = 7;
+    bool is_deprecated = 8;
+    int32 version = 9;
+    int32 realm_id = 10;
+    string create_user_id = 11;
+    google.protobuf.Timestamp create_time = 12;
+    string update_user_id = 13;
+    google.protobuf.Timestamp update_time = 14;
+    string create_group_id = 15;
+    string intro_typename = 16;
+    repeated UserPhoneNumbersRelationInput user_phone_numbers_relation = 17;
+    UserInput input = 18;
+    UserExpression where = 19;
+}
+message MutationUserListRequest {
+    optional string selection_set = 1;
+    optional string arguments = 2;
+    string id = 3;
+    string name = 4;
+    string email = 5;
+    repeated string phone_numbers = 6;
+    UserType user_type = 7;
+    bool is_deprecated = 8;
+    int32 version = 9;
+    int32 realm_id = 10;
+    string create_user_id = 11;
+    google.protobuf.Timestamp create_time = 12;
+    string update_user_id = 13;
+    google.protobuf.Timestamp update_time = 14;
+    string create_group_id = 15;
+    string intro_typename = 16;
+    repeated UserPhoneNumbersRelationInput user_phone_numbers_relation = 17;
+    repeated UserInput list = 18;
+    UserExpression where = 19;
+}
+message MutationUserPhoneNumbersRelationRequest {
+    optional string selection_set = 1;
+    optional string arguments = 2;
+    string id = 3;
+    string user_ref = 4;
+    UserInput user = 5;
+    string phone_numbers_ref = 6;
+    bool is_deprecated = 7;
+    int32 version = 8;
+    int32 realm_id = 9;
+    string create_user_id = 10;
+    google.protobuf.Timestamp create_time = 11;
+    string update_user_id = 12;
+    google.protobuf.Timestamp update_time = 13;
+    string create_group_id = 14;
+    string intro_typename = 15;
+    UserPhoneNumbersRelationInput input = 16;
+    UserPhoneNumbersRelationExpression where = 17;
+}
+message MutationUserPhoneNumbersRelationListRequest {
+    optional string selection_set = 1;
+    optional string arguments = 2;
+    string id = 3;
+    string user_ref = 4;
+    UserInput user = 5;
+    string phone_numbers_ref = 6;
+    bool is_deprecated = 7;
+    int32 version = 8;
+    int32 realm_id = 9;
+    string create_user_id = 10;
+    google.protobuf.Timestamp create_time = 11;
+    string update_user_id = 12;
+    google.protobuf.Timestamp update_time = 13;
+    string create_group_id = 14;
+    string intro_typename = 15;
+    repeated UserPhoneNumbersRelationInput list = 16;
+    UserPhoneNumbersRelationExpression where = 17;
+}

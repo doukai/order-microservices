@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "demo.gp.order.grpc";
+
+package demo.gp.order;
+
+import "demo/gp/order/enums.proto";
+import "demo/gp/order/objects.proto";
+import "demo/gp/order/interfaces.proto";
+import "demo/gp/order/input_objects.proto";
+import "demo/gp/order/mutation_requests.proto";
+import "demo/gp/order/mutation_responses.proto";
+
+service MutationService {
+    rpc Product (MutationProductRequest) returns (MutationProductResponse);
+    rpc ProductList (MutationProductListRequest) returns (MutationProductListResponse);
+    rpc Order (MutationOrderRequest) returns (MutationOrderResponse);
+    rpc OrderList (MutationOrderListRequest) returns (MutationOrderListResponse);
+    rpc OrderItem (MutationOrderItemRequest) returns (MutationOrderItemResponse);
+    rpc OrderItemList (MutationOrderItemListRequest) returns (MutationOrderItemListResponse);
+    rpc OrderOrderItemRelation (MutationOrderOrderItemRelationRequest) returns (MutationOrderOrderItemRelationResponse);
+    rpc OrderOrderItemRelationList (MutationOrderOrderItemRelationListRequest) returns (MutationOrderOrderItemRelationListResponse);
+    rpc OrderItemProductRelation (MutationOrderItemProductRelationRequest) returns (MutationOrderItemProductRelationResponse);
+    rpc OrderItemProductRelationList (MutationOrderItemProductRelationListRequest) returns (MutationOrderItemProductRelationListResponse);
+    rpc ProductReviewRelation (MutationProductReviewRelationRequest) returns (MutationProductReviewRelationResponse);
+    rpc ProductReviewRelationList (MutationProductReviewRelationListRequest) returns (MutationProductReviewRelationListResponse);
+    rpc OrderUserRelation (MutationOrderUserRelationRequest) returns (MutationOrderUserRelationResponse);
+    rpc OrderUserRelationList (MutationOrderUserRelationListRequest) returns (MutationOrderUserRelationListResponse);
+}

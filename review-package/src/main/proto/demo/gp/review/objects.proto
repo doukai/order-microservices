@@ -1,0 +1,87 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "demo.gp.review.dto.objectType.grpc";
+
+package demo.gp.review;
+
+import "demo/gp/review/enums.proto";
+import "demo/gp/user/objects.proto";
+import "io/graphoenix/core/objects.proto";
+import "google/protobuf/timestamp.proto";
+
+/**
+* 评论
+*/
+message Review {
+    optional string id = 1; /* 评论ID */
+    string content = 2; /* 评论内容 */
+    optional float rating = 3; /* 评分 */
+    optional demo.gp.user.User user = 4; /* 评论人 */
+    bool is_deprecated = 5;
+    int32 version = 6;
+    int32 realm_id = 7;
+    string create_user_id = 8;
+    google.protobuf.Timestamp create_time = 9;
+    string update_user_id = 10;
+    google.protobuf.Timestamp update_time = 11;
+    string create_group_id = 12;
+    string intro_typename = 13;
+    repeated ReviewUserRelation review_user_relation = 14;
+    int32 id_count = 15;
+    int32 id_max = 16;
+    int32 id_min = 17;
+    int32 content_count = 18;
+    string content_max = 19;
+    string content_min = 20;
+    int32 rating_count = 21;
+    float rating_sum = 22;
+    float rating_avg = 23;
+    float rating_max = 24;
+    float rating_min = 25;
+}
+message ReviewUserRelation {
+    string id = 1;
+    string review_ref = 2;
+    Review review = 3;
+    int32 user_ref = 4;
+    demo.gp.user.User user = 5;
+    bool is_deprecated = 6;
+    int32 version = 7;
+    int32 realm_id = 8;
+    string create_user_id = 9;
+    google.protobuf.Timestamp create_time = 10;
+    string update_user_id = 11;
+    google.protobuf.Timestamp update_time = 12;
+    string create_group_id = 13;
+    string intro_typename = 14;
+    int32 id_count = 15;
+    int32 id_max = 16;
+    int32 id_min = 17;
+    int32 review_ref_count = 18;
+    string review_ref_max = 19;
+    string review_ref_min = 20;
+    int32 user_ref_count = 21;
+    int32 user_ref_sum = 22;
+    int32 user_ref_avg = 23;
+    int32 user_ref_max = 24;
+    int32 user_ref_min = 25;
+}
+message ReviewConnection {
+    int32 total_count = 1;
+    io.graphoenix.core.PageInfo page_info = 2;
+    repeated ReviewEdge edges = 3;
+}
+message ReviewEdge {
+    Review node = 1;
+    string cursor = 2;
+}
+message ReviewUserRelationConnection {
+    int32 total_count = 1;
+    io.graphoenix.core.PageInfo page_info = 2;
+    repeated ReviewUserRelationEdge edges = 3;
+}
+message ReviewUserRelationEdge {
+    ReviewUserRelation node = 1;
+    string cursor = 2;
+}

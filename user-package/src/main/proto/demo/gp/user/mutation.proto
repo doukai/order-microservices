@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "demo.gp.user.grpc";
+
+package demo.gp.user;
+
+import "demo/gp/user/enums.proto";
+import "demo/gp/user/objects.proto";
+import "demo/gp/user/interfaces.proto";
+import "demo/gp/user/input_objects.proto";
+import "demo/gp/user/mutation_requests.proto";
+import "demo/gp/user/mutation_responses.proto";
+
+service MutationService {
+    rpc User (MutationUserRequest) returns (MutationUserResponse);
+    rpc UserList (MutationUserListRequest) returns (MutationUserListResponse);
+    rpc UserPhoneNumbersRelation (MutationUserPhoneNumbersRelationRequest) returns (MutationUserPhoneNumbersRelationResponse);
+    rpc UserPhoneNumbersRelationList (MutationUserPhoneNumbersRelationListRequest) returns (MutationUserPhoneNumbersRelationListResponse);
+}

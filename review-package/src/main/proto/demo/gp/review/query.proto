@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "demo.gp.review.grpc";
+
+package demo.gp.review;
+
+import "demo/gp/review/enums.proto";
+import "demo/gp/review/objects.proto";
+import "demo/gp/review/interfaces.proto";
+import "demo/gp/review/input_objects.proto";
+import "demo/gp/review/query_requests.proto";
+import "demo/gp/review/query_responses.proto";
+
+service QueryService {
+    rpc Review (QueryReviewRequest) returns (QueryReviewResponse);
+    rpc ReviewList (QueryReviewListRequest) returns (QueryReviewListResponse);
+    rpc ReviewConnection (QueryReviewConnectionRequest) returns (QueryReviewConnectionResponse);
+    rpc ReviewUserRelation (QueryReviewUserRelationRequest) returns (QueryReviewUserRelationResponse);
+    rpc ReviewUserRelationList (QueryReviewUserRelationListRequest) returns (QueryReviewUserRelationListResponse);
+    rpc ReviewUserRelationConnection (QueryReviewUserRelationConnectionRequest) returns (QueryReviewUserRelationConnectionResponse);
+}

@@ -1,0 +1,8 @@
+rootProject.name = 'order-microservices'
+include 'order-package'
+include 'order-app'
+include 'review-package'
+include 'review-app'
+include 'user-package'
+include 'user-app'
+

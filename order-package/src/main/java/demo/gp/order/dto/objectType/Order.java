@@ -27,7 +27,6 @@ public class Order implements Meta {
    * 订单ID
    */
   @Id
-  @NonNull
   @Description("订单ID")
   private String id;
 

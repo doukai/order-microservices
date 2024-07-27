@@ -14,7 +14,7 @@ import "google/protobuf/timestamp.proto";
 * 评论
 */
 message Review {
-    optional string id = 1; /* 评论ID */
+    string id = 1; /* 评论ID */
     string content = 2; /* 评论内容 */
     optional float rating = 3; /* 评分 */
     optional demo.gp.user.User user = 4; /* 评论人 */

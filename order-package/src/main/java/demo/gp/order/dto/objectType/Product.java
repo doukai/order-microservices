@@ -28,7 +28,6 @@ public class Product implements Meta {
    * 产品ID
    */
   @Id
-  @NonNull
   @Description("产品ID")
   private String id;
 

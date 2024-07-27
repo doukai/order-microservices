@@ -15,7 +15,7 @@ import "google/protobuf/timestamp.proto";
 * 产品
 */
 message Product {
-    optional string id = 1; /* 产品ID */
+    string id = 1; /* 产品ID */
     optional string name = 2; /* 产品名称 */
     optional float price = 3; /* 定价 */
     repeated demo.gp.review.Review reviews = 4; /* 评论列表 */
@@ -45,7 +45,7 @@ message Product {
 * 订单
 */
 message Order {
-    optional string id = 1; /* 订单ID */
+    string id = 1; /* 订单ID */
     optional demo.gp.user.User user = 2; /* 购买用户 */
     repeated OrderItem items = 3; /* 产品列表 */
     bool is_deprecated = 4;
@@ -71,7 +71,7 @@ message Order {
 * 订单项
 */
 message OrderItem {
-    optional string id = 1; /* 订单项ID */
+    string id = 1; /* 订单项ID */
     optional Product product = 2; /* 产品 */
     optional int32 quantity = 3; /* 购买数量 */
     bool is_deprecated = 4;

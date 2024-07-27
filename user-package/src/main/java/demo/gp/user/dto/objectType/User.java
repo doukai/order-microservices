@@ -27,7 +27,6 @@ public class User implements Meta {
    * 用户ID
    */
   @Id
-  @NonNull
   @Description("用户ID")
   private String id;
 

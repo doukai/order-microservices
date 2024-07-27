@@ -1,7 +1,7 @@
 "评论"
 type Review {
     "评论ID"
-    id: ID!
+    id: ID
     "评论内容"
     content: String
     "评分"

@@ -28,7 +28,6 @@ public class Review implements Meta {
    * 评论ID
    */
   @Id
-  @NonNull
   @Description("评论ID")
   private String id;
 

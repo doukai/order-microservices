@@ -1,7 +1,7 @@
 "用户"
 type User {
     "用户ID"
-    id: ID!
+    id: ID
     "用户名"
     name: String!
     "电子邮箱"

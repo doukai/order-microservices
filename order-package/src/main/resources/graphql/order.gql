@@ -1,7 +1,7 @@
 "产品"
 type Product {
     "产品ID"
-    id: ID!
+    id: ID
     "产品名称"
     name: String!
     "定价"
@@ -13,7 +13,7 @@ type Product {
 "订单"
 type Order {
     "订单ID"
-    id: ID!
+    id: ID
     "购买用户"
     user: User!
     "产品列表"
@@ -23,7 +23,7 @@ type Order {
 "订单项"
 type OrderItem {
     "订单项ID"
-    id: ID!
+    id: ID
     "产品"
     product: Product!
     "购买数量"

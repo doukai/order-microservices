@@ -1,35 +1,62 @@
 package demo.gp.order;
 
 import demo.gp.user.dto.enumType.grpc.UserType;
+import demo.gp.user.dto.inputObjectType.grpc.UserTypeExpression;
 import demo.gp.user.grpc.*;
 import io.graphoenix.core.dto.enumType.grpc.Operator;
 import io.graphoenix.core.dto.inputObjectType.grpc.StringExpression;
+import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class UserGrpcTest {
 
+    private static final String userGrpcAddress = "localhost:50053";
+    private static final ManagedChannel userManagedChannel = ManagedChannelBuilder.forTarget(userGrpcAddress).usePlaintext().build();
+    private static final QueryServiceGrpc.QueryServiceBlockingStub queryServiceStub = QueryServiceGrpc.newBlockingStub(userManagedChannel);
+    private static final ReactorQueryServiceGrpc.ReactorQueryServiceStub reactorQueryServiceStub = ReactorQueryServiceGrpc.newReactorStub(userManagedChannel);
+    private static final MutationServiceGrpc.MutationServiceBlockingStub mutationServiceBlockingStub = MutationServiceGrpc.newBlockingStub(userManagedChannel);
+
     @Test
     void queryUserTest() {
-        QueryServiceGrpc.QueryServiceBlockingStub queryServiceStub = QueryServiceGrpc.newBlockingStub(ManagedChannelBuilder.forTarget("localhost:50053").usePlaintext().build());
-        QueryUserResponse response = queryServiceStub.user(QueryUserRequest.newBuilder().setName(StringExpression.newBuilder().setOpr(Operator.EQ_OPERATOR).setVal("Alice").build()).build());
+        QueryUserRequest queryUserRequest = QueryUserRequest.newBuilder()
+                .setSelectionSet("{name userType}")
+                .setName(
+                        StringExpression.newBuilder()
+                                .setOpr(Operator.EQ_OPERATOR)
+                                .setVal("Alice")
+                                .build()
+                )
+                .setUserType(
+                        UserTypeExpression.newBuilder()
+                                .setVal(UserType.VIP_USER_TYPE)
+                                .build()
+                )
+                .build();
+        QueryUserResponse response = queryServiceStub.user(queryUserRequest);
 
         assertAll(
                 () -> assertEquals(response.getUser().getName(), "Alice"),
-                () -> assertEquals(response.getUser().getEmail(), "alice@example.com"),
                 () -> assertEquals(response.getUser().getUserType(), UserType.VIP_USER_TYPE)
+//                () -> assertNull(response.getUser().getEmail())
         );
     }
 
     @Test
     void reactorQueryUserTest() {
-        ReactorQueryServiceGrpc.ReactorQueryServiceStub reactorQueryServiceStub = ReactorQueryServiceGrpc.newReactorStub(ManagedChannelBuilder.forTarget("localhost:50053").usePlaintext().build());
-        Mono<QueryUserResponse> responseMono = reactorQueryServiceStub.user(QueryUserRequest.newBuilder().setName(StringExpression.newBuilder().setOpr(Operator.EQ_OPERATOR).setVal("Bob").build()).build());
+        QueryUserRequest queryUserRequest = QueryUserRequest.newBuilder()
+                .setName(
+                        StringExpression.newBuilder()
+                                .setOpr(Operator.EQ_OPERATOR)
+                                .setVal("Bob")
+                                .build()
+                )
+                .build();
+        Mono<QueryUserResponse> responseMono = reactorQueryServiceStub.user(queryUserRequest);
 
         StepVerifier.create(responseMono)
                 .assertNext(response ->
@@ -41,5 +68,21 @@ public class UserGrpcTest {
                 )
                 .expectComplete()
                 .verify();
+    }
+
+    @Test
+    void MutationUserTest() {
+        MutationUserRequest mutationUserRequest = MutationUserRequest.newBuilder()
+                .setName("Uma")
+                .setEmail("uma@example.com")
+                .setUserType(UserType.VIP_USER_TYPE)
+                .build();
+        MutationUserResponse response = mutationServiceBlockingStub.user(mutationUserRequest);
+
+        assertAll(
+                () -> assertEquals(response.getUser().getName(), "Uma"),
+                () -> assertEquals(response.getUser().getEmail(), "uma@example.com"),
+                () -> assertEquals(response.getUser().getUserType(), UserType.VIP_USER_TYPE)
+        );
     }
 }

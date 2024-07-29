@@ -1,7 +1,6 @@
-package demo.gp.order;
+package demo.gp.order.test.grpc;
 
 import demo.gp.user.dto.enumType.grpc.UserType;
-import demo.gp.user.dto.inputObjectType.grpc.UserTypeExpression;
 import demo.gp.user.grpc.*;
 import io.graphoenix.core.dto.enumType.grpc.Operator;
 import io.graphoenix.core.dto.inputObjectType.grpc.StringExpression;
@@ -31,18 +30,13 @@ public class UserGrpcTest {
                                 .setVal("Alice")
                                 .build()
                 )
-                .setUserType(
-                        UserTypeExpression.newBuilder()
-                                .setVal(UserType.VIP_USER_TYPE)
-                                .build()
-                )
                 .build();
         QueryUserResponse response = queryServiceStub.user(queryUserRequest);
 
         assertAll(
                 () -> assertEquals(response.getUser().getName(), "Alice"),
-                () -> assertEquals(response.getUser().getUserType(), UserType.VIP_USER_TYPE)
-//                () -> assertNull(response.getUser().getEmail())
+                () -> assertEquals(response.getUser().getUserType(), UserType.VIP_USER_TYPE),
+                () -> assertEquals(response.getUser().getEmail(), "")
         );
     }
 

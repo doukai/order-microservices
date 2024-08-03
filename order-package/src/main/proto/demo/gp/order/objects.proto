@@ -66,6 +66,7 @@ message Order {
     int32 id_count = 19;
     int32 id_max = 20;
     int32 id_min = 21;
+    float total = 22;
 }
 /**
 * 订单项

@@ -5,6 +5,7 @@ import demo.gp.user.dto.objectType.User;
 import io.graphoenix.core.dto.interfaceType.Meta;
 import jakarta.annotation.Generated;
 import java.lang.Boolean;
+import java.lang.Float;
 import java.lang.Integer;
 import java.lang.Override;
 import java.lang.String;
@@ -79,6 +80,8 @@ public class Order implements Meta {
   private Integer idMax;
 
   private Integer idMin;
+
+  private Float total;
 
   public String getId() {
     return this.id;
@@ -264,5 +267,13 @@ public class Order implements Meta {
 
   public void setIdMin(Integer idMin) {
     this.idMin = idMin;
+  }
+
+  public Float getTotal() {
+    return this.total;
+  }
+
+  public void setTotal(Float total) {
+    this.total = total;
   }
 }

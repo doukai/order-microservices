@@ -12,6 +12,8 @@ repositories {
 }
 
 dependencies {
+    implementation project(':user-package')
+    implementation project(':review-package')
     implementation project(':order-package')
     implementation 'io.graphoenix:graphoenix-core:0.0.1-SNAPSHOT'
     implementation 'io.graphoenix:graphoenix-r2dbc:0.0.1-SNAPSHOT'

@@ -8,42 +8,111 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import org.eclipse.microprofile.graphql.Description;
 
+/**
+ * Mutation Arguments for 产品 List
+ */
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
 @Documented
 @Retention(RetentionPolicy.SOURCE)
 @Target(ElementType.METHOD)
+@Description("Mutation Arguments for 产品 List")
 public @interface ProductListMutationArguments {
+  /**
+   * 产品ID
+   */
+  @Description("产品ID")
   String id() default "";
 
+  /**
+   * 产品名称
+   */
+  @Description("产品名称")
   String name() default "";
 
+  /**
+   * 定价
+   */
+  @Description("定价")
   float price() default 0;
 
+  /**
+   * 评论列表
+   */
+  @Description("评论列表")
   ReviewInput[] reviews() default {};
 
+  /**
+   * Is Deprecated
+   */
+  @Description("Is Deprecated")
   boolean isDeprecated() default false;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   int version() default 0;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   int realmId() default 0;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   String createUserId() default "";
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   String createTime() default "";
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   String updateUserId() default "";
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   String updateTime() default "";
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   String createGroupId() default "";
 
+  /**
+   * Type Name
+   */
+  @Description("Type Name")
   String __typename() default "Product";
 
+  /**
+   * Relationship Object between 产品 and 评论
+   */
+  @Description("Relationship Object between 产品 and 评论")
   ProductReviewRelationInput[] productReviewRelation() default {};
 
+  /**
+   * Input List
+   */
+  @Description("Input List")
   ProductInput[] list() default {};
 
+  /**
+   * Where
+   */
+  @Description("Where")
   ProductExpression where() default @ProductExpression;
 
   String $id() default "";

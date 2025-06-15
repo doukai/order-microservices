@@ -3,52 +3,141 @@ package demo.gp.order.dto.objectType;
 import com.dslplatform.json.CompiledJson;
 import jakarta.annotation.Generated;
 import java.util.Collection;
+import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.Type;
 
+/**
+ * Query
+ */
 @Type
 @CompiledJson
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
+@Description("Query")
 public class Query {
+  /**
+   * Query Field for 产品
+   */
+  @Description("Query Field for 产品")
   private Product product;
 
+  /**
+   * Query Field for 产品 List
+   */
+  @Description("Query Field for 产品 List")
   private Collection<Product> productList;
 
+  /**
+   * Query Field for 产品 Connection
+   */
+  @Description("Query Field for 产品 Connection")
   private ProductConnection productConnection;
 
+  /**
+   * Query Field for 订单
+   */
+  @Description("Query Field for 订单")
   private Order order;
 
+  /**
+   * Query Field for 订单 List
+   */
+  @Description("Query Field for 订单 List")
   private Collection<Order> orderList;
 
+  /**
+   * Query Field for 订单 Connection
+   */
+  @Description("Query Field for 订单 Connection")
   private OrderConnection orderConnection;
 
+  /**
+   * Query Field for 订单项
+   */
+  @Description("Query Field for 订单项")
   private OrderItem orderItem;
 
+  /**
+   * Query Field for 订单项 List
+   */
+  @Description("Query Field for 订单项 List")
   private Collection<OrderItem> orderItemList;
 
+  /**
+   * Query Field for 订单项 Connection
+   */
+  @Description("Query Field for 订单项 Connection")
   private OrderItemConnection orderItemConnection;
 
+  /**
+   * Query Field for Relationship Object between 订单 and 订单项
+   */
+  @Description("Query Field for Relationship Object between 订单 and 订单项")
   private OrderOrderItemRelation orderOrderItemRelation;
 
+  /**
+   * Query Field for Relationship Object between 订单 and 订单项 List
+   */
+  @Description("Query Field for Relationship Object between 订单 and 订单项 List")
   private Collection<OrderOrderItemRelation> orderOrderItemRelationList;
 
+  /**
+   * Query Field for Relationship Object between 订单 and 订单项 Connection
+   */
+  @Description("Query Field for Relationship Object between 订单 and 订单项 Connection")
   private OrderOrderItemRelationConnection orderOrderItemRelationConnection;
 
+  /**
+   * Query Field for Relationship Object between 订单项 and 产品
+   */
+  @Description("Query Field for Relationship Object between 订单项 and 产品")
   private OrderItemProductRelation orderItemProductRelation;
 
+  /**
+   * Query Field for Relationship Object between 订单项 and 产品 List
+   */
+  @Description("Query Field for Relationship Object between 订单项 and 产品 List")
   private Collection<OrderItemProductRelation> orderItemProductRelationList;
 
+  /**
+   * Query Field for Relationship Object between 订单项 and 产品 Connection
+   */
+  @Description("Query Field for Relationship Object between 订单项 and 产品 Connection")
   private OrderItemProductRelationConnection orderItemProductRelationConnection;
 
+  /**
+   * Query Field for Relationship Object between 产品 and 评论
+   */
+  @Description("Query Field for Relationship Object between 产品 and 评论")
   private ProductReviewRelation productReviewRelation;
 
+  /**
+   * Query Field for Relationship Object between 产品 and 评论 List
+   */
+  @Description("Query Field for Relationship Object between 产品 and 评论 List")
   private Collection<ProductReviewRelation> productReviewRelationList;
 
+  /**
+   * Query Field for Relationship Object between 产品 and 评论 Connection
+   */
+  @Description("Query Field for Relationship Object between 产品 and 评论 Connection")
   private ProductReviewRelationConnection productReviewRelationConnection;
 
+  /**
+   * Query Field for Relationship Object between 订单 and 用户
+   */
+  @Description("Query Field for Relationship Object between 订单 and 用户")
   private OrderUserRelation orderUserRelation;
 
+  /**
+   * Query Field for Relationship Object between 订单 and 用户 List
+   */
+  @Description("Query Field for Relationship Object between 订单 and 用户 List")
   private Collection<OrderUserRelation> orderUserRelationList;
 
+  /**
+   * Query Field for Relationship Object between 订单 and 用户 Connection
+   */
+  @Description("Query Field for Relationship Object between 订单 and 用户 Connection")
   private OrderUserRelationConnection orderUserRelationConnection;
 
   public Product getProduct() {

@@ -3,22 +3,51 @@ package demo.gp.review.dto.objectType;
 import com.dslplatform.json.CompiledJson;
 import jakarta.annotation.Generated;
 import java.util.Collection;
+import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.Type;
 
+/**
+ * Query
+ */
 @Type
 @CompiledJson
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
+@Description("Query")
 public class Query {
+  /**
+   * Query Field for 评论
+   */
+  @Description("Query Field for 评论")
   private Review review;
 
+  /**
+   * Query Field for 评论 List
+   */
+  @Description("Query Field for 评论 List")
   private Collection<Review> reviewList;
 
+  /**
+   * Query Field for 评论 Connection
+   */
+  @Description("Query Field for 评论 Connection")
   private ReviewConnection reviewConnection;
 
+  /**
+   * Query Field for Relationship Object between 评论 and 用户
+   */
+  @Description("Query Field for Relationship Object between 评论 and 用户")
   private ReviewUserRelation reviewUserRelation;
 
+  /**
+   * Query Field for Relationship Object between 评论 and 用户 List
+   */
+  @Description("Query Field for Relationship Object between 评论 and 用户 List")
   private Collection<ReviewUserRelation> reviewUserRelationList;
 
+  /**
+   * Query Field for Relationship Object between 评论 and 用户 Connection
+   */
+  @Description("Query Field for Relationship Object between 评论 and 用户 Connection")
   private ReviewUserRelationConnection reviewUserRelationConnection;
 
   public Review getReview() {

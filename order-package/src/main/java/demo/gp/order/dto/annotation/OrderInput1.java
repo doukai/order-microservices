@@ -8,40 +8,105 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import org.eclipse.microprofile.graphql.Description;
 
+/**
+ * Mutation Input for 订单
+ */
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
 @Documented
 @Retention(RetentionPolicy.SOURCE)
 @Target(ElementType.METHOD)
+@Description("Mutation Input for 订单")
 public @interface OrderInput1 {
+  /**
+   * 订单ID
+   */
+  @Description("订单ID")
   String id() default "";
 
+  /**
+   * 购买用户
+   */
+  @Description("购买用户")
   UserInput2 user() default @UserInput2;
 
+  /**
+   * 产品列表
+   */
+  @Description("产品列表")
   OrderItemInput2[] items() default {};
 
+  /**
+   * Is Deprecated
+   */
+  @Description("Is Deprecated")
   boolean isDeprecated() default false;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   int version() default 0;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   int realmId() default 0;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   String createUserId() default "";
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   String createTime() default "";
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   String updateUserId() default "";
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   String updateTime() default "";
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   String createGroupId() default "";
 
+  /**
+   * Type Name
+   */
+  @Description("Type Name")
   String __typename() default "Order";
 
+  /**
+   * Relationship Object between 订单 and 用户
+   */
+  @Description("Relationship Object between 订单 and 用户")
   OrderUserRelationInput2[] orderUserRelation() default {};
 
+  /**
+   * Relationship Object between 订单 and 订单项
+   */
+  @Description("Relationship Object between 订单 and 订单项")
   OrderOrderItemRelationInput2[] orderOrderItemRelation() default {};
 
+  /**
+   * Where
+   */
+  @Description("Where")
   OrderExpression2 where() default @OrderExpression2;
 
   String $id() default "";

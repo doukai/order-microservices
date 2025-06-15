@@ -1,6 +1,7 @@
 package demo.gp.review.dto.objectType;
 
 import com.dslplatform.json.CompiledJson;
+import demo.gp.review.dto.inputObjectType.ReviewInput;
 import demo.gp.user.dto.objectType.User;
 import io.graphoenix.core.dto.interfaceType.Meta;
 import jakarta.annotation.Generated;
@@ -51,46 +52,130 @@ public class Review implements Meta {
   @Description("评论人")
   private User user;
 
+  /**
+   * Is Deprecated
+   */
+  @Description("Is Deprecated")
   private Boolean isDeprecated = false;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   private Integer version;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   private Integer realmId;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   private String createUserId;
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   private LocalDateTime createTime;
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   private String updateUserId;
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   private LocalDateTime updateTime;
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   private String createGroupId;
 
+  /**
+   * Type Name
+   */
+  @Description("Type Name")
   private String __typename = "Review";
 
+  /**
+   * Relationship Object between 评论 and 用户
+   */
+  @Description("Relationship Object between 评论 and 用户")
   private Collection<ReviewUserRelation> reviewUserRelation;
 
+  /**
+   * Count of 评论
+   */
+  @Description("Count of 评论")
   private Integer idCount;
 
+  /**
+   * Max of 评论ID
+   */
+  @Description("Max of 评论ID")
   private Integer idMax;
 
+  /**
+   * Min of 评论ID
+   */
+  @Description("Min of 评论ID")
   private Integer idMin;
 
+  /**
+   * Count of 评论内容
+   */
+  @Description("Count of 评论内容")
   private Integer contentCount;
 
+  /**
+   * Max of 评论内容
+   */
+  @Description("Max of 评论内容")
   private String contentMax;
 
+  /**
+   * Min of 评论内容
+   */
+  @Description("Min of 评论内容")
   private String contentMin;
 
+  /**
+   * Count of 评分
+   */
+  @Description("Count of 评分")
   private Integer ratingCount;
 
+  /**
+   * Sum of 评分
+   */
+  @Description("Sum of 评分")
   private Float ratingSum;
 
+  /**
+   * Avg of 评分
+   */
+  @Description("Avg of 评分")
   private Float ratingAvg;
 
+  /**
+   * Max of 评分
+   */
+  @Description("Max of 评分")
   private Float ratingMax;
 
+  /**
+   * Min of 评分
+   */
+  @Description("Min of 评分")
   private Float ratingMin;
 
   public String getId() {
@@ -307,5 +392,22 @@ public class Review implements Meta {
 
   public void setRatingMin(Float ratingMin) {
     this.ratingMin = ratingMin;
+  }
+
+  public ReviewInput toInput() {
+    ReviewInput input = new ReviewInput();
+    input.setId(this.getId());
+    input.setContent(this.getContent());
+    input.setRating(this.getRating());
+    input.setIsDeprecated(this.getIsDeprecated());
+    input.setVersion(this.getVersion());
+    input.setRealmId(this.getRealmId());
+    input.setCreateUserId(this.getCreateUserId());
+    input.setCreateTime(this.getCreateTime());
+    input.setUpdateUserId(this.getUpdateUserId());
+    input.setUpdateTime(this.getUpdateTime());
+    input.setCreateGroupId(this.getCreateGroupId());
+    input.set__typename(this.get__typename());
+    return input;
   }
 }

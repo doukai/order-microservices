@@ -10,72 +10,141 @@ import java.lang.String;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import org.eclipse.microprofile.graphql.DefaultValue;
+import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.Input;
 
+/**
+ * Mutation Input for 订单项
+ */
 @CompiledJson
 @Input
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
-public class OrderItemInput implements MetaInput {
+@Description("Mutation Input for 订单项")
+public class OrderItemInput implements MetaInput, OrderItemInputBase {
+  /**
+   * 订单项ID
+   */
+  @Description("订单项ID")
   private String id;
 
+  /**
+   * 产品
+   */
+  @Description("产品")
   private ProductInput product;
 
+  /**
+   * 购买数量
+   */
+  @Description("购买数量")
   private Integer quantity;
 
+  /**
+   * Is Deprecated
+   */
   @DefaultValue("false")
+  @Description("Is Deprecated")
   private Boolean isDeprecated = false;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   private Integer version;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   private Integer realmId;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   private String createUserId;
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   private LocalDateTime createTime;
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   private String updateUserId;
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   private LocalDateTime updateTime;
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   private String createGroupId;
 
-  @DefaultValue("\"OrderItem\"")
+  /**
+   * Type Name
+   */
+  @DefaultValue("OrderItem")
+  @Description("Type Name")
   private String __typename = "OrderItem";
 
+  /**
+   * Relationship Object between 订单项 and 产品
+   */
+  @Description("Relationship Object between 订单项 and 产品")
   private Collection<OrderItemProductRelationInput> orderItemProductRelation;
 
+  /**
+   * Where
+   */
+  @Description("Where")
   private OrderItemExpression where;
 
+  @Override
   public String getId() {
     return this.id;
   }
 
+  @Override
   public void setId(String id) {
-    this.id = id;
+    this.id = (String)id;
   }
 
+  @Override
   public ProductInput getProduct() {
     return this.product;
   }
 
+  @Override
   public void setProduct(ProductInput product) {
-    this.product = product;
+    this.product = (ProductInput)product;
   }
 
+  @Override
   public Integer getQuantity() {
     return this.quantity;
   }
 
+  @Override
   public void setQuantity(Integer quantity) {
-    this.quantity = quantity;
+    this.quantity = (Integer)quantity;
   }
 
+  @Override
   public Boolean getIsDeprecated() {
     return this.isDeprecated;
   }
 
+  @Override
   public void setIsDeprecated(Boolean isDeprecated) {
-    this.isDeprecated = isDeprecated;
+    this.isDeprecated = (Boolean)isDeprecated;
   }
 
   @Override
@@ -148,28 +217,34 @@ public class OrderItemInput implements MetaInput {
     this.createGroupId = (String)createGroupId;
   }
 
+  @Override
   public String get__typename() {
     return this.__typename;
   }
 
+  @Override
   public void set__typename(String __typename) {
-    this.__typename = __typename;
+    this.__typename = (String)__typename;
   }
 
+  @Override
   public Collection<OrderItemProductRelationInput> getOrderItemProductRelation() {
     return this.orderItemProductRelation;
   }
 
+  @Override
   public void setOrderItemProductRelation(
       Collection<OrderItemProductRelationInput> orderItemProductRelation) {
-    this.orderItemProductRelation = orderItemProductRelation;
+    this.orderItemProductRelation = (Collection<OrderItemProductRelationInput>)orderItemProductRelation;
   }
 
+  @Override
   public OrderItemExpression getWhere() {
     return this.where;
   }
 
+  @Override
   public void setWhere(OrderItemExpression where) {
-    this.where = where;
+    this.where = (OrderItemExpression)where;
   }
 }

@@ -12,84 +12,163 @@ import java.lang.String;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import org.eclipse.microprofile.graphql.DefaultValue;
+import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.Input;
 
+/**
+ * Mutation Arguments for 产品
+ */
 @CompiledJson
 @Input
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
-public class ProductMutationArguments implements MetaInput {
+@Description("Mutation Arguments for 产品")
+public class ProductMutationArguments implements MetaInput, ProductInputBase {
+  /**
+   * 产品ID
+   */
+  @Description("产品ID")
   private String id;
 
+  /**
+   * 产品名称
+   */
+  @Description("产品名称")
   private String name;
 
+  /**
+   * 定价
+   */
+  @Description("定价")
   private Float price;
 
+  /**
+   * 评论列表
+   */
+  @Description("评论列表")
   private Collection<ReviewInput> reviews;
 
+  /**
+   * Is Deprecated
+   */
   @DefaultValue("false")
+  @Description("Is Deprecated")
   private Boolean isDeprecated = false;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   private Integer version;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   private Integer realmId;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   private String createUserId;
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   private LocalDateTime createTime;
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   private String updateUserId;
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   private LocalDateTime updateTime;
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   private String createGroupId;
 
-  @DefaultValue("\"Product\"")
+  /**
+   * Type Name
+   */
+  @DefaultValue("Product")
+  @Description("Type Name")
   private String __typename = "Product";
 
+  /**
+   * Relationship Object between 产品 and 评论
+   */
+  @Description("Relationship Object between 产品 and 评论")
   private Collection<ProductReviewRelationInput> productReviewRelation;
 
+  /**
+   * Input
+   */
+  @Description("Input")
   private ProductInput input;
 
+  /**
+   * Where
+   */
+  @Description("Where")
   private ProductExpression where;
 
+  @Override
   public String getId() {
     return this.id;
   }
 
+  @Override
   public void setId(String id) {
-    this.id = id;
+    this.id = (String)id;
   }
 
+  @Override
   public String getName() {
     return this.name;
   }
 
+  @Override
   public void setName(String name) {
-    this.name = name;
+    this.name = (String)name;
   }
 
+  @Override
   public Float getPrice() {
     return this.price;
   }
 
+  @Override
   public void setPrice(Float price) {
-    this.price = price;
+    this.price = (Float)price;
   }
 
+  @Override
   public Collection<ReviewInput> getReviews() {
     return this.reviews;
   }
 
+  @Override
   public void setReviews(Collection<ReviewInput> reviews) {
-    this.reviews = reviews;
+    this.reviews = (Collection<ReviewInput>)reviews;
   }
 
+  @Override
   public Boolean getIsDeprecated() {
     return this.isDeprecated;
   }
 
+  @Override
   public void setIsDeprecated(Boolean isDeprecated) {
-    this.isDeprecated = isDeprecated;
+    this.isDeprecated = (Boolean)isDeprecated;
   }
 
   @Override
@@ -162,21 +241,25 @@ public class ProductMutationArguments implements MetaInput {
     this.createGroupId = (String)createGroupId;
   }
 
+  @Override
   public String get__typename() {
     return this.__typename;
   }
 
+  @Override
   public void set__typename(String __typename) {
-    this.__typename = __typename;
+    this.__typename = (String)__typename;
   }
 
+  @Override
   public Collection<ProductReviewRelationInput> getProductReviewRelation() {
     return this.productReviewRelation;
   }
 
+  @Override
   public void setProductReviewRelation(
       Collection<ProductReviewRelationInput> productReviewRelation) {
-    this.productReviewRelation = productReviewRelation;
+    this.productReviewRelation = (Collection<ProductReviewRelationInput>)productReviewRelation;
   }
 
   public ProductInput getInput() {
@@ -187,11 +270,13 @@ public class ProductMutationArguments implements MetaInput {
     this.input = input;
   }
 
+  @Override
   public ProductExpression getWhere() {
     return this.where;
   }
 
+  @Override
   public void setWhere(ProductExpression where) {
-    this.where = where;
+    this.where = (ProductExpression)where;
   }
 }

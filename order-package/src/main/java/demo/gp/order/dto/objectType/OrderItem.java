@@ -1,6 +1,7 @@
 package demo.gp.order.dto.objectType;
 
 import com.dslplatform.json.CompiledJson;
+import demo.gp.order.dto.inputObjectType.OrderItemInput;
 import io.graphoenix.core.dto.interfaceType.Meta;
 import jakarta.annotation.Generated;
 import java.lang.Boolean;
@@ -9,6 +10,7 @@ import java.lang.Override;
 import java.lang.String;
 import java.time.LocalDateTime;
 import java.util.Collection;
+import java.util.stream.Collectors;
 import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.Id;
 import org.eclipse.microprofile.graphql.NonNull;
@@ -43,44 +45,124 @@ public class OrderItem implements Meta {
   @Description("购买数量")
   private Integer quantity;
 
+  /**
+   * Is Deprecated
+   */
+  @Description("Is Deprecated")
   private Boolean isDeprecated = false;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   private Integer version;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   private Integer realmId;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   private String createUserId;
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   private LocalDateTime createTime;
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   private String updateUserId;
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   private LocalDateTime updateTime;
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   private String createGroupId;
 
+  /**
+   * Type Name
+   */
+  @Description("Type Name")
   private String __typename = "OrderItem";
 
+  /**
+   * Relationship Object between 订单项 and 产品
+   */
+  @Description("Relationship Object between 订单项 and 产品")
   private Collection<OrderItemProductRelation> orderItemProductRelation;
 
+  /**
+   * Aggregate Field for Relationship Object between 订单项 and 产品
+   */
+  @Description("Aggregate Field for Relationship Object between 订单项 and 产品")
   private OrderItemProductRelation orderItemProductRelationAggregate;
 
+  /**
+   * Connection Field for Relationship Object between 订单项 and 产品
+   */
+  @Description("Connection Field for Relationship Object between 订单项 and 产品")
   private OrderItemProductRelationConnection orderItemProductRelationConnection;
 
+  /**
+   * Count of 订单项
+   */
+  @Description("Count of 订单项")
   private Integer idCount;
 
+  /**
+   * Max of 订单项ID
+   */
+  @Description("Max of 订单项ID")
   private Integer idMax;
 
+  /**
+   * Min of 订单项ID
+   */
+  @Description("Min of 订单项ID")
   private Integer idMin;
 
+  /**
+   * Count of 购买数量
+   */
+  @Description("Count of 购买数量")
   private Integer quantityCount;
 
+  /**
+   * Sum of 购买数量
+   */
+  @Description("Sum of 购买数量")
   private Integer quantitySum;
 
+  /**
+   * Avg of 购买数量
+   */
+  @Description("Avg of 购买数量")
   private Integer quantityAvg;
 
+  /**
+   * Max of 购买数量
+   */
+  @Description("Max of 购买数量")
   private Integer quantityMax;
 
+  /**
+   * Min of 购买数量
+   */
+  @Description("Min of 购买数量")
   private Integer quantityMin;
 
   public String getId() {
@@ -284,5 +366,27 @@ public class OrderItem implements Meta {
 
   public void setQuantityMin(Integer quantityMin) {
     this.quantityMin = quantityMin;
+  }
+
+  public OrderItemInput toInput() {
+    OrderItemInput input = new OrderItemInput();
+    input.setId(this.getId());
+    if(getProduct() != null) {
+      input.setProduct(this.getProduct().toInput());
+    }
+    input.setQuantity(this.getQuantity());
+    input.setIsDeprecated(this.getIsDeprecated());
+    input.setVersion(this.getVersion());
+    input.setRealmId(this.getRealmId());
+    input.setCreateUserId(this.getCreateUserId());
+    input.setCreateTime(this.getCreateTime());
+    input.setUpdateUserId(this.getUpdateUserId());
+    input.setUpdateTime(this.getUpdateTime());
+    input.setCreateGroupId(this.getCreateGroupId());
+    input.set__typename(this.get__typename());
+    if(getOrderItemProductRelation() != null) {
+      input.setOrderItemProductRelation(this.getOrderItemProductRelation().stream().map(item -> item.toInput()).collect(Collectors.toList()));
+    }
+    return input;
   }
 }

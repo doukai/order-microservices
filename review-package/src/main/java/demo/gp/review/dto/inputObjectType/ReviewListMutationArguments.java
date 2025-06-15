@@ -12,84 +12,163 @@ import java.lang.String;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import org.eclipse.microprofile.graphql.DefaultValue;
+import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.Input;
 
+/**
+ * Mutation Arguments for 评论 List
+ */
 @CompiledJson
 @Input
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
-public class ReviewListMutationArguments implements MetaInput {
+@Description("Mutation Arguments for 评论 List")
+public class ReviewListMutationArguments implements MetaInput, ReviewInputBase {
+  /**
+   * 评论ID
+   */
+  @Description("评论ID")
   private String id;
 
+  /**
+   * 评论内容
+   */
+  @Description("评论内容")
   private String content;
 
+  /**
+   * 评分
+   */
+  @Description("评分")
   private Float rating;
 
+  /**
+   * 评论人
+   */
+  @Description("评论人")
   private UserInput user;
 
+  /**
+   * Is Deprecated
+   */
   @DefaultValue("false")
+  @Description("Is Deprecated")
   private Boolean isDeprecated = false;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   private Integer version;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   private Integer realmId;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   private String createUserId;
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   private LocalDateTime createTime;
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   private String updateUserId;
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   private LocalDateTime updateTime;
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   private String createGroupId;
 
-  @DefaultValue("\"Review\"")
+  /**
+   * Type Name
+   */
+  @DefaultValue("Review")
+  @Description("Type Name")
   private String __typename = "Review";
 
+  /**
+   * Relationship Object between 评论 and 用户
+   */
+  @Description("Relationship Object between 评论 and 用户")
   private Collection<ReviewUserRelationInput> reviewUserRelation;
 
+  /**
+   * Input List
+   */
+  @Description("Input List")
   private Collection<ReviewInput> list;
 
+  /**
+   * Where
+   */
+  @Description("Where")
   private ReviewExpression where;
 
+  @Override
   public String getId() {
     return this.id;
   }
 
+  @Override
   public void setId(String id) {
-    this.id = id;
+    this.id = (String)id;
   }
 
+  @Override
   public String getContent() {
     return this.content;
   }
 
+  @Override
   public void setContent(String content) {
-    this.content = content;
+    this.content = (String)content;
   }
 
+  @Override
   public Float getRating() {
     return this.rating;
   }
 
+  @Override
   public void setRating(Float rating) {
-    this.rating = rating;
+    this.rating = (Float)rating;
   }
 
+  @Override
   public UserInput getUser() {
     return this.user;
   }
 
+  @Override
   public void setUser(UserInput user) {
-    this.user = user;
+    this.user = (UserInput)user;
   }
 
+  @Override
   public Boolean getIsDeprecated() {
     return this.isDeprecated;
   }
 
+  @Override
   public void setIsDeprecated(Boolean isDeprecated) {
-    this.isDeprecated = isDeprecated;
+    this.isDeprecated = (Boolean)isDeprecated;
   }
 
   @Override
@@ -162,20 +241,24 @@ public class ReviewListMutationArguments implements MetaInput {
     this.createGroupId = (String)createGroupId;
   }
 
+  @Override
   public String get__typename() {
     return this.__typename;
   }
 
+  @Override
   public void set__typename(String __typename) {
-    this.__typename = __typename;
+    this.__typename = (String)__typename;
   }
 
+  @Override
   public Collection<ReviewUserRelationInput> getReviewUserRelation() {
     return this.reviewUserRelation;
   }
 
+  @Override
   public void setReviewUserRelation(Collection<ReviewUserRelationInput> reviewUserRelation) {
-    this.reviewUserRelation = reviewUserRelation;
+    this.reviewUserRelation = (Collection<ReviewUserRelationInput>)reviewUserRelation;
   }
 
   public Collection<ReviewInput> getList() {
@@ -186,11 +269,13 @@ public class ReviewListMutationArguments implements MetaInput {
     this.list = list;
   }
 
+  @Override
   public ReviewExpression getWhere() {
     return this.where;
   }
 
+  @Override
   public void setWhere(ReviewExpression where) {
-    this.where = where;
+    this.where = (ReviewExpression)where;
   }
 }

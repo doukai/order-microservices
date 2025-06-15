@@ -12,9 +12,12 @@ import "demo/gp/user/input_objects.proto";
 import "demo/gp/user/mutation_requests.proto";
 import "demo/gp/user/mutation_responses.proto";
 
+/**
+* Mutation
+*/
 service MutationService {
-    rpc User (MutationUserRequest) returns (MutationUserResponse);
-    rpc UserList (MutationUserListRequest) returns (MutationUserListResponse);
-    rpc UserPhoneNumbersRelation (MutationUserPhoneNumbersRelationRequest) returns (MutationUserPhoneNumbersRelationResponse);
-    rpc UserPhoneNumbersRelationList (MutationUserPhoneNumbersRelationListRequest) returns (MutationUserPhoneNumbersRelationListResponse);
+    rpc User (MutationUserRequest) returns (MutationUserResponse); /* Mutation Field for 用户 */
+    rpc UserList (MutationUserListRequest) returns (MutationUserListResponse); /* Mutation Field for 用户 List */
+    rpc UserPhoneNumbersRelation (MutationUserPhoneNumbersRelationRequest) returns (MutationUserPhoneNumbersRelationResponse); /* Mutation Field for Relationship Object between 用户 and 联系方式 */
+    rpc UserPhoneNumbersRelationList (MutationUserPhoneNumbersRelationListRequest) returns (MutationUserPhoneNumbersRelationListResponse); /* Mutation Field for Relationship Object between 用户 and 联系方式 List */
 }

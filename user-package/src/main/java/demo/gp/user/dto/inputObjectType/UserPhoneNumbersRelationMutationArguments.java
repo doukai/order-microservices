@@ -9,82 +9,157 @@ import java.lang.Override;
 import java.lang.String;
 import java.time.LocalDateTime;
 import org.eclipse.microprofile.graphql.DefaultValue;
+import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.Input;
 
+/**
+ * Mutation Arguments for Relationship Object between 用户 and 联系方式
+ */
 @CompiledJson
 @Input
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
-public class UserPhoneNumbersRelationMutationArguments implements MetaInput {
+@Description("Mutation Arguments for Relationship Object between 用户 and 联系方式")
+public class UserPhoneNumbersRelationMutationArguments implements MetaInput, UserPhoneNumbersRelationInputBase {
+  /**
+   * ID
+   */
+  @Description("ID")
   private String id;
 
+  /**
+   * 用户 Reference
+   */
+  @Description("用户 Reference")
   private String userRef;
 
+  /**
+   * 用户
+   */
+  @Description("用户")
   private UserInput user;
 
+  /**
+   * 联系方式 Reference
+   */
+  @Description("联系方式 Reference")
   private String phoneNumbersRef;
 
+  /**
+   * Is Deprecated
+   */
   @DefaultValue("false")
+  @Description("Is Deprecated")
   private Boolean isDeprecated = false;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   private Integer version;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   private Integer realmId;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   private String createUserId;
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   private LocalDateTime createTime;
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   private String updateUserId;
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   private LocalDateTime updateTime;
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   private String createGroupId;
 
-  @DefaultValue("\"UserPhoneNumbersRelation\"")
+  /**
+   * Type Name
+   */
+  @DefaultValue("UserPhoneNumbersRelation")
+  @Description("Type Name")
   private String __typename = "UserPhoneNumbersRelation";
 
+  /**
+   * Input
+   */
+  @Description("Input")
   private UserPhoneNumbersRelationInput input;
 
+  /**
+   * Where
+   */
+  @Description("Where")
   private UserPhoneNumbersRelationExpression where;
 
+  @Override
   public String getId() {
     return this.id;
   }
 
+  @Override
   public void setId(String id) {
-    this.id = id;
+    this.id = (String)id;
   }
 
+  @Override
   public String getUserRef() {
     return this.userRef;
   }
 
+  @Override
   public void setUserRef(String userRef) {
-    this.userRef = userRef;
+    this.userRef = (String)userRef;
   }
 
+  @Override
   public UserInput getUser() {
     return this.user;
   }
 
+  @Override
   public void setUser(UserInput user) {
-    this.user = user;
+    this.user = (UserInput)user;
   }
 
+  @Override
   public String getPhoneNumbersRef() {
     return this.phoneNumbersRef;
   }
 
+  @Override
   public void setPhoneNumbersRef(String phoneNumbersRef) {
-    this.phoneNumbersRef = phoneNumbersRef;
+    this.phoneNumbersRef = (String)phoneNumbersRef;
   }
 
+  @Override
   public Boolean getIsDeprecated() {
     return this.isDeprecated;
   }
 
+  @Override
   public void setIsDeprecated(Boolean isDeprecated) {
-    this.isDeprecated = isDeprecated;
+    this.isDeprecated = (Boolean)isDeprecated;
   }
 
   @Override
@@ -157,12 +232,14 @@ public class UserPhoneNumbersRelationMutationArguments implements MetaInput {
     this.createGroupId = (String)createGroupId;
   }
 
+  @Override
   public String get__typename() {
     return this.__typename;
   }
 
+  @Override
   public void set__typename(String __typename) {
-    this.__typename = __typename;
+    this.__typename = (String)__typename;
   }
 
   public UserPhoneNumbersRelationInput getInput() {
@@ -173,11 +250,13 @@ public class UserPhoneNumbersRelationMutationArguments implements MetaInput {
     this.input = input;
   }
 
+  @Override
   public UserPhoneNumbersRelationExpression getWhere() {
     return this.where;
   }
 
+  @Override
   public void setWhere(UserPhoneNumbersRelationExpression where) {
-    this.where = where;
+    this.where = (UserPhoneNumbersRelationExpression)where;
   }
 }

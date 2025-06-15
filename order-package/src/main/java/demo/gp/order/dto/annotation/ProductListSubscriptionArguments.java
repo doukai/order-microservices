@@ -12,58 +12,159 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import org.eclipse.microprofile.graphql.Description;
 
+/**
+ * Subscription Arguments for 产品 List
+ */
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
 @Documented
 @Retention(RetentionPolicy.SOURCE)
 @Target(ElementType.METHOD)
+@Description("Subscription Arguments for 产品 List")
 public @interface ProductListSubscriptionArguments {
+  /**
+   * 产品ID
+   */
+  @Description("产品ID")
   StringExpression id() default @StringExpression;
 
+  /**
+   * 产品名称
+   */
+  @Description("产品名称")
   StringExpression name() default @StringExpression;
 
+  /**
+   * 定价
+   */
+  @Description("定价")
   FloatExpression price() default @FloatExpression;
 
+  /**
+   * 评论列表
+   */
+  @Description("评论列表")
   ReviewExpression reviews() default @ReviewExpression;
 
+  /**
+   * Include Deprecated
+   */
+  @Description("Include Deprecated")
   boolean includeDeprecated() default false;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   IntExpression version() default @IntExpression;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   IntExpression realmId() default @IntExpression;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   StringExpression createUserId() default @StringExpression;
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   StringExpression createTime() default @StringExpression;
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   StringExpression updateUserId() default @StringExpression;
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   StringExpression updateTime() default @StringExpression;
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   StringExpression createGroupId() default @StringExpression;
 
+  /**
+   * Type Name
+   */
+  @Description("Type Name")
   StringExpression __typename() default @StringExpression;
 
+  /**
+   * Relationship Object between 产品 and 评论
+   */
+  @Description("Relationship Object between 产品 and 评论")
   ProductReviewRelationExpression productReviewRelation() default @ProductReviewRelationExpression;
 
+  /**
+   * Order By
+   */
+  @Description("Order By")
   ProductOrderBy orderBy() default @ProductOrderBy;
 
+  /**
+   * Group By
+   */
+  @Description("Group By")
   String[] groupBy() default {};
 
+  /**
+   * Not
+   */
+  @Description("Not")
   boolean not() default false;
 
+  /**
+   * Condition
+   */
+  @Description("Condition")
   Conditional cond() default Conditional.AND;
 
+  /**
+   * Expressions
+   */
+  @Description("Expressions")
   ProductExpression[] exs() default {};
 
+  /**
+   * First
+   */
+  @Description("First")
   int first() default 0;
 
+  /**
+   * Input List
+   */
+  @Description("Input List")
   int last() default 0;
 
+  /**
+   * Offset
+   */
+  @Description("Offset")
   int offset() default 0;
 
+  /**
+   * After
+   */
+  @Description("After")
   String after() default "";
 
+  /**
+   * Before
+   */
+  @Description("Before")
   String before() default "";
 
   String $id() default "";

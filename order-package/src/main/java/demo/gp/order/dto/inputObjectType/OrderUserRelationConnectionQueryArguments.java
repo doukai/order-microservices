@@ -13,117 +13,232 @@ import java.lang.Override;
 import java.lang.String;
 import java.util.Collection;
 import org.eclipse.microprofile.graphql.DefaultValue;
+import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.Input;
 
+/**
+ * Query Arguments for Relationship Object between 订单 and 用户 Connection
+ */
 @CompiledJson
 @Input
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
-public class OrderUserRelationConnectionQueryArguments implements MetaExpression {
+@Description("Query Arguments for Relationship Object between 订单 and 用户 Connection")
+public class OrderUserRelationConnectionQueryArguments implements MetaExpression, OrderUserRelationExpressionBase {
+  /**
+   * ID
+   */
+  @Description("ID")
   private StringExpression id;
 
+  /**
+   * 订单 Reference
+   */
+  @Description("订单 Reference")
   private StringExpression orderRef;
 
+  /**
+   * 订单
+   */
+  @Description("订单")
   private OrderExpression order;
 
+  /**
+   * 用户 Reference
+   */
+  @Description("用户 Reference")
   private IntExpression userRef;
 
+  /**
+   * 用户
+   */
+  @Description("用户")
   private UserExpression user;
 
+  /**
+   * Include Deprecated
+   */
   @DefaultValue("false")
+  @Description("Include Deprecated")
   private Boolean includeDeprecated = false;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   private IntExpression version;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   private IntExpression realmId;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   private StringExpression createUserId;
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   private StringExpression createTime;
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   private StringExpression updateUserId;
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   private StringExpression updateTime;
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   private StringExpression createGroupId;
 
+  /**
+   * Type Name
+   */
+  @Description("Type Name")
   private StringExpression __typename;
 
+  /**
+   * Order By
+   */
+  @Description("Order By")
   private OrderUserRelationOrderBy orderBy;
 
+  /**
+   * Group By
+   */
+  @Description("Group By")
   private Collection<String> groupBy;
 
+  /**
+   * Not
+   */
   @DefaultValue("false")
+  @Description("Not")
   private Boolean not = false;
 
+  /**
+   * Condition
+   */
   @DefaultValue("AND")
+  @Description("Condition")
   private Conditional cond = Conditional.AND;
 
+  /**
+   * Expressions
+   */
+  @Description("Expressions")
   private Collection<OrderUserRelationExpression> exs;
 
+  /**
+   * First
+   */
+  @Description("First")
   private Integer first;
 
+  /**
+   * Last
+   */
+  @Description("Last")
   private Integer last;
 
+  /**
+   * Offset
+   */
+  @Description("Offset")
   private Integer offset;
 
+  /**
+   * After
+   */
+  @Description("After")
   private String after;
 
+  /**
+   * Before
+   */
+  @Description("Before")
   private String before;
 
+  @Override
   public StringExpression getId() {
     return this.id;
   }
 
+  @Override
   public void setId(StringExpression id) {
-    this.id = id;
+    this.id = (StringExpression)id;
   }
 
+  @Override
   public StringExpression getOrderRef() {
     return this.orderRef;
   }
 
+  @Override
   public void setOrderRef(StringExpression orderRef) {
-    this.orderRef = orderRef;
+    this.orderRef = (StringExpression)orderRef;
   }
 
+  @Override
   public OrderExpression getOrder() {
     return this.order;
   }
 
+  @Override
   public void setOrder(OrderExpression order) {
-    this.order = order;
+    this.order = (OrderExpression)order;
   }
 
+  @Override
   public IntExpression getUserRef() {
     return this.userRef;
   }
 
+  @Override
   public void setUserRef(IntExpression userRef) {
-    this.userRef = userRef;
+    this.userRef = (IntExpression)userRef;
   }
 
+  @Override
   public UserExpression getUser() {
     return this.user;
   }
 
+  @Override
   public void setUser(UserExpression user) {
-    this.user = user;
+    this.user = (UserExpression)user;
   }
 
+  @Override
   public Boolean getIncludeDeprecated() {
     return this.includeDeprecated;
   }
 
+  @Override
   public void setIncludeDeprecated(Boolean includeDeprecated) {
-    this.includeDeprecated = includeDeprecated;
+    this.includeDeprecated = (Boolean)includeDeprecated;
   }
 
+  @Override
   public IntExpression getVersion() {
     return this.version;
   }
 
+  @Override
   public void setVersion(IntExpression version) {
-    this.version = version;
+    this.version = (IntExpression)version;
   }
 
   @Override
@@ -186,12 +301,14 @@ public class OrderUserRelationConnectionQueryArguments implements MetaExpression
     this.createGroupId = (StringExpression)createGroupId;
   }
 
+  @Override
   public StringExpression get__typename() {
     return this.__typename;
   }
 
+  @Override
   public void set__typename(StringExpression __typename) {
-    this.__typename = __typename;
+    this.__typename = (StringExpression)__typename;
   }
 
   public OrderUserRelationOrderBy getOrderBy() {
@@ -210,28 +327,34 @@ public class OrderUserRelationConnectionQueryArguments implements MetaExpression
     this.groupBy = groupBy;
   }
 
+  @Override
   public Boolean getNot() {
     return this.not;
   }
 
+  @Override
   public void setNot(Boolean not) {
-    this.not = not;
+    this.not = (Boolean)not;
   }
 
+  @Override
   public Conditional getCond() {
     return this.cond;
   }
 
+  @Override
   public void setCond(Conditional cond) {
-    this.cond = cond;
+    this.cond = (Conditional)cond;
   }
 
+  @Override
   public Collection<OrderUserRelationExpression> getExs() {
     return this.exs;
   }
 
+  @Override
   public void setExs(Collection<OrderUserRelationExpression> exs) {
-    this.exs = exs;
+    this.exs = (Collection<OrderUserRelationExpression>)exs;
   }
 
   public Integer getFirst() {

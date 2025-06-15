@@ -1,6 +1,7 @@
 package demo.gp.order.dto.objectType;
 
 import com.dslplatform.json.CompiledJson;
+import demo.gp.order.dto.inputObjectType.ProductReviewRelationInput;
 import demo.gp.review.dto.objectType.Review;
 import io.graphoenix.core.dto.interfaceType.Meta;
 import jakarta.annotation.Generated;
@@ -9,62 +10,167 @@ import java.lang.Integer;
 import java.lang.Override;
 import java.lang.String;
 import java.time.LocalDateTime;
+import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.Id;
 import org.eclipse.microprofile.graphql.Type;
 
+/**
+ * Relationship Object between 产品 and 评论
+ */
 @Type
 @CompiledJson
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
+@Description("Relationship Object between 产品 and 评论")
 public class ProductReviewRelation implements Meta {
+  /**
+   * ID
+   */
   @Id
+  @Description("ID")
   private String id;
 
+  /**
+   * 产品 Reference
+   */
+  @Description("产品 Reference")
   private String productRef;
 
+  /**
+   * 产品
+   */
+  @Description("产品")
   private Product product;
 
+  /**
+   * 评论 Reference
+   */
+  @Description("评论 Reference")
   private Integer reviewRef;
 
+  /**
+   * 评论
+   */
+  @Description("评论")
   private Review review;
 
+  /**
+   * Is Deprecated
+   */
+  @Description("Is Deprecated")
   private Boolean isDeprecated = false;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   private Integer version;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   private Integer realmId;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   private String createUserId;
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   private LocalDateTime createTime;
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   private String updateUserId;
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   private LocalDateTime updateTime;
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   private String createGroupId;
 
+  /**
+   * Type Name
+   */
+  @Description("Type Name")
   private String __typename = "ProductReviewRelation";
 
+  /**
+   * Count of Relationship Object between 产品 and 评论
+   */
+  @Description("Count of Relationship Object between 产品 and 评论")
   private Integer idCount;
 
+  /**
+   * Max of ID
+   */
+  @Description("Max of ID")
   private Integer idMax;
 
+  /**
+   * Min of ID
+   */
+  @Description("Min of ID")
   private Integer idMin;
 
+  /**
+   * Count of 产品 Reference
+   */
+  @Description("Count of 产品 Reference")
   private Integer productRefCount;
 
+  /**
+   * Max of 产品 Reference
+   */
+  @Description("Max of 产品 Reference")
   private String productRefMax;
 
+  /**
+   * Min of 产品 Reference
+   */
+  @Description("Min of 产品 Reference")
   private String productRefMin;
 
+  /**
+   * Count of 评论 Reference
+   */
+  @Description("Count of 评论 Reference")
   private Integer reviewRefCount;
 
+  /**
+   * Sum of 评论 Reference
+   */
+  @Description("Sum of 评论 Reference")
   private Integer reviewRefSum;
 
+  /**
+   * Avg of 评论 Reference
+   */
+  @Description("Avg of 评论 Reference")
   private Integer reviewRefAvg;
 
+  /**
+   * Max of 评论 Reference
+   */
+  @Description("Max of 评论 Reference")
   private Integer reviewRefMax;
 
+  /**
+   * Min of 评论 Reference
+   */
+  @Description("Min of 评论 Reference")
   private Integer reviewRefMin;
 
   public String getId() {
@@ -281,5 +387,25 @@ public class ProductReviewRelation implements Meta {
 
   public void setReviewRefMin(Integer reviewRefMin) {
     this.reviewRefMin = reviewRefMin;
+  }
+
+  public ProductReviewRelationInput toInput() {
+    ProductReviewRelationInput input = new ProductReviewRelationInput();
+    input.setId(this.getId());
+    input.setProductRef(this.getProductRef());
+    if(getProduct() != null) {
+      input.setProduct(this.getProduct().toInput());
+    }
+    input.setReviewRef(this.getReviewRef());
+    input.setIsDeprecated(this.getIsDeprecated());
+    input.setVersion(this.getVersion());
+    input.setRealmId(this.getRealmId());
+    input.setCreateUserId(this.getCreateUserId());
+    input.setCreateTime(this.getCreateTime());
+    input.setUpdateUserId(this.getUpdateUserId());
+    input.setUpdateTime(this.getUpdateTime());
+    input.setCreateGroupId(this.getCreateGroupId());
+    input.set__typename(this.get__typename());
+    return input;
   }
 }

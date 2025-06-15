@@ -8,39 +8,154 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import org.eclipse.microprofile.graphql.Description;
 
+/**
+ * Order Input for Relationship Object between 用户 and 联系方式
+ */
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
 @Documented
 @Retention(RetentionPolicy.SOURCE)
 @Target(ElementType.METHOD)
+@Description("Order Input for Relationship Object between 用户 and 联系方式")
 public @interface UserPhoneNumbersRelationOrderBy {
+  /**
+   * ID
+   */
+  @Description("ID")
   Sort id() default Sort.ASC;
 
+  /**
+   * 用户 Reference
+   */
+  @Description("用户 Reference")
   Sort userRef() default Sort.ASC;
 
+  /**
+   * 用户
+   */
+  @Description("用户")
+  UserOrderBy1 user() default @UserOrderBy1;
+
+  /**
+   * 联系方式 Reference
+   */
+  @Description("联系方式 Reference")
   Sort phoneNumbersRef() default Sort.ASC;
 
+  /**
+   * Is Deprecated
+   */
+  @Description("Is Deprecated")
   Sort isDeprecated() default Sort.ASC;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   Sort version() default Sort.ASC;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   Sort realmId() default Sort.ASC;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   Sort createUserId() default Sort.ASC;
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   Sort createTime() default Sort.ASC;
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   Sort updateUserId() default Sort.ASC;
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   Sort updateTime() default Sort.ASC;
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   Sort createGroupId() default Sort.ASC;
 
+  /**
+   * Type Name
+   */
+  @Description("Type Name")
   Sort __typename() default Sort.ASC;
+
+  /**
+   * Count of Relationship Object between 用户 and 联系方式
+   */
+  @Description("Count of Relationship Object between 用户 and 联系方式")
+  Sort idCount() default Sort.ASC;
+
+  /**
+   * Max of ID
+   */
+  @Description("Max of ID")
+  Sort idMax() default Sort.ASC;
+
+  /**
+   * Min of ID
+   */
+  @Description("Min of ID")
+  Sort idMin() default Sort.ASC;
+
+  /**
+   * Count of 用户 Reference
+   */
+  @Description("Count of 用户 Reference")
+  Sort userRefCount() default Sort.ASC;
+
+  /**
+   * Max of 用户 Reference
+   */
+  @Description("Max of 用户 Reference")
+  Sort userRefMax() default Sort.ASC;
+
+  /**
+   * Min of 用户 Reference
+   */
+  @Description("Min of 用户 Reference")
+  Sort userRefMin() default Sort.ASC;
+
+  /**
+   * Count of 联系方式 Reference
+   */
+  @Description("Count of 联系方式 Reference")
+  Sort phoneNumbersRefCount() default Sort.ASC;
+
+  /**
+   * Max of 联系方式 Reference
+   */
+  @Description("Max of 联系方式 Reference")
+  Sort phoneNumbersRefMax() default Sort.ASC;
+
+  /**
+   * Min of 联系方式 Reference
+   */
+  @Description("Min of 联系方式 Reference")
+  Sort phoneNumbersRefMin() default Sort.ASC;
 
   String $id() default "";
 
   String $userRef() default "";
+
+  String $user() default "";
 
   String $phoneNumbersRef() default "";
 
@@ -61,4 +176,22 @@ public @interface UserPhoneNumbersRelationOrderBy {
   String $createGroupId() default "";
 
   String $__typename() default "";
+
+  String $idCount() default "";
+
+  String $idMax() default "";
+
+  String $idMin() default "";
+
+  String $userRefCount() default "";
+
+  String $userRefMax() default "";
+
+  String $userRefMin() default "";
+
+  String $phoneNumbersRefCount() default "";
+
+  String $phoneNumbersRefMax() default "";
+
+  String $phoneNumbersRefMin() default "";
 }

@@ -1,37 +1,169 @@
 package demo.gp.order.dto.inputObjectType;
 
 import com.dslplatform.json.CompiledJson;
+import demo.gp.review.dto.inputObjectType.ReviewOrderBy;
 import io.graphoenix.core.dto.enumType.Sort;
 import jakarta.annotation.Generated;
+import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.Input;
 
+/**
+ * Order Input for Relationship Object between 产品 and 评论
+ */
 @CompiledJson
 @Input
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
+@Description("Order Input for Relationship Object between 产品 and 评论")
 public class ProductReviewRelationOrderBy {
+  /**
+   * ID
+   */
+  @Description("ID")
   private Sort id;
 
+  /**
+   * 产品 Reference
+   */
+  @Description("产品 Reference")
   private Sort productRef;
 
+  /**
+   * 产品
+   */
+  @Description("产品")
+  private ProductOrderBy product;
+
+  /**
+   * 评论 Reference
+   */
+  @Description("评论 Reference")
   private Sort reviewRef;
 
+  /**
+   * 评论
+   */
+  @Description("评论")
+  private ReviewOrderBy review;
+
+  /**
+   * Is Deprecated
+   */
+  @Description("Is Deprecated")
   private Sort isDeprecated;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   private Sort version;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   private Sort realmId;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   private Sort createUserId;
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   private Sort createTime;
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   private Sort updateUserId;
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   private Sort updateTime;
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   private Sort createGroupId;
 
+  /**
+   * Type Name
+   */
+  @Description("Type Name")
   private Sort __typename;
+
+  /**
+   * Count of Relationship Object between 产品 and 评论
+   */
+  @Description("Count of Relationship Object between 产品 and 评论")
+  private Sort idCount;
+
+  /**
+   * Max of ID
+   */
+  @Description("Max of ID")
+  private Sort idMax;
+
+  /**
+   * Min of ID
+   */
+  @Description("Min of ID")
+  private Sort idMin;
+
+  /**
+   * Count of 产品 Reference
+   */
+  @Description("Count of 产品 Reference")
+  private Sort productRefCount;
+
+  /**
+   * Max of 产品 Reference
+   */
+  @Description("Max of 产品 Reference")
+  private Sort productRefMax;
+
+  /**
+   * Min of 产品 Reference
+   */
+  @Description("Min of 产品 Reference")
+  private Sort productRefMin;
+
+  /**
+   * Count of 评论 Reference
+   */
+  @Description("Count of 评论 Reference")
+  private Sort reviewRefCount;
+
+  /**
+   * Sum of 评论 Reference
+   */
+  @Description("Sum of 评论 Reference")
+  private Sort reviewRefSum;
+
+  /**
+   * Avg of 评论 Reference
+   */
+  @Description("Avg of 评论 Reference")
+  private Sort reviewRefAvg;
+
+  /**
+   * Max of 评论 Reference
+   */
+  @Description("Max of 评论 Reference")
+  private Sort reviewRefMax;
+
+  /**
+   * Min of 评论 Reference
+   */
+  @Description("Min of 评论 Reference")
+  private Sort reviewRefMin;
 
   public Sort getId() {
     return this.id;
@@ -49,12 +181,28 @@ public class ProductReviewRelationOrderBy {
     this.productRef = productRef;
   }
 
+  public ProductOrderBy getProduct() {
+    return this.product;
+  }
+
+  public void setProduct(ProductOrderBy product) {
+    this.product = product;
+  }
+
   public Sort getReviewRef() {
     return this.reviewRef;
   }
 
   public void setReviewRef(Sort reviewRef) {
     this.reviewRef = reviewRef;
+  }
+
+  public ReviewOrderBy getReview() {
+    return this.review;
+  }
+
+  public void setReview(ReviewOrderBy review) {
+    this.review = review;
   }
 
   public Sort getIsDeprecated() {
@@ -127,5 +275,93 @@ public class ProductReviewRelationOrderBy {
 
   public void set__typename(Sort __typename) {
     this.__typename = __typename;
+  }
+
+  public Sort getIdCount() {
+    return this.idCount;
+  }
+
+  public void setIdCount(Sort idCount) {
+    this.idCount = idCount;
+  }
+
+  public Sort getIdMax() {
+    return this.idMax;
+  }
+
+  public void setIdMax(Sort idMax) {
+    this.idMax = idMax;
+  }
+
+  public Sort getIdMin() {
+    return this.idMin;
+  }
+
+  public void setIdMin(Sort idMin) {
+    this.idMin = idMin;
+  }
+
+  public Sort getProductRefCount() {
+    return this.productRefCount;
+  }
+
+  public void setProductRefCount(Sort productRefCount) {
+    this.productRefCount = productRefCount;
+  }
+
+  public Sort getProductRefMax() {
+    return this.productRefMax;
+  }
+
+  public void setProductRefMax(Sort productRefMax) {
+    this.productRefMax = productRefMax;
+  }
+
+  public Sort getProductRefMin() {
+    return this.productRefMin;
+  }
+
+  public void setProductRefMin(Sort productRefMin) {
+    this.productRefMin = productRefMin;
+  }
+
+  public Sort getReviewRefCount() {
+    return this.reviewRefCount;
+  }
+
+  public void setReviewRefCount(Sort reviewRefCount) {
+    this.reviewRefCount = reviewRefCount;
+  }
+
+  public Sort getReviewRefSum() {
+    return this.reviewRefSum;
+  }
+
+  public void setReviewRefSum(Sort reviewRefSum) {
+    this.reviewRefSum = reviewRefSum;
+  }
+
+  public Sort getReviewRefAvg() {
+    return this.reviewRefAvg;
+  }
+
+  public void setReviewRefAvg(Sort reviewRefAvg) {
+    this.reviewRefAvg = reviewRefAvg;
+  }
+
+  public Sort getReviewRefMax() {
+    return this.reviewRefMax;
+  }
+
+  public void setReviewRefMax(Sort reviewRefMax) {
+    this.reviewRefMax = reviewRefMax;
+  }
+
+  public Sort getReviewRefMin() {
+    return this.reviewRefMin;
+  }
+
+  public void setReviewRefMin(Sort reviewRefMin) {
+    this.reviewRefMin = reviewRefMin;
   }
 }

@@ -12,9 +12,12 @@ import "demo/gp/review/input_objects.proto";
 import "demo/gp/review/mutation_requests.proto";
 import "demo/gp/review/mutation_responses.proto";
 
+/**
+* Mutation
+*/
 service MutationService {
-    rpc Review (MutationReviewRequest) returns (MutationReviewResponse);
-    rpc ReviewList (MutationReviewListRequest) returns (MutationReviewListResponse);
-    rpc ReviewUserRelation (MutationReviewUserRelationRequest) returns (MutationReviewUserRelationResponse);
-    rpc ReviewUserRelationList (MutationReviewUserRelationListRequest) returns (MutationReviewUserRelationListResponse);
+    rpc Review (MutationReviewRequest) returns (MutationReviewResponse); /* Mutation Field for 评论 */
+    rpc ReviewList (MutationReviewListRequest) returns (MutationReviewListResponse); /* Mutation Field for 评论 List */
+    rpc ReviewUserRelation (MutationReviewUserRelationRequest) returns (MutationReviewUserRelationResponse); /* Mutation Field for Relationship Object between 评论 and 用户 */
+    rpc ReviewUserRelationList (MutationReviewUserRelationListRequest) returns (MutationReviewUserRelationListResponse); /* Mutation Field for Relationship Object between 评论 and 用户 List */
 }

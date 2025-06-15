@@ -7,40 +7,105 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import org.eclipse.microprofile.graphql.Description;
 
+/**
+ * Mutation Arguments for Relationship Object between 用户 and 联系方式
+ */
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
 @Documented
 @Retention(RetentionPolicy.SOURCE)
 @Target(ElementType.METHOD)
+@Description("Mutation Arguments for Relationship Object between 用户 and 联系方式")
 public @interface UserPhoneNumbersRelationMutationArguments {
+  /**
+   * ID
+   */
+  @Description("ID")
   String id() default "";
 
+  /**
+   * 用户 Reference
+   */
+  @Description("用户 Reference")
   String userRef() default "";
 
+  /**
+   * 用户
+   */
+  @Description("用户")
   UserInput user() default @UserInput;
 
+  /**
+   * 联系方式 Reference
+   */
+  @Description("联系方式 Reference")
   String phoneNumbersRef() default "";
 
+  /**
+   * Is Deprecated
+   */
+  @Description("Is Deprecated")
   boolean isDeprecated() default false;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   int version() default 0;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   int realmId() default 0;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   String createUserId() default "";
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   String createTime() default "";
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   String updateUserId() default "";
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   String updateTime() default "";
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   String createGroupId() default "";
 
+  /**
+   * Type Name
+   */
+  @Description("Type Name")
   String __typename() default "UserPhoneNumbersRelation";
 
+  /**
+   * Input
+   */
+  @Description("Input")
   UserPhoneNumbersRelationInput input() default @UserPhoneNumbersRelationInput;
 
+  /**
+   * Where
+   */
+  @Description("Where")
   UserPhoneNumbersRelationExpression where() default @UserPhoneNumbersRelationExpression;
 
   String $id() default "";

@@ -18,67 +18,85 @@ message User {
     string email = 3; /* 电子邮箱 */
     repeated string phone_numbers = 4; /* 联系方式 */
     optional UserType user_type = 5; /* 用户类型 */
-    bool is_deprecated = 6;
-    int32 version = 7;
-    int32 realm_id = 8;
-    string create_user_id = 9;
-    google.protobuf.Timestamp create_time = 10;
-    string update_user_id = 11;
-    google.protobuf.Timestamp update_time = 12;
-    string create_group_id = 13;
-    string intro_typename = 14;
-    repeated UserPhoneNumbersRelation user_phone_numbers_relation = 15;
-    UserPhoneNumbersRelation user_phone_numbers_relation_aggregate = 16;
-    UserPhoneNumbersRelationConnection user_phone_numbers_relation_connection = 17;
-    int32 id_count = 18;
-    int32 id_max = 19;
-    int32 id_min = 20;
-    int32 name_count = 21;
-    string name_max = 22;
-    string name_min = 23;
-    int32 email_count = 24;
-    string email_max = 25;
-    string email_min = 26;
+    bool is_deprecated = 6; /* Is Deprecated */
+    int32 version = 7; /* Version */
+    int32 realm_id = 8; /* Realm ID */
+    string create_user_id = 9; /* Create User ID */
+    google.protobuf.Timestamp create_time = 10; /* Create Time */
+    string update_user_id = 11; /* Update User ID */
+    google.protobuf.Timestamp update_time = 12; /* Update Time */
+    string create_group_id = 13; /* Create Group ID */
+    string intro_typename = 14; /* Type Name */
+    repeated UserPhoneNumbersRelation user_phone_numbers_relation = 15; /* Relationship Object between 用户 and 联系方式 */
+    UserPhoneNumbersRelation user_phone_numbers_relation_aggregate = 16; /* Aggregate Field for Relationship Object between 用户 and 联系方式 */
+    UserPhoneNumbersRelationConnection user_phone_numbers_relation_connection = 17; /* Connection Field for Relationship Object between 用户 and 联系方式 */
+    int32 id_count = 18; /* Count of 用户 */
+    int32 id_max = 19; /* Max of 用户ID */
+    int32 id_min = 20; /* Min of 用户ID */
+    int32 name_count = 21; /* Count of 用户名 */
+    string name_max = 22; /* Max of 用户名 */
+    string name_min = 23; /* Min of 用户名 */
+    int32 email_count = 24; /* Count of 电子邮箱 */
+    string email_max = 25; /* Max of 电子邮箱 */
+    string email_min = 26; /* Min of 电子邮箱 */
+    int32 user_type_count = 27; /* Count of 用户类型 */
+    UserType user_type_max = 28; /* Max of 用户类型 */
+    UserType user_type_min = 29; /* Min of 用户类型 */
 }
+/**
+* Relationship Object between 用户 and 联系方式
+*/
 message UserPhoneNumbersRelation {
-    string id = 1;
-    string user_ref = 2;
-    User user = 3;
-    string phone_numbers_ref = 4;
-    bool is_deprecated = 5;
-    int32 version = 6;
-    int32 realm_id = 7;
-    string create_user_id = 8;
-    google.protobuf.Timestamp create_time = 9;
-    string update_user_id = 10;
-    google.protobuf.Timestamp update_time = 11;
-    string create_group_id = 12;
-    string intro_typename = 13;
-    int32 id_count = 14;
-    int32 id_max = 15;
-    int32 id_min = 16;
-    int32 user_ref_count = 17;
-    string user_ref_max = 18;
-    string user_ref_min = 19;
-    int32 phone_numbers_ref_count = 20;
-    string phone_numbers_ref_max = 21;
-    string phone_numbers_ref_min = 22;
+    string id = 1; /* ID */
+    string user_ref = 2; /* 用户 Reference */
+    User user = 3; /* 用户 */
+    string phone_numbers_ref = 4; /* 联系方式 Reference */
+    bool is_deprecated = 5; /* Is Deprecated */
+    int32 version = 6; /* Version */
+    int32 realm_id = 7; /* Realm ID */
+    string create_user_id = 8; /* Create User ID */
+    google.protobuf.Timestamp create_time = 9; /* Create Time */
+    string update_user_id = 10; /* Update User ID */
+    google.protobuf.Timestamp update_time = 11; /* Update Time */
+    string create_group_id = 12; /* Create Group ID */
+    string intro_typename = 13; /* Type Name */
+    int32 id_count = 14; /* Count of Relationship Object between 用户 and 联系方式 */
+    int32 id_max = 15; /* Max of ID */
+    int32 id_min = 16; /* Min of ID */
+    int32 user_ref_count = 17; /* Count of 用户 Reference */
+    string user_ref_max = 18; /* Max of 用户 Reference */
+    string user_ref_min = 19; /* Min of 用户 Reference */
+    int32 phone_numbers_ref_count = 20; /* Count of 联系方式 Reference */
+    string phone_numbers_ref_max = 21; /* Max of 联系方式 Reference */
+    string phone_numbers_ref_min = 22; /* Min of 联系方式 Reference */
 }
+/**
+* Connection Object for 用户
+*/
 message UserConnection {
-    int32 total_count = 1;
-    io.graphoenix.core.PageInfo page_info = 2;
-    repeated UserEdge edges = 3;
+    int32 total_count = 1; /* Total */
+    io.graphoenix.core.PageInfo page_info = 2; /* Page Info */
+    repeated UserEdge edges = 3; /* Edges */
 }
+/**
+* Edge Object for 用户
+*/
 message UserEdge {
-    User node = 1;
-    string cursor = 2;
+    User node = 1; /* Node */
+    string cursor = 2; /* Cursor */
 }
+/**
+* Connection Object for Relationship Object between 用户 and 联系方式
+*/
 message UserPhoneNumbersRelationConnection {
-    int32 total_count = 1;
-    io.graphoenix.core.PageInfo page_info = 2;
-    repeated UserPhoneNumbersRelationEdge edges = 3;
+    int32 total_count = 1; /* Total */
+    io.graphoenix.core.PageInfo page_info = 2; /* Page Info */
+    repeated UserPhoneNumbersRelationEdge edges = 3; /* Edges */
 }
+/**
+* Edge Object for Relationship Object between 用户 and 联系方式
+*/
 message UserPhoneNumbersRelationEdge {
-    UserPhoneNumbersRelation node = 1;
-    string cursor = 2;
+    UserPhoneNumbersRelation node = 1; /* Node */
+    string cursor = 2; /* Cursor */
 }

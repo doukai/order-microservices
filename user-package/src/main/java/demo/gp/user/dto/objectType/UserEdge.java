@@ -3,14 +3,27 @@ package demo.gp.user.dto.objectType;
 import com.dslplatform.json.CompiledJson;
 import jakarta.annotation.Generated;
 import java.lang.String;
+import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.Type;
 
+/**
+ * Edge Object for 用户
+ */
 @Type
 @CompiledJson
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
+@Description("Edge Object for 用户")
 public class UserEdge {
+  /**
+   * Node
+   */
+  @Description("Node")
   private User node;
 
+  /**
+   * Cursor
+   */
+  @Description("Cursor")
   private String cursor;
 
   public User getNode() {

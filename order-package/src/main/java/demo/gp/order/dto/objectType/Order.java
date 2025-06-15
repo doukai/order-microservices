@@ -1,6 +1,7 @@
 package demo.gp.order.dto.objectType;
 
 import com.dslplatform.json.CompiledJson;
+import demo.gp.order.dto.inputObjectType.OrderInput;
 import demo.gp.user.dto.objectType.User;
 import io.graphoenix.core.dto.interfaceType.Meta;
 import jakarta.annotation.Generated;
@@ -11,6 +12,7 @@ import java.lang.Override;
 import java.lang.String;
 import java.time.LocalDateTime;
 import java.util.Collection;
+import java.util.stream.Collectors;
 import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.Id;
 import org.eclipse.microprofile.graphql.NonNull;
@@ -45,40 +47,112 @@ public class Order implements Meta {
   @Description("产品列表")
   private Collection<OrderItem> items;
 
+  /**
+   * Is Deprecated
+   */
+  @Description("Is Deprecated")
   private Boolean isDeprecated = false;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   private Integer version;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   private Integer realmId;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   private String createUserId;
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   private LocalDateTime createTime;
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   private String updateUserId;
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   private LocalDateTime updateTime;
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   private String createGroupId;
 
+  /**
+   * Type Name
+   */
+  @Description("Type Name")
   private String __typename = "Order";
 
+  /**
+   * Relationship Object between 订单 and 用户
+   */
+  @Description("Relationship Object between 订单 and 用户")
   private Collection<OrderUserRelation> orderUserRelation;
 
+  /**
+   * Relationship Object between 订单 and 订单项
+   */
+  @Description("Relationship Object between 订单 and 订单项")
   private Collection<OrderOrderItemRelation> orderOrderItemRelation;
 
+  /**
+   * Aggregate Field for 产品列表
+   */
+  @Description("Aggregate Field for 产品列表")
   private OrderItem itemsAggregate;
 
+  /**
+   * Connection Field for 产品列表
+   */
+  @Description("Connection Field for 产品列表")
   private OrderItemConnection itemsConnection;
 
+  /**
+   * Aggregate Field for Relationship Object between 订单 and 订单项
+   */
+  @Description("Aggregate Field for Relationship Object between 订单 and 订单项")
   private OrderOrderItemRelation orderOrderItemRelationAggregate;
 
+  /**
+   * Connection Field for Relationship Object between 订单 and 订单项
+   */
+  @Description("Connection Field for Relationship Object between 订单 and 订单项")
   private OrderOrderItemRelationConnection orderOrderItemRelationConnection;
 
+  /**
+   * Count of 订单
+   */
+  @Description("Count of 订单")
   private Integer idCount;
 
+  /**
+   * Max of 订单ID
+   */
+  @Description("Max of 订单ID")
   private Integer idMax;
 
+  /**
+   * Min of 订单ID
+   */
+  @Description("Min of 订单ID")
   private Integer idMin;
 
   private Float total;
@@ -275,5 +349,26 @@ public class Order implements Meta {
 
   public void setTotal(Float total) {
     this.total = total;
+  }
+
+  public OrderInput toInput() {
+    OrderInput input = new OrderInput();
+    input.setId(this.getId());
+    if(getItems() != null) {
+      input.setItems(this.getItems().stream().map(item -> item.toInput()).collect(Collectors.toList()));
+    }
+    input.setIsDeprecated(this.getIsDeprecated());
+    input.setVersion(this.getVersion());
+    input.setRealmId(this.getRealmId());
+    input.setCreateUserId(this.getCreateUserId());
+    input.setCreateTime(this.getCreateTime());
+    input.setUpdateUserId(this.getUpdateUserId());
+    input.setUpdateTime(this.getUpdateTime());
+    input.setCreateGroupId(this.getCreateGroupId());
+    input.set__typename(this.get__typename());
+    if(getOrderOrderItemRelation() != null) {
+      input.setOrderOrderItemRelation(this.getOrderOrderItemRelation().stream().map(item -> item.toInput()).collect(Collectors.toList()));
+    }
+    return input;
   }
 }

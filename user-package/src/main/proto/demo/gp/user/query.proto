@@ -12,11 +12,14 @@ import "demo/gp/user/input_objects.proto";
 import "demo/gp/user/query_requests.proto";
 import "demo/gp/user/query_responses.proto";
 
+/**
+* Query
+*/
 service QueryService {
-    rpc User (QueryUserRequest) returns (QueryUserResponse);
-    rpc UserList (QueryUserListRequest) returns (QueryUserListResponse);
-    rpc UserConnection (QueryUserConnectionRequest) returns (QueryUserConnectionResponse);
-    rpc UserPhoneNumbersRelation (QueryUserPhoneNumbersRelationRequest) returns (QueryUserPhoneNumbersRelationResponse);
-    rpc UserPhoneNumbersRelationList (QueryUserPhoneNumbersRelationListRequest) returns (QueryUserPhoneNumbersRelationListResponse);
-    rpc UserPhoneNumbersRelationConnection (QueryUserPhoneNumbersRelationConnectionRequest) returns (QueryUserPhoneNumbersRelationConnectionResponse);
+    rpc User (QueryUserRequest) returns (QueryUserResponse); /* Query Field for 用户 */
+    rpc UserList (QueryUserListRequest) returns (QueryUserListResponse); /* Query Field for 用户 List */
+    rpc UserConnection (QueryUserConnectionRequest) returns (QueryUserConnectionResponse); /* Query Field for 用户 Connection */
+    rpc UserPhoneNumbersRelation (QueryUserPhoneNumbersRelationRequest) returns (QueryUserPhoneNumbersRelationResponse); /* Query Field for Relationship Object between 用户 and 联系方式 */
+    rpc UserPhoneNumbersRelationList (QueryUserPhoneNumbersRelationListRequest) returns (QueryUserPhoneNumbersRelationListResponse); /* Query Field for Relationship Object between 用户 and 联系方式 List */
+    rpc UserPhoneNumbersRelationConnection (QueryUserPhoneNumbersRelationConnectionRequest) returns (QueryUserPhoneNumbersRelationConnectionResponse); /* Query Field for Relationship Object between 用户 and 联系方式 Connection */
 }

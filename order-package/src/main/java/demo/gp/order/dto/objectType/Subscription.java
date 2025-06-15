@@ -3,52 +3,141 @@ package demo.gp.order.dto.objectType;
 import com.dslplatform.json.CompiledJson;
 import jakarta.annotation.Generated;
 import java.util.Collection;
+import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.Type;
 
+/**
+ * Subscription
+ */
 @Type
 @CompiledJson
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
+@Description("Subscription")
 public class Subscription {
+  /**
+   * Subscription Field for 产品
+   */
+  @Description("Subscription Field for 产品")
   private Product product;
 
+  /**
+   * Subscription Field for 产品 List
+   */
+  @Description("Subscription Field for 产品 List")
   private Collection<Product> productList;
 
+  /**
+   * Subscription Field for 产品 Connection
+   */
+  @Description("Subscription Field for 产品 Connection")
   private ProductConnection productConnection;
 
+  /**
+   * Subscription Field for 订单
+   */
+  @Description("Subscription Field for 订单")
   private Order order;
 
+  /**
+   * Subscription Field for 订单 List
+   */
+  @Description("Subscription Field for 订单 List")
   private Collection<Order> orderList;
 
+  /**
+   * Subscription Field for 订单 Connection
+   */
+  @Description("Subscription Field for 订单 Connection")
   private OrderConnection orderConnection;
 
+  /**
+   * Subscription Field for 订单项
+   */
+  @Description("Subscription Field for 订单项")
   private OrderItem orderItem;
 
+  /**
+   * Subscription Field for 订单项 List
+   */
+  @Description("Subscription Field for 订单项 List")
   private Collection<OrderItem> orderItemList;
 
+  /**
+   * Subscription Field for 订单项 Connection
+   */
+  @Description("Subscription Field for 订单项 Connection")
   private OrderItemConnection orderItemConnection;
 
+  /**
+   * Subscription Field for Relationship Object between 订单 and 订单项
+   */
+  @Description("Subscription Field for Relationship Object between 订单 and 订单项")
   private OrderOrderItemRelation orderOrderItemRelation;
 
+  /**
+   * Subscription Field for Relationship Object between 订单 and 订单项 List
+   */
+  @Description("Subscription Field for Relationship Object between 订单 and 订单项 List")
   private Collection<OrderOrderItemRelation> orderOrderItemRelationList;
 
+  /**
+   * Subscription Field for Relationship Object between 订单 and 订单项 Connection
+   */
+  @Description("Subscription Field for Relationship Object between 订单 and 订单项 Connection")
   private OrderOrderItemRelationConnection orderOrderItemRelationConnection;
 
+  /**
+   * Subscription Field for Relationship Object between 订单项 and 产品
+   */
+  @Description("Subscription Field for Relationship Object between 订单项 and 产品")
   private OrderItemProductRelation orderItemProductRelation;
 
+  /**
+   * Subscription Field for Relationship Object between 订单项 and 产品 List
+   */
+  @Description("Subscription Field for Relationship Object between 订单项 and 产品 List")
   private Collection<OrderItemProductRelation> orderItemProductRelationList;
 
+  /**
+   * Subscription Field for Relationship Object between 订单项 and 产品 Connection
+   */
+  @Description("Subscription Field for Relationship Object between 订单项 and 产品 Connection")
   private OrderItemProductRelationConnection orderItemProductRelationConnection;
 
+  /**
+   * Subscription Field for Relationship Object between 产品 and 评论
+   */
+  @Description("Subscription Field for Relationship Object between 产品 and 评论")
   private ProductReviewRelation productReviewRelation;
 
+  /**
+   * Subscription Field for Relationship Object between 产品 and 评论 List
+   */
+  @Description("Subscription Field for Relationship Object between 产品 and 评论 List")
   private Collection<ProductReviewRelation> productReviewRelationList;
 
+  /**
+   * Subscription Field for Relationship Object between 产品 and 评论 Connection
+   */
+  @Description("Subscription Field for Relationship Object between 产品 and 评论 Connection")
   private ProductReviewRelationConnection productReviewRelationConnection;
 
+  /**
+   * Subscription Field for Relationship Object between 订单 and 用户
+   */
+  @Description("Subscription Field for Relationship Object between 订单 and 用户")
   private OrderUserRelation orderUserRelation;
 
+  /**
+   * Subscription Field for Relationship Object between 订单 and 用户 List
+   */
+  @Description("Subscription Field for Relationship Object between 订单 and 用户 List")
   private Collection<OrderUserRelation> orderUserRelationList;
 
+  /**
+   * Subscription Field for Relationship Object between 订单 and 用户 Connection
+   */
+  @Description("Subscription Field for Relationship Object between 订单 and 用户 Connection")
   private OrderUserRelationConnection orderUserRelationConnection;
 
   public Product getProduct() {

@@ -3,38 +3,99 @@ package demo.gp.order.dto.objectType;
 import com.dslplatform.json.CompiledJson;
 import jakarta.annotation.Generated;
 import java.util.Collection;
+import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.Type;
 
+/**
+ * Mutation
+ */
 @Type
 @CompiledJson
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
+@Description("Mutation")
 public class Mutation {
+  /**
+   * Mutation Field for 产品
+   */
+  @Description("Mutation Field for 产品")
   private Product product;
 
+  /**
+   * Mutation Field for 产品 List
+   */
+  @Description("Mutation Field for 产品 List")
   private Collection<Product> productList;
 
+  /**
+   * Mutation Field for 订单
+   */
+  @Description("Mutation Field for 订单")
   private Order order;
 
+  /**
+   * Mutation Field for 订单 List
+   */
+  @Description("Mutation Field for 订单 List")
   private Collection<Order> orderList;
 
+  /**
+   * Mutation Field for 订单项
+   */
+  @Description("Mutation Field for 订单项")
   private OrderItem orderItem;
 
+  /**
+   * Mutation Field for 订单项 List
+   */
+  @Description("Mutation Field for 订单项 List")
   private Collection<OrderItem> orderItemList;
 
+  /**
+   * Mutation Field for Relationship Object between 订单 and 订单项
+   */
+  @Description("Mutation Field for Relationship Object between 订单 and 订单项")
   private OrderOrderItemRelation orderOrderItemRelation;
 
+  /**
+   * Mutation Field for Relationship Object between 订单 and 订单项 List
+   */
+  @Description("Mutation Field for Relationship Object between 订单 and 订单项 List")
   private Collection<OrderOrderItemRelation> orderOrderItemRelationList;
 
+  /**
+   * Mutation Field for Relationship Object between 订单项 and 产品
+   */
+  @Description("Mutation Field for Relationship Object between 订单项 and 产品")
   private OrderItemProductRelation orderItemProductRelation;
 
+  /**
+   * Mutation Field for Relationship Object between 订单项 and 产品 List
+   */
+  @Description("Mutation Field for Relationship Object between 订单项 and 产品 List")
   private Collection<OrderItemProductRelation> orderItemProductRelationList;
 
+  /**
+   * Mutation Field for Relationship Object between 产品 and 评论
+   */
+  @Description("Mutation Field for Relationship Object between 产品 and 评论")
   private ProductReviewRelation productReviewRelation;
 
+  /**
+   * Mutation Field for Relationship Object between 产品 and 评论 List
+   */
+  @Description("Mutation Field for Relationship Object between 产品 and 评论 List")
   private Collection<ProductReviewRelation> productReviewRelationList;
 
+  /**
+   * Mutation Field for Relationship Object between 订单 and 用户
+   */
+  @Description("Mutation Field for Relationship Object between 订单 and 用户")
   private OrderUserRelation orderUserRelation;
 
+  /**
+   * Mutation Field for Relationship Object between 订单 and 用户 List
+   */
+  @Description("Mutation Field for Relationship Object between 订单 and 用户 List")
   private Collection<OrderUserRelation> orderUserRelationList;
 
   public Product getProduct() {

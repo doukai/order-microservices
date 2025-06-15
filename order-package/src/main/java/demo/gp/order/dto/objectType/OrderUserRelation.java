@@ -1,6 +1,7 @@
 package demo.gp.order.dto.objectType;
 
 import com.dslplatform.json.CompiledJson;
+import demo.gp.order.dto.inputObjectType.OrderUserRelationInput;
 import demo.gp.user.dto.objectType.User;
 import io.graphoenix.core.dto.interfaceType.Meta;
 import jakarta.annotation.Generated;
@@ -9,62 +10,167 @@ import java.lang.Integer;
 import java.lang.Override;
 import java.lang.String;
 import java.time.LocalDateTime;
+import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.Id;
 import org.eclipse.microprofile.graphql.Type;
 
+/**
+ * Relationship Object between 订单 and 用户
+ */
 @Type
 @CompiledJson
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
+@Description("Relationship Object between 订单 and 用户")
 public class OrderUserRelation implements Meta {
+  /**
+   * ID
+   */
   @Id
+  @Description("ID")
   private String id;
 
+  /**
+   * 订单 Reference
+   */
+  @Description("订单 Reference")
   private String orderRef;
 
+  /**
+   * 订单
+   */
+  @Description("订单")
   private Order order;
 
+  /**
+   * 用户 Reference
+   */
+  @Description("用户 Reference")
   private Integer userRef;
 
+  /**
+   * 用户
+   */
+  @Description("用户")
   private User user;
 
+  /**
+   * Is Deprecated
+   */
+  @Description("Is Deprecated")
   private Boolean isDeprecated = false;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   private Integer version;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   private Integer realmId;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   private String createUserId;
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   private LocalDateTime createTime;
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   private String updateUserId;
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   private LocalDateTime updateTime;
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   private String createGroupId;
 
+  /**
+   * Type Name
+   */
+  @Description("Type Name")
   private String __typename = "OrderUserRelation";
 
+  /**
+   * Count of Relationship Object between 订单 and 用户
+   */
+  @Description("Count of Relationship Object between 订单 and 用户")
   private Integer idCount;
 
+  /**
+   * Max of ID
+   */
+  @Description("Max of ID")
   private Integer idMax;
 
+  /**
+   * Min of ID
+   */
+  @Description("Min of ID")
   private Integer idMin;
 
+  /**
+   * Count of 订单 Reference
+   */
+  @Description("Count of 订单 Reference")
   private Integer orderRefCount;
 
+  /**
+   * Max of 订单 Reference
+   */
+  @Description("Max of 订单 Reference")
   private String orderRefMax;
 
+  /**
+   * Min of 订单 Reference
+   */
+  @Description("Min of 订单 Reference")
   private String orderRefMin;
 
+  /**
+   * Count of 用户 Reference
+   */
+  @Description("Count of 用户 Reference")
   private Integer userRefCount;
 
+  /**
+   * Sum of 用户 Reference
+   */
+  @Description("Sum of 用户 Reference")
   private Integer userRefSum;
 
+  /**
+   * Avg of 用户 Reference
+   */
+  @Description("Avg of 用户 Reference")
   private Integer userRefAvg;
 
+  /**
+   * Max of 用户 Reference
+   */
+  @Description("Max of 用户 Reference")
   private Integer userRefMax;
 
+  /**
+   * Min of 用户 Reference
+   */
+  @Description("Min of 用户 Reference")
   private Integer userRefMin;
 
   public String getId() {
@@ -281,5 +387,25 @@ public class OrderUserRelation implements Meta {
 
   public void setUserRefMin(Integer userRefMin) {
     this.userRefMin = userRefMin;
+  }
+
+  public OrderUserRelationInput toInput() {
+    OrderUserRelationInput input = new OrderUserRelationInput();
+    input.setId(this.getId());
+    input.setOrderRef(this.getOrderRef());
+    if(getOrder() != null) {
+      input.setOrder(this.getOrder().toInput());
+    }
+    input.setUserRef(this.getUserRef());
+    input.setIsDeprecated(this.getIsDeprecated());
+    input.setVersion(this.getVersion());
+    input.setRealmId(this.getRealmId());
+    input.setCreateUserId(this.getCreateUserId());
+    input.setCreateTime(this.getCreateTime());
+    input.setUpdateUserId(this.getUpdateUserId());
+    input.setUpdateTime(this.getUpdateTime());
+    input.setCreateGroupId(this.getCreateGroupId());
+    input.set__typename(this.get__typename());
+    return input;
   }
 }

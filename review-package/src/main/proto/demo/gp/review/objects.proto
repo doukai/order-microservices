@@ -18,70 +18,85 @@ message Review {
     string content = 2; /* 评论内容 */
     optional float rating = 3; /* 评分 */
     optional demo.gp.user.User user = 4; /* 评论人 */
-    bool is_deprecated = 5;
-    int32 version = 6;
-    int32 realm_id = 7;
-    string create_user_id = 8;
-    google.protobuf.Timestamp create_time = 9;
-    string update_user_id = 10;
-    google.protobuf.Timestamp update_time = 11;
-    string create_group_id = 12;
-    string intro_typename = 13;
-    repeated ReviewUserRelation review_user_relation = 14;
-    int32 id_count = 15;
-    int32 id_max = 16;
-    int32 id_min = 17;
-    int32 content_count = 18;
-    string content_max = 19;
-    string content_min = 20;
-    int32 rating_count = 21;
-    float rating_sum = 22;
-    float rating_avg = 23;
-    float rating_max = 24;
-    float rating_min = 25;
+    bool is_deprecated = 5; /* Is Deprecated */
+    int32 version = 6; /* Version */
+    int32 realm_id = 7; /* Realm ID */
+    string create_user_id = 8; /* Create User ID */
+    google.protobuf.Timestamp create_time = 9; /* Create Time */
+    string update_user_id = 10; /* Update User ID */
+    google.protobuf.Timestamp update_time = 11; /* Update Time */
+    string create_group_id = 12; /* Create Group ID */
+    string intro_typename = 13; /* Type Name */
+    repeated ReviewUserRelation review_user_relation = 14; /* Relationship Object between 评论 and 用户 */
+    int32 id_count = 15; /* Count of 评论 */
+    int32 id_max = 16; /* Max of 评论ID */
+    int32 id_min = 17; /* Min of 评论ID */
+    int32 content_count = 18; /* Count of 评论内容 */
+    string content_max = 19; /* Max of 评论内容 */
+    string content_min = 20; /* Min of 评论内容 */
+    int32 rating_count = 21; /* Count of 评分 */
+    float rating_sum = 22; /* Sum of 评分 */
+    float rating_avg = 23; /* Avg of 评分 */
+    float rating_max = 24; /* Max of 评分 */
+    float rating_min = 25; /* Min of 评分 */
 }
+/**
+* Relationship Object between 评论 and 用户
+*/
 message ReviewUserRelation {
-    string id = 1;
-    string review_ref = 2;
-    Review review = 3;
-    int32 user_ref = 4;
-    demo.gp.user.User user = 5;
-    bool is_deprecated = 6;
-    int32 version = 7;
-    int32 realm_id = 8;
-    string create_user_id = 9;
-    google.protobuf.Timestamp create_time = 10;
-    string update_user_id = 11;
-    google.protobuf.Timestamp update_time = 12;
-    string create_group_id = 13;
-    string intro_typename = 14;
-    int32 id_count = 15;
-    int32 id_max = 16;
-    int32 id_min = 17;
-    int32 review_ref_count = 18;
-    string review_ref_max = 19;
-    string review_ref_min = 20;
-    int32 user_ref_count = 21;
-    int32 user_ref_sum = 22;
-    int32 user_ref_avg = 23;
-    int32 user_ref_max = 24;
-    int32 user_ref_min = 25;
+    string id = 1; /* ID */
+    string review_ref = 2; /* 评论 Reference */
+    Review review = 3; /* 评论 */
+    int32 user_ref = 4; /* 用户 Reference */
+    demo.gp.user.User user = 5; /* 用户 */
+    bool is_deprecated = 6; /* Is Deprecated */
+    int32 version = 7; /* Version */
+    int32 realm_id = 8; /* Realm ID */
+    string create_user_id = 9; /* Create User ID */
+    google.protobuf.Timestamp create_time = 10; /* Create Time */
+    string update_user_id = 11; /* Update User ID */
+    google.protobuf.Timestamp update_time = 12; /* Update Time */
+    string create_group_id = 13; /* Create Group ID */
+    string intro_typename = 14; /* Type Name */
+    int32 id_count = 15; /* Count of Relationship Object between 评论 and 用户 */
+    int32 id_max = 16; /* Max of ID */
+    int32 id_min = 17; /* Min of ID */
+    int32 review_ref_count = 18; /* Count of 评论 Reference */
+    string review_ref_max = 19; /* Max of 评论 Reference */
+    string review_ref_min = 20; /* Min of 评论 Reference */
+    int32 user_ref_count = 21; /* Count of 用户 Reference */
+    int32 user_ref_sum = 22; /* Sum of 用户 Reference */
+    int32 user_ref_avg = 23; /* Avg of 用户 Reference */
+    int32 user_ref_max = 24; /* Max of 用户 Reference */
+    int32 user_ref_min = 25; /* Min of 用户 Reference */
 }
+/**
+* Connection Object for 评论
+*/
 message ReviewConnection {
-    int32 total_count = 1;
-    io.graphoenix.core.PageInfo page_info = 2;
-    repeated ReviewEdge edges = 3;
+    int32 total_count = 1; /* Total */
+    io.graphoenix.core.PageInfo page_info = 2; /* Page Info */
+    repeated ReviewEdge edges = 3; /* Edges */
 }
+/**
+* Edge Object for 评论
+*/
 message ReviewEdge {
-    Review node = 1;
-    string cursor = 2;
+    Review node = 1; /* Node */
+    string cursor = 2; /* Cursor */
 }
+/**
+* Connection Object for Relationship Object between 评论 and 用户
+*/
 message ReviewUserRelationConnection {
-    int32 total_count = 1;
-    io.graphoenix.core.PageInfo page_info = 2;
-    repeated ReviewUserRelationEdge edges = 3;
+    int32 total_count = 1; /* Total */
+    io.graphoenix.core.PageInfo page_info = 2; /* Page Info */
+    repeated ReviewUserRelationEdge edges = 3; /* Edges */
 }
+/**
+* Edge Object for Relationship Object between 评论 and 用户
+*/
 message ReviewUserRelationEdge {
-    ReviewUserRelation node = 1;
-    string cursor = 2;
+    ReviewUserRelation node = 1; /* Node */
+    string cursor = 2; /* Cursor */
 }

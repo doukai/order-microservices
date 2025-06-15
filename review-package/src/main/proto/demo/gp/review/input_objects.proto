@@ -11,463 +11,639 @@ import "io/graphoenix/core/input_objects.proto";
 import "demo/gp/user/input_objects.proto";
 import "google/protobuf/timestamp.proto";
 
+/**
+* Query Expression Input for 评论
+*/
+message ReviewExpressionBase {
+    io.graphoenix.core.StringExpression id = 1; /* 评论ID */
+    io.graphoenix.core.StringExpression content = 2; /* 评论内容 */
+    io.graphoenix.core.FloatExpression rating = 3; /* 评分 */
+    demo.gp.user.UserExpression user = 4; /* 评论人 */
+    bool include_deprecated = 5; /* Include Deprecated */
+    io.graphoenix.core.IntExpression version = 6; /* Version */
+    io.graphoenix.core.IntExpression realm_id = 7; /* Realm ID */
+    io.graphoenix.core.StringExpression create_user_id = 8; /* Create User ID */
+    io.graphoenix.core.StringExpression create_time = 9; /* Create Time */
+    io.graphoenix.core.StringExpression update_user_id = 10; /* Update User ID */
+    io.graphoenix.core.StringExpression update_time = 11; /* Update Time */
+    io.graphoenix.core.StringExpression create_group_id = 12; /* Create Group ID */
+    io.graphoenix.core.StringExpression intro_typename = 13; /* Type Name */
+    ReviewUserRelationExpression review_user_relation = 14; /* Relationship Object between 评论 and 用户 */
+    bool not = 15; /* Not */
+    io.graphoenix.core.Conditional cond = 16; /* Condition */
+    repeated ReviewExpression exs = 17; /* Expressions */
+}
+/**
+* Mutation Input for 评论
+*/
+message ReviewInputBase {
+    string id = 1; /* 评论ID */
+    string content = 2; /* 评论内容 */
+    float rating = 3; /* 评分 */
+    demo.gp.user.UserInput user = 4; /* 评论人 */
+    bool is_deprecated = 5; /* Is Deprecated */
+    int32 version = 6; /* Version */
+    int32 realm_id = 7; /* Realm ID */
+    string create_user_id = 8; /* Create User ID */
+    google.protobuf.Timestamp create_time = 9; /* Create Time */
+    string update_user_id = 10; /* Update User ID */
+    google.protobuf.Timestamp update_time = 11; /* Update Time */
+    string create_group_id = 12; /* Create Group ID */
+    string intro_typename = 13; /* Type Name */
+    repeated ReviewUserRelationInput review_user_relation = 14; /* Relationship Object between 评论 and 用户 */
+    ReviewExpression where = 15; /* Where */
+}
+/**
+* Query Expression Input for 评论
+*/
 message ReviewExpression {
-    io.graphoenix.core.StringExpression id = 1;
-    io.graphoenix.core.StringExpression content = 2;
-    io.graphoenix.core.FloatExpression rating = 3;
-    demo.gp.user.UserExpression user = 4;
-    bool include_deprecated = 5;
-    io.graphoenix.core.IntExpression version = 6;
-    io.graphoenix.core.IntExpression realm_id = 7;
-    io.graphoenix.core.StringExpression create_user_id = 8;
-    io.graphoenix.core.StringExpression create_time = 9;
-    io.graphoenix.core.StringExpression update_user_id = 10;
-    io.graphoenix.core.StringExpression update_time = 11;
-    io.graphoenix.core.StringExpression create_group_id = 12;
-    io.graphoenix.core.StringExpression intro_typename = 13;
-    ReviewUserRelationExpression review_user_relation = 14;
-    bool not = 15;
-    io.graphoenix.core.Conditional cond = 16;
-    repeated ReviewExpression exs = 17;
+    io.graphoenix.core.StringExpression id = 1; /* 评论ID */
+    io.graphoenix.core.StringExpression content = 2; /* 评论内容 */
+    io.graphoenix.core.FloatExpression rating = 3; /* 评分 */
+    demo.gp.user.UserExpression user = 4; /* 评论人 */
+    bool include_deprecated = 5; /* Include Deprecated */
+    io.graphoenix.core.IntExpression version = 6; /* Version */
+    io.graphoenix.core.IntExpression realm_id = 7; /* Realm ID */
+    io.graphoenix.core.StringExpression create_user_id = 8; /* Create User ID */
+    io.graphoenix.core.StringExpression create_time = 9; /* Create Time */
+    io.graphoenix.core.StringExpression update_user_id = 10; /* Update User ID */
+    io.graphoenix.core.StringExpression update_time = 11; /* Update Time */
+    io.graphoenix.core.StringExpression create_group_id = 12; /* Create Group ID */
+    io.graphoenix.core.StringExpression intro_typename = 13; /* Type Name */
+    ReviewUserRelationExpression review_user_relation = 14; /* Relationship Object between 评论 and 用户 */
+    bool not = 15; /* Not */
+    io.graphoenix.core.Conditional cond = 16; /* Condition */
+    repeated ReviewExpression exs = 17; /* Expressions */
 }
+/**
+* Mutation Input for 评论
+*/
 message ReviewInput {
-    string id = 1;
-    string content = 2;
-    float rating = 3;
-    demo.gp.user.UserInput user = 4;
-    bool is_deprecated = 5;
-    int32 version = 6;
-    int32 realm_id = 7;
-    string create_user_id = 8;
-    google.protobuf.Timestamp create_time = 9;
-    string update_user_id = 10;
-    google.protobuf.Timestamp update_time = 11;
-    string create_group_id = 12;
-    string intro_typename = 13;
-    repeated ReviewUserRelationInput review_user_relation = 14;
-    ReviewExpression where = 15;
+    string id = 1; /* 评论ID */
+    string content = 2; /* 评论内容 */
+    float rating = 3; /* 评分 */
+    demo.gp.user.UserInput user = 4; /* 评论人 */
+    bool is_deprecated = 5; /* Is Deprecated */
+    int32 version = 6; /* Version */
+    int32 realm_id = 7; /* Realm ID */
+    string create_user_id = 8; /* Create User ID */
+    google.protobuf.Timestamp create_time = 9; /* Create Time */
+    string update_user_id = 10; /* Update User ID */
+    google.protobuf.Timestamp update_time = 11; /* Update Time */
+    string create_group_id = 12; /* Create Group ID */
+    string intro_typename = 13; /* Type Name */
+    repeated ReviewUserRelationInput review_user_relation = 14; /* Relationship Object between 评论 and 用户 */
+    ReviewExpression where = 15; /* Where */
 }
+/**
+* Order Input for 评论
+*/
 message ReviewOrderBy {
-    io.graphoenix.core.Sort id = 1;
-    io.graphoenix.core.Sort content = 2;
-    io.graphoenix.core.Sort rating = 3;
-    io.graphoenix.core.Sort is_deprecated = 4;
-    io.graphoenix.core.Sort version = 5;
-    io.graphoenix.core.Sort realm_id = 6;
-    io.graphoenix.core.Sort create_user_id = 7;
-    io.graphoenix.core.Sort create_time = 8;
-    io.graphoenix.core.Sort update_user_id = 9;
-    io.graphoenix.core.Sort update_time = 10;
-    io.graphoenix.core.Sort create_group_id = 11;
-    io.graphoenix.core.Sort intro_typename = 12;
+    io.graphoenix.core.Sort id = 1; /* 评论ID */
+    io.graphoenix.core.Sort content = 2; /* 评论内容 */
+    io.graphoenix.core.Sort rating = 3; /* 评分 */
+    demo.gp.user.UserOrderBy user = 4; /* 评论人 */
+    io.graphoenix.core.Sort is_deprecated = 5; /* Is Deprecated */
+    io.graphoenix.core.Sort version = 6; /* Version */
+    io.graphoenix.core.Sort realm_id = 7; /* Realm ID */
+    io.graphoenix.core.Sort create_user_id = 8; /* Create User ID */
+    io.graphoenix.core.Sort create_time = 9; /* Create Time */
+    io.graphoenix.core.Sort update_user_id = 10; /* Update User ID */
+    io.graphoenix.core.Sort update_time = 11; /* Update Time */
+    io.graphoenix.core.Sort create_group_id = 12; /* Create Group ID */
+    io.graphoenix.core.Sort intro_typename = 13; /* Type Name */
+    ReviewUserRelationOrderBy review_user_relation = 14; /* Relationship Object between 评论 and 用户 */
+    io.graphoenix.core.Sort id_count = 15; /* Count of 评论 */
+    io.graphoenix.core.Sort id_max = 16; /* Max of 评论ID */
+    io.graphoenix.core.Sort id_min = 17; /* Min of 评论ID */
+    io.graphoenix.core.Sort content_count = 18; /* Count of 评论内容 */
+    io.graphoenix.core.Sort content_max = 19; /* Max of 评论内容 */
+    io.graphoenix.core.Sort content_min = 20; /* Min of 评论内容 */
+    io.graphoenix.core.Sort rating_count = 21; /* Count of 评分 */
+    io.graphoenix.core.Sort rating_sum = 22; /* Sum of 评分 */
+    io.graphoenix.core.Sort rating_avg = 23; /* Avg of 评分 */
+    io.graphoenix.core.Sort rating_max = 24; /* Max of 评分 */
+    io.graphoenix.core.Sort rating_min = 25; /* Min of 评分 */
 }
+/**
+* Query Expression Input for Relationship Object between 评论 and 用户
+*/
+message ReviewUserRelationExpressionBase {
+    io.graphoenix.core.StringExpression id = 1; /* ID */
+    io.graphoenix.core.StringExpression review_ref = 2; /* 评论 Reference */
+    ReviewExpression review = 3; /* 评论 */
+    io.graphoenix.core.IntExpression user_ref = 4; /* 用户 Reference */
+    demo.gp.user.UserExpression user = 5; /* 用户 */
+    bool include_deprecated = 6; /* Include Deprecated */
+    io.graphoenix.core.IntExpression version = 7; /* Version */
+    io.graphoenix.core.IntExpression realm_id = 8; /* Realm ID */
+    io.graphoenix.core.StringExpression create_user_id = 9; /* Create User ID */
+    io.graphoenix.core.StringExpression create_time = 10; /* Create Time */
+    io.graphoenix.core.StringExpression update_user_id = 11; /* Update User ID */
+    io.graphoenix.core.StringExpression update_time = 12; /* Update Time */
+    io.graphoenix.core.StringExpression create_group_id = 13; /* Create Group ID */
+    io.graphoenix.core.StringExpression intro_typename = 14; /* Type Name */
+    bool not = 15; /* Not */
+    io.graphoenix.core.Conditional cond = 16; /* Condition */
+    repeated ReviewUserRelationExpression exs = 17; /* Expressions */
+}
+/**
+* Mutation Input for Relationship Object between 评论 and 用户
+*/
+message ReviewUserRelationInputBase {
+    string id = 1; /* ID */
+    string review_ref = 2; /* 评论 Reference */
+    ReviewInput review = 3; /* 评论 */
+    int32 user_ref = 4; /* 用户 Reference */
+    demo.gp.user.UserInput user = 5; /* 用户 */
+    bool is_deprecated = 6; /* Is Deprecated */
+    int32 version = 7; /* Version */
+    int32 realm_id = 8; /* Realm ID */
+    string create_user_id = 9; /* Create User ID */
+    google.protobuf.Timestamp create_time = 10; /* Create Time */
+    string update_user_id = 11; /* Update User ID */
+    google.protobuf.Timestamp update_time = 12; /* Update Time */
+    string create_group_id = 13; /* Create Group ID */
+    string intro_typename = 14; /* Type Name */
+    ReviewUserRelationExpression where = 15; /* Where */
+}
+/**
+* Query Expression Input for Relationship Object between 评论 and 用户
+*/
 message ReviewUserRelationExpression {
-    io.graphoenix.core.StringExpression id = 1;
-    io.graphoenix.core.StringExpression review_ref = 2;
-    ReviewExpression review = 3;
-    io.graphoenix.core.IntExpression user_ref = 4;
-    demo.gp.user.UserExpression user = 5;
-    bool include_deprecated = 6;
-    io.graphoenix.core.IntExpression version = 7;
-    io.graphoenix.core.IntExpression realm_id = 8;
-    io.graphoenix.core.StringExpression create_user_id = 9;
-    io.graphoenix.core.StringExpression create_time = 10;
-    io.graphoenix.core.StringExpression update_user_id = 11;
-    io.graphoenix.core.StringExpression update_time = 12;
-    io.graphoenix.core.StringExpression create_group_id = 13;
-    io.graphoenix.core.StringExpression intro_typename = 14;
-    bool not = 15;
-    io.graphoenix.core.Conditional cond = 16;
-    repeated ReviewUserRelationExpression exs = 17;
+    io.graphoenix.core.StringExpression id = 1; /* ID */
+    io.graphoenix.core.StringExpression review_ref = 2; /* 评论 Reference */
+    ReviewExpression review = 3; /* 评论 */
+    io.graphoenix.core.IntExpression user_ref = 4; /* 用户 Reference */
+    demo.gp.user.UserExpression user = 5; /* 用户 */
+    bool include_deprecated = 6; /* Include Deprecated */
+    io.graphoenix.core.IntExpression version = 7; /* Version */
+    io.graphoenix.core.IntExpression realm_id = 8; /* Realm ID */
+    io.graphoenix.core.StringExpression create_user_id = 9; /* Create User ID */
+    io.graphoenix.core.StringExpression create_time = 10; /* Create Time */
+    io.graphoenix.core.StringExpression update_user_id = 11; /* Update User ID */
+    io.graphoenix.core.StringExpression update_time = 12; /* Update Time */
+    io.graphoenix.core.StringExpression create_group_id = 13; /* Create Group ID */
+    io.graphoenix.core.StringExpression intro_typename = 14; /* Type Name */
+    bool not = 15; /* Not */
+    io.graphoenix.core.Conditional cond = 16; /* Condition */
+    repeated ReviewUserRelationExpression exs = 17; /* Expressions */
 }
+/**
+* Mutation Input for Relationship Object between 评论 and 用户
+*/
 message ReviewUserRelationInput {
-    string id = 1;
-    string review_ref = 2;
-    ReviewInput review = 3;
-    int32 user_ref = 4;
-    demo.gp.user.UserInput user = 5;
-    bool is_deprecated = 6;
-    int32 version = 7;
-    int32 realm_id = 8;
-    string create_user_id = 9;
-    google.protobuf.Timestamp create_time = 10;
-    string update_user_id = 11;
-    google.protobuf.Timestamp update_time = 12;
-    string create_group_id = 13;
-    string intro_typename = 14;
-    ReviewUserRelationExpression where = 15;
+    string id = 1; /* ID */
+    string review_ref = 2; /* 评论 Reference */
+    ReviewInput review = 3; /* 评论 */
+    int32 user_ref = 4; /* 用户 Reference */
+    demo.gp.user.UserInput user = 5; /* 用户 */
+    bool is_deprecated = 6; /* Is Deprecated */
+    int32 version = 7; /* Version */
+    int32 realm_id = 8; /* Realm ID */
+    string create_user_id = 9; /* Create User ID */
+    google.protobuf.Timestamp create_time = 10; /* Create Time */
+    string update_user_id = 11; /* Update User ID */
+    google.protobuf.Timestamp update_time = 12; /* Update Time */
+    string create_group_id = 13; /* Create Group ID */
+    string intro_typename = 14; /* Type Name */
+    ReviewUserRelationExpression where = 15; /* Where */
 }
+/**
+* Order Input for Relationship Object between 评论 and 用户
+*/
 message ReviewUserRelationOrderBy {
-    io.graphoenix.core.Sort id = 1;
-    io.graphoenix.core.Sort review_ref = 2;
-    io.graphoenix.core.Sort user_ref = 3;
-    io.graphoenix.core.Sort is_deprecated = 4;
-    io.graphoenix.core.Sort version = 5;
-    io.graphoenix.core.Sort realm_id = 6;
-    io.graphoenix.core.Sort create_user_id = 7;
-    io.graphoenix.core.Sort create_time = 8;
-    io.graphoenix.core.Sort update_user_id = 9;
-    io.graphoenix.core.Sort update_time = 10;
-    io.graphoenix.core.Sort create_group_id = 11;
-    io.graphoenix.core.Sort intro_typename = 12;
+    io.graphoenix.core.Sort id = 1; /* ID */
+    io.graphoenix.core.Sort review_ref = 2; /* 评论 Reference */
+    ReviewOrderBy review = 3; /* 评论 */
+    io.graphoenix.core.Sort user_ref = 4; /* 用户 Reference */
+    demo.gp.user.UserOrderBy user = 5; /* 用户 */
+    io.graphoenix.core.Sort is_deprecated = 6; /* Is Deprecated */
+    io.graphoenix.core.Sort version = 7; /* Version */
+    io.graphoenix.core.Sort realm_id = 8; /* Realm ID */
+    io.graphoenix.core.Sort create_user_id = 9; /* Create User ID */
+    io.graphoenix.core.Sort create_time = 10; /* Create Time */
+    io.graphoenix.core.Sort update_user_id = 11; /* Update User ID */
+    io.graphoenix.core.Sort update_time = 12; /* Update Time */
+    io.graphoenix.core.Sort create_group_id = 13; /* Create Group ID */
+    io.graphoenix.core.Sort intro_typename = 14; /* Type Name */
+    io.graphoenix.core.Sort id_count = 15; /* Count of Relationship Object between 评论 and 用户 */
+    io.graphoenix.core.Sort id_max = 16; /* Max of ID */
+    io.graphoenix.core.Sort id_min = 17; /* Min of ID */
+    io.graphoenix.core.Sort review_ref_count = 18; /* Count of 评论 Reference */
+    io.graphoenix.core.Sort review_ref_max = 19; /* Max of 评论 Reference */
+    io.graphoenix.core.Sort review_ref_min = 20; /* Min of 评论 Reference */
+    io.graphoenix.core.Sort user_ref_count = 21; /* Count of 用户 Reference */
+    io.graphoenix.core.Sort user_ref_sum = 22; /* Sum of 用户 Reference */
+    io.graphoenix.core.Sort user_ref_avg = 23; /* Avg of 用户 Reference */
+    io.graphoenix.core.Sort user_ref_max = 24; /* Max of 用户 Reference */
+    io.graphoenix.core.Sort user_ref_min = 25; /* Min of 用户 Reference */
 }
+/**
+* Query Arguments for 评论
+*/
 message ReviewQueryArguments {
-    io.graphoenix.core.StringExpression id = 1;
-    io.graphoenix.core.StringExpression content = 2;
-    io.graphoenix.core.FloatExpression rating = 3;
-    demo.gp.user.UserExpression user = 4;
-    bool include_deprecated = 5;
-    io.graphoenix.core.IntExpression version = 6;
-    io.graphoenix.core.IntExpression realm_id = 7;
-    io.graphoenix.core.StringExpression create_user_id = 8;
-    io.graphoenix.core.StringExpression create_time = 9;
-    io.graphoenix.core.StringExpression update_user_id = 10;
-    io.graphoenix.core.StringExpression update_time = 11;
-    io.graphoenix.core.StringExpression create_group_id = 12;
-    io.graphoenix.core.StringExpression intro_typename = 13;
-    ReviewUserRelationExpression review_user_relation = 14;
-    repeated string group_by = 15;
-    bool not = 16;
-    io.graphoenix.core.Conditional cond = 17;
-    repeated ReviewExpression exs = 18;
+    io.graphoenix.core.StringExpression id = 1; /* 评论ID */
+    io.graphoenix.core.StringExpression content = 2; /* 评论内容 */
+    io.graphoenix.core.FloatExpression rating = 3; /* 评分 */
+    demo.gp.user.UserExpression user = 4; /* 评论人 */
+    bool include_deprecated = 5; /* Include Deprecated */
+    io.graphoenix.core.IntExpression version = 6; /* Version */
+    io.graphoenix.core.IntExpression realm_id = 7; /* Realm ID */
+    io.graphoenix.core.StringExpression create_user_id = 8; /* Create User ID */
+    io.graphoenix.core.StringExpression create_time = 9; /* Create Time */
+    io.graphoenix.core.StringExpression update_user_id = 10; /* Update User ID */
+    io.graphoenix.core.StringExpression update_time = 11; /* Update Time */
+    io.graphoenix.core.StringExpression create_group_id = 12; /* Create Group ID */
+    io.graphoenix.core.StringExpression intro_typename = 13; /* Type Name */
+    ReviewUserRelationExpression review_user_relation = 14; /* Relationship Object between 评论 and 用户 */
+    repeated string group_by = 15; /* Group By */
+    bool not = 16; /* Not */
+    io.graphoenix.core.Conditional cond = 17; /* Condition */
+    repeated ReviewExpression exs = 18; /* Expressions */
 }
+/**
+* Query Arguments for 评论 List
+*/
 message ReviewListQueryArguments {
-    io.graphoenix.core.StringExpression id = 1;
-    io.graphoenix.core.StringExpression content = 2;
-    io.graphoenix.core.FloatExpression rating = 3;
-    demo.gp.user.UserExpression user = 4;
-    bool include_deprecated = 5;
-    io.graphoenix.core.IntExpression version = 6;
-    io.graphoenix.core.IntExpression realm_id = 7;
-    io.graphoenix.core.StringExpression create_user_id = 8;
-    io.graphoenix.core.StringExpression create_time = 9;
-    io.graphoenix.core.StringExpression update_user_id = 10;
-    io.graphoenix.core.StringExpression update_time = 11;
-    io.graphoenix.core.StringExpression create_group_id = 12;
-    io.graphoenix.core.StringExpression intro_typename = 13;
-    ReviewUserRelationExpression review_user_relation = 14;
-    ReviewOrderBy order_by = 15;
-    repeated string group_by = 16;
-    bool not = 17;
-    io.graphoenix.core.Conditional cond = 18;
-    repeated ReviewExpression exs = 19;
-    int32 first = 20;
-    int32 last = 21;
-    int32 offset = 22;
-    string after = 23;
-    string before = 24;
+    io.graphoenix.core.StringExpression id = 1; /* 评论ID */
+    io.graphoenix.core.StringExpression content = 2; /* 评论内容 */
+    io.graphoenix.core.FloatExpression rating = 3; /* 评分 */
+    demo.gp.user.UserExpression user = 4; /* 评论人 */
+    bool include_deprecated = 5; /* Include Deprecated */
+    io.graphoenix.core.IntExpression version = 6; /* Version */
+    io.graphoenix.core.IntExpression realm_id = 7; /* Realm ID */
+    io.graphoenix.core.StringExpression create_user_id = 8; /* Create User ID */
+    io.graphoenix.core.StringExpression create_time = 9; /* Create Time */
+    io.graphoenix.core.StringExpression update_user_id = 10; /* Update User ID */
+    io.graphoenix.core.StringExpression update_time = 11; /* Update Time */
+    io.graphoenix.core.StringExpression create_group_id = 12; /* Create Group ID */
+    io.graphoenix.core.StringExpression intro_typename = 13; /* Type Name */
+    ReviewUserRelationExpression review_user_relation = 14; /* Relationship Object between 评论 and 用户 */
+    ReviewOrderBy order_by = 15; /* Order By */
+    repeated string group_by = 16; /* Group By */
+    bool not = 17; /* Not */
+    io.graphoenix.core.Conditional cond = 18; /* Condition */
+    repeated ReviewExpression exs = 19; /* Expressions */
+    int32 first = 20; /* First */
+    int32 last = 21; /* Last */
+    int32 offset = 22; /* Offset */
+    string after = 23; /* After */
+    string before = 24; /* Before */
 }
+/**
+* Query Arguments for 评论 Connection
+*/
 message ReviewConnectionQueryArguments {
-    io.graphoenix.core.StringExpression id = 1;
-    io.graphoenix.core.StringExpression content = 2;
-    io.graphoenix.core.FloatExpression rating = 3;
-    demo.gp.user.UserExpression user = 4;
-    bool include_deprecated = 5;
-    io.graphoenix.core.IntExpression version = 6;
-    io.graphoenix.core.IntExpression realm_id = 7;
-    io.graphoenix.core.StringExpression create_user_id = 8;
-    io.graphoenix.core.StringExpression create_time = 9;
-    io.graphoenix.core.StringExpression update_user_id = 10;
-    io.graphoenix.core.StringExpression update_time = 11;
-    io.graphoenix.core.StringExpression create_group_id = 12;
-    io.graphoenix.core.StringExpression intro_typename = 13;
-    ReviewUserRelationExpression review_user_relation = 14;
-    ReviewOrderBy order_by = 15;
-    repeated string group_by = 16;
-    bool not = 17;
-    io.graphoenix.core.Conditional cond = 18;
-    repeated ReviewExpression exs = 19;
-    int32 first = 20;
-    int32 last = 21;
-    int32 offset = 22;
-    string after = 23;
-    string before = 24;
+    io.graphoenix.core.StringExpression id = 1; /* 评论ID */
+    io.graphoenix.core.StringExpression content = 2; /* 评论内容 */
+    io.graphoenix.core.FloatExpression rating = 3; /* 评分 */
+    demo.gp.user.UserExpression user = 4; /* 评论人 */
+    bool include_deprecated = 5; /* Include Deprecated */
+    io.graphoenix.core.IntExpression version = 6; /* Version */
+    io.graphoenix.core.IntExpression realm_id = 7; /* Realm ID */
+    io.graphoenix.core.StringExpression create_user_id = 8; /* Create User ID */
+    io.graphoenix.core.StringExpression create_time = 9; /* Create Time */
+    io.graphoenix.core.StringExpression update_user_id = 10; /* Update User ID */
+    io.graphoenix.core.StringExpression update_time = 11; /* Update Time */
+    io.graphoenix.core.StringExpression create_group_id = 12; /* Create Group ID */
+    io.graphoenix.core.StringExpression intro_typename = 13; /* Type Name */
+    ReviewUserRelationExpression review_user_relation = 14; /* Relationship Object between 评论 and 用户 */
+    ReviewOrderBy order_by = 15; /* Order By */
+    repeated string group_by = 16; /* Group By */
+    bool not = 17; /* Not */
+    io.graphoenix.core.Conditional cond = 18; /* Condition */
+    repeated ReviewExpression exs = 19; /* Expressions */
+    int32 first = 20; /* First */
+    int32 last = 21; /* Last */
+    int32 offset = 22; /* Offset */
+    string after = 23; /* After */
+    string before = 24; /* Before */
 }
+/**
+* Query Arguments for Relationship Object between 评论 and 用户
+*/
 message ReviewUserRelationQueryArguments {
-    io.graphoenix.core.StringExpression id = 1;
-    io.graphoenix.core.StringExpression review_ref = 2;
-    ReviewExpression review = 3;
-    io.graphoenix.core.IntExpression user_ref = 4;
-    demo.gp.user.UserExpression user = 5;
-    bool include_deprecated = 6;
-    io.graphoenix.core.IntExpression version = 7;
-    io.graphoenix.core.IntExpression realm_id = 8;
-    io.graphoenix.core.StringExpression create_user_id = 9;
-    io.graphoenix.core.StringExpression create_time = 10;
-    io.graphoenix.core.StringExpression update_user_id = 11;
-    io.graphoenix.core.StringExpression update_time = 12;
-    io.graphoenix.core.StringExpression create_group_id = 13;
-    io.graphoenix.core.StringExpression intro_typename = 14;
-    repeated string group_by = 15;
-    bool not = 16;
-    io.graphoenix.core.Conditional cond = 17;
-    repeated ReviewUserRelationExpression exs = 18;
+    io.graphoenix.core.StringExpression id = 1; /* ID */
+    io.graphoenix.core.StringExpression review_ref = 2; /* 评论 Reference */
+    ReviewExpression review = 3; /* 评论 */
+    io.graphoenix.core.IntExpression user_ref = 4; /* 用户 Reference */
+    demo.gp.user.UserExpression user = 5; /* 用户 */
+    bool include_deprecated = 6; /* Include Deprecated */
+    io.graphoenix.core.IntExpression version = 7; /* Version */
+    io.graphoenix.core.IntExpression realm_id = 8; /* Realm ID */
+    io.graphoenix.core.StringExpression create_user_id = 9; /* Create User ID */
+    io.graphoenix.core.StringExpression create_time = 10; /* Create Time */
+    io.graphoenix.core.StringExpression update_user_id = 11; /* Update User ID */
+    io.graphoenix.core.StringExpression update_time = 12; /* Update Time */
+    io.graphoenix.core.StringExpression create_group_id = 13; /* Create Group ID */
+    io.graphoenix.core.StringExpression intro_typename = 14; /* Type Name */
+    repeated string group_by = 15; /* Group By */
+    bool not = 16; /* Not */
+    io.graphoenix.core.Conditional cond = 17; /* Condition */
+    repeated ReviewUserRelationExpression exs = 18; /* Expressions */
 }
+/**
+* Query Arguments for Relationship Object between 评论 and 用户 List
+*/
 message ReviewUserRelationListQueryArguments {
-    io.graphoenix.core.StringExpression id = 1;
-    io.graphoenix.core.StringExpression review_ref = 2;
-    ReviewExpression review = 3;
-    io.graphoenix.core.IntExpression user_ref = 4;
-    demo.gp.user.UserExpression user = 5;
-    bool include_deprecated = 6;
-    io.graphoenix.core.IntExpression version = 7;
-    io.graphoenix.core.IntExpression realm_id = 8;
-    io.graphoenix.core.StringExpression create_user_id = 9;
-    io.graphoenix.core.StringExpression create_time = 10;
-    io.graphoenix.core.StringExpression update_user_id = 11;
-    io.graphoenix.core.StringExpression update_time = 12;
-    io.graphoenix.core.StringExpression create_group_id = 13;
-    io.graphoenix.core.StringExpression intro_typename = 14;
-    ReviewUserRelationOrderBy order_by = 15;
-    repeated string group_by = 16;
-    bool not = 17;
-    io.graphoenix.core.Conditional cond = 18;
-    repeated ReviewUserRelationExpression exs = 19;
-    int32 first = 20;
-    int32 last = 21;
-    int32 offset = 22;
-    string after = 23;
-    string before = 24;
+    io.graphoenix.core.StringExpression id = 1; /* ID */
+    io.graphoenix.core.StringExpression review_ref = 2; /* 评论 Reference */
+    ReviewExpression review = 3; /* 评论 */
+    io.graphoenix.core.IntExpression user_ref = 4; /* 用户 Reference */
+    demo.gp.user.UserExpression user = 5; /* 用户 */
+    bool include_deprecated = 6; /* Include Deprecated */
+    io.graphoenix.core.IntExpression version = 7; /* Version */
+    io.graphoenix.core.IntExpression realm_id = 8; /* Realm ID */
+    io.graphoenix.core.StringExpression create_user_id = 9; /* Create User ID */
+    io.graphoenix.core.StringExpression create_time = 10; /* Create Time */
+    io.graphoenix.core.StringExpression update_user_id = 11; /* Update User ID */
+    io.graphoenix.core.StringExpression update_time = 12; /* Update Time */
+    io.graphoenix.core.StringExpression create_group_id = 13; /* Create Group ID */
+    io.graphoenix.core.StringExpression intro_typename = 14; /* Type Name */
+    ReviewUserRelationOrderBy order_by = 15; /* Order By */
+    repeated string group_by = 16; /* Group By */
+    bool not = 17; /* Not */
+    io.graphoenix.core.Conditional cond = 18; /* Condition */
+    repeated ReviewUserRelationExpression exs = 19; /* Expressions */
+    int32 first = 20; /* First */
+    int32 last = 21; /* Last */
+    int32 offset = 22; /* Offset */
+    string after = 23; /* After */
+    string before = 24; /* Before */
 }
+/**
+* Query Arguments for Relationship Object between 评论 and 用户 Connection
+*/
 message ReviewUserRelationConnectionQueryArguments {
-    io.graphoenix.core.StringExpression id = 1;
-    io.graphoenix.core.StringExpression review_ref = 2;
-    ReviewExpression review = 3;
-    io.graphoenix.core.IntExpression user_ref = 4;
-    demo.gp.user.UserExpression user = 5;
-    bool include_deprecated = 6;
-    io.graphoenix.core.IntExpression version = 7;
-    io.graphoenix.core.IntExpression realm_id = 8;
-    io.graphoenix.core.StringExpression create_user_id = 9;
-    io.graphoenix.core.StringExpression create_time = 10;
-    io.graphoenix.core.StringExpression update_user_id = 11;
-    io.graphoenix.core.StringExpression update_time = 12;
-    io.graphoenix.core.StringExpression create_group_id = 13;
-    io.graphoenix.core.StringExpression intro_typename = 14;
-    ReviewUserRelationOrderBy order_by = 15;
-    repeated string group_by = 16;
-    bool not = 17;
-    io.graphoenix.core.Conditional cond = 18;
-    repeated ReviewUserRelationExpression exs = 19;
-    int32 first = 20;
-    int32 last = 21;
-    int32 offset = 22;
-    string after = 23;
-    string before = 24;
+    io.graphoenix.core.StringExpression id = 1; /* ID */
+    io.graphoenix.core.StringExpression review_ref = 2; /* 评论 Reference */
+    ReviewExpression review = 3; /* 评论 */
+    io.graphoenix.core.IntExpression user_ref = 4; /* 用户 Reference */
+    demo.gp.user.UserExpression user = 5; /* 用户 */
+    bool include_deprecated = 6; /* Include Deprecated */
+    io.graphoenix.core.IntExpression version = 7; /* Version */
+    io.graphoenix.core.IntExpression realm_id = 8; /* Realm ID */
+    io.graphoenix.core.StringExpression create_user_id = 9; /* Create User ID */
+    io.graphoenix.core.StringExpression create_time = 10; /* Create Time */
+    io.graphoenix.core.StringExpression update_user_id = 11; /* Update User ID */
+    io.graphoenix.core.StringExpression update_time = 12; /* Update Time */
+    io.graphoenix.core.StringExpression create_group_id = 13; /* Create Group ID */
+    io.graphoenix.core.StringExpression intro_typename = 14; /* Type Name */
+    ReviewUserRelationOrderBy order_by = 15; /* Order By */
+    repeated string group_by = 16; /* Group By */
+    bool not = 17; /* Not */
+    io.graphoenix.core.Conditional cond = 18; /* Condition */
+    repeated ReviewUserRelationExpression exs = 19; /* Expressions */
+    int32 first = 20; /* First */
+    int32 last = 21; /* Last */
+    int32 offset = 22; /* Offset */
+    string after = 23; /* After */
+    string before = 24; /* Before */
 }
+/**
+* Mutation Arguments for 评论
+*/
 message ReviewMutationArguments {
-    string id = 1;
-    string content = 2;
-    float rating = 3;
-    demo.gp.user.UserInput user = 4;
-    bool is_deprecated = 5;
-    int32 version = 6;
-    int32 realm_id = 7;
-    string create_user_id = 8;
-    google.protobuf.Timestamp create_time = 9;
-    string update_user_id = 10;
-    google.protobuf.Timestamp update_time = 11;
-    string create_group_id = 12;
-    string intro_typename = 13;
-    repeated ReviewUserRelationInput review_user_relation = 14;
-    ReviewInput input = 15;
-    ReviewExpression where = 16;
+    string id = 1; /* 评论ID */
+    string content = 2; /* 评论内容 */
+    float rating = 3; /* 评分 */
+    demo.gp.user.UserInput user = 4; /* 评论人 */
+    bool is_deprecated = 5; /* Is Deprecated */
+    int32 version = 6; /* Version */
+    int32 realm_id = 7; /* Realm ID */
+    string create_user_id = 8; /* Create User ID */
+    google.protobuf.Timestamp create_time = 9; /* Create Time */
+    string update_user_id = 10; /* Update User ID */
+    google.protobuf.Timestamp update_time = 11; /* Update Time */
+    string create_group_id = 12; /* Create Group ID */
+    string intro_typename = 13; /* Type Name */
+    repeated ReviewUserRelationInput review_user_relation = 14; /* Relationship Object between 评论 and 用户 */
+    ReviewInput input = 15; /* Input */
+    ReviewExpression where = 16; /* Where */
 }
+/**
+* Mutation Arguments for 评论 List
+*/
 message ReviewListMutationArguments {
-    string id = 1;
-    string content = 2;
-    float rating = 3;
-    demo.gp.user.UserInput user = 4;
-    bool is_deprecated = 5;
-    int32 version = 6;
-    int32 realm_id = 7;
-    string create_user_id = 8;
-    google.protobuf.Timestamp create_time = 9;
-    string update_user_id = 10;
-    google.protobuf.Timestamp update_time = 11;
-    string create_group_id = 12;
-    string intro_typename = 13;
-    repeated ReviewUserRelationInput review_user_relation = 14;
-    repeated ReviewInput list = 15;
-    ReviewExpression where = 16;
+    string id = 1; /* 评论ID */
+    string content = 2; /* 评论内容 */
+    float rating = 3; /* 评分 */
+    demo.gp.user.UserInput user = 4; /* 评论人 */
+    bool is_deprecated = 5; /* Is Deprecated */
+    int32 version = 6; /* Version */
+    int32 realm_id = 7; /* Realm ID */
+    string create_user_id = 8; /* Create User ID */
+    google.protobuf.Timestamp create_time = 9; /* Create Time */
+    string update_user_id = 10; /* Update User ID */
+    google.protobuf.Timestamp update_time = 11; /* Update Time */
+    string create_group_id = 12; /* Create Group ID */
+    string intro_typename = 13; /* Type Name */
+    repeated ReviewUserRelationInput review_user_relation = 14; /* Relationship Object between 评论 and 用户 */
+    repeated ReviewInput list = 15; /* Input List */
+    ReviewExpression where = 16; /* Where */
 }
+/**
+* Mutation Arguments for Relationship Object between 评论 and 用户
+*/
 message ReviewUserRelationMutationArguments {
-    string id = 1;
-    string review_ref = 2;
-    ReviewInput review = 3;
-    int32 user_ref = 4;
-    demo.gp.user.UserInput user = 5;
-    bool is_deprecated = 6;
-    int32 version = 7;
-    int32 realm_id = 8;
-    string create_user_id = 9;
-    google.protobuf.Timestamp create_time = 10;
-    string update_user_id = 11;
-    google.protobuf.Timestamp update_time = 12;
-    string create_group_id = 13;
-    string intro_typename = 14;
-    ReviewUserRelationInput input = 15;
-    ReviewUserRelationExpression where = 16;
+    string id = 1; /* ID */
+    string review_ref = 2; /* 评论 Reference */
+    ReviewInput review = 3; /* 评论 */
+    int32 user_ref = 4; /* 用户 Reference */
+    demo.gp.user.UserInput user = 5; /* 用户 */
+    bool is_deprecated = 6; /* Is Deprecated */
+    int32 version = 7; /* Version */
+    int32 realm_id = 8; /* Realm ID */
+    string create_user_id = 9; /* Create User ID */
+    google.protobuf.Timestamp create_time = 10; /* Create Time */
+    string update_user_id = 11; /* Update User ID */
+    google.protobuf.Timestamp update_time = 12; /* Update Time */
+    string create_group_id = 13; /* Create Group ID */
+    string intro_typename = 14; /* Type Name */
+    ReviewUserRelationInput input = 15; /* Input */
+    ReviewUserRelationExpression where = 16; /* Where */
 }
+/**
+* Mutation Arguments for Relationship Object between 评论 and 用户 List
+*/
 message ReviewUserRelationListMutationArguments {
-    string id = 1;
-    string review_ref = 2;
-    ReviewInput review = 3;
-    int32 user_ref = 4;
-    demo.gp.user.UserInput user = 5;
-    bool is_deprecated = 6;
-    int32 version = 7;
-    int32 realm_id = 8;
-    string create_user_id = 9;
-    google.protobuf.Timestamp create_time = 10;
-    string update_user_id = 11;
-    google.protobuf.Timestamp update_time = 12;
-    string create_group_id = 13;
-    string intro_typename = 14;
-    repeated ReviewUserRelationInput list = 15;
-    ReviewUserRelationExpression where = 16;
+    string id = 1; /* ID */
+    string review_ref = 2; /* 评论 Reference */
+    ReviewInput review = 3; /* 评论 */
+    int32 user_ref = 4; /* 用户 Reference */
+    demo.gp.user.UserInput user = 5; /* 用户 */
+    bool is_deprecated = 6; /* Is Deprecated */
+    int32 version = 7; /* Version */
+    int32 realm_id = 8; /* Realm ID */
+    string create_user_id = 9; /* Create User ID */
+    google.protobuf.Timestamp create_time = 10; /* Create Time */
+    string update_user_id = 11; /* Update User ID */
+    google.protobuf.Timestamp update_time = 12; /* Update Time */
+    string create_group_id = 13; /* Create Group ID */
+    string intro_typename = 14; /* Type Name */
+    repeated ReviewUserRelationInput list = 15; /* Input List */
+    ReviewUserRelationExpression where = 16; /* Where */
 }
+/**
+* Subscription Arguments for 评论
+*/
 message ReviewSubscriptionArguments {
-    io.graphoenix.core.StringExpression id = 1;
-    io.graphoenix.core.StringExpression content = 2;
-    io.graphoenix.core.FloatExpression rating = 3;
-    demo.gp.user.UserExpression user = 4;
-    bool include_deprecated = 5;
-    io.graphoenix.core.IntExpression version = 6;
-    io.graphoenix.core.IntExpression realm_id = 7;
-    io.graphoenix.core.StringExpression create_user_id = 8;
-    io.graphoenix.core.StringExpression create_time = 9;
-    io.graphoenix.core.StringExpression update_user_id = 10;
-    io.graphoenix.core.StringExpression update_time = 11;
-    io.graphoenix.core.StringExpression create_group_id = 12;
-    io.graphoenix.core.StringExpression intro_typename = 13;
-    ReviewUserRelationExpression review_user_relation = 14;
-    repeated string group_by = 15;
-    bool not = 16;
-    io.graphoenix.core.Conditional cond = 17;
-    repeated ReviewExpression exs = 18;
+    io.graphoenix.core.StringExpression id = 1; /* 评论ID */
+    io.graphoenix.core.StringExpression content = 2; /* 评论内容 */
+    io.graphoenix.core.FloatExpression rating = 3; /* 评分 */
+    demo.gp.user.UserExpression user = 4; /* 评论人 */
+    bool include_deprecated = 5; /* Include Deprecated */
+    io.graphoenix.core.IntExpression version = 6; /* Version */
+    io.graphoenix.core.IntExpression realm_id = 7; /* Realm ID */
+    io.graphoenix.core.StringExpression create_user_id = 8; /* Create User ID */
+    io.graphoenix.core.StringExpression create_time = 9; /* Create Time */
+    io.graphoenix.core.StringExpression update_user_id = 10; /* Update User ID */
+    io.graphoenix.core.StringExpression update_time = 11; /* Update Time */
+    io.graphoenix.core.StringExpression create_group_id = 12; /* Create Group ID */
+    io.graphoenix.core.StringExpression intro_typename = 13; /* Type Name */
+    ReviewUserRelationExpression review_user_relation = 14; /* Relationship Object between 评论 and 用户 */
+    repeated string group_by = 15; /* Group By */
+    bool not = 16; /* Not */
+    io.graphoenix.core.Conditional cond = 17; /* Condition */
+    repeated ReviewExpression exs = 18; /* Expressions */
 }
+/**
+* Subscription Arguments for 评论 List
+*/
 message ReviewListSubscriptionArguments {
-    io.graphoenix.core.StringExpression id = 1;
-    io.graphoenix.core.StringExpression content = 2;
-    io.graphoenix.core.FloatExpression rating = 3;
-    demo.gp.user.UserExpression user = 4;
-    bool include_deprecated = 5;
-    io.graphoenix.core.IntExpression version = 6;
-    io.graphoenix.core.IntExpression realm_id = 7;
-    io.graphoenix.core.StringExpression create_user_id = 8;
-    io.graphoenix.core.StringExpression create_time = 9;
-    io.graphoenix.core.StringExpression update_user_id = 10;
-    io.graphoenix.core.StringExpression update_time = 11;
-    io.graphoenix.core.StringExpression create_group_id = 12;
-    io.graphoenix.core.StringExpression intro_typename = 13;
-    ReviewUserRelationExpression review_user_relation = 14;
-    ReviewOrderBy order_by = 15;
-    repeated string group_by = 16;
-    bool not = 17;
-    io.graphoenix.core.Conditional cond = 18;
-    repeated ReviewExpression exs = 19;
-    int32 first = 20;
-    int32 last = 21;
-    int32 offset = 22;
-    string after = 23;
-    string before = 24;
+    io.graphoenix.core.StringExpression id = 1; /* 评论ID */
+    io.graphoenix.core.StringExpression content = 2; /* 评论内容 */
+    io.graphoenix.core.FloatExpression rating = 3; /* 评分 */
+    demo.gp.user.UserExpression user = 4; /* 评论人 */
+    bool include_deprecated = 5; /* Include Deprecated */
+    io.graphoenix.core.IntExpression version = 6; /* Version */
+    io.graphoenix.core.IntExpression realm_id = 7; /* Realm ID */
+    io.graphoenix.core.StringExpression create_user_id = 8; /* Create User ID */
+    io.graphoenix.core.StringExpression create_time = 9; /* Create Time */
+    io.graphoenix.core.StringExpression update_user_id = 10; /* Update User ID */
+    io.graphoenix.core.StringExpression update_time = 11; /* Update Time */
+    io.graphoenix.core.StringExpression create_group_id = 12; /* Create Group ID */
+    io.graphoenix.core.StringExpression intro_typename = 13; /* Type Name */
+    ReviewUserRelationExpression review_user_relation = 14; /* Relationship Object between 评论 and 用户 */
+    ReviewOrderBy order_by = 15; /* Order By */
+    repeated string group_by = 16; /* Group By */
+    bool not = 17; /* Not */
+    io.graphoenix.core.Conditional cond = 18; /* Condition */
+    repeated ReviewExpression exs = 19; /* Expressions */
+    int32 first = 20; /* First */
+    int32 last = 21; /* Input List */
+    int32 offset = 22; /* Offset */
+    string after = 23; /* After */
+    string before = 24; /* Before */
 }
+/**
+* Subscription Arguments for 评论 List
+*/
 message ReviewConnectionSubscriptionArguments {
-    io.graphoenix.core.StringExpression id = 1;
-    io.graphoenix.core.StringExpression content = 2;
-    io.graphoenix.core.FloatExpression rating = 3;
-    demo.gp.user.UserExpression user = 4;
-    bool include_deprecated = 5;
-    io.graphoenix.core.IntExpression version = 6;
-    io.graphoenix.core.IntExpression realm_id = 7;
-    io.graphoenix.core.StringExpression create_user_id = 8;
-    io.graphoenix.core.StringExpression create_time = 9;
-    io.graphoenix.core.StringExpression update_user_id = 10;
-    io.graphoenix.core.StringExpression update_time = 11;
-    io.graphoenix.core.StringExpression create_group_id = 12;
-    io.graphoenix.core.StringExpression intro_typename = 13;
-    ReviewUserRelationExpression review_user_relation = 14;
-    ReviewOrderBy order_by = 15;
-    repeated string group_by = 16;
-    bool not = 17;
-    io.graphoenix.core.Conditional cond = 18;
-    repeated ReviewExpression exs = 19;
-    int32 first = 20;
-    int32 last = 21;
-    int32 offset = 22;
-    string after = 23;
-    string before = 24;
+    io.graphoenix.core.StringExpression id = 1; /* 评论ID */
+    io.graphoenix.core.StringExpression content = 2; /* 评论内容 */
+    io.graphoenix.core.FloatExpression rating = 3; /* 评分 */
+    demo.gp.user.UserExpression user = 4; /* 评论人 */
+    bool include_deprecated = 5; /* Include Deprecated */
+    io.graphoenix.core.IntExpression version = 6; /* Version */
+    io.graphoenix.core.IntExpression realm_id = 7; /* Realm ID */
+    io.graphoenix.core.StringExpression create_user_id = 8; /* Create User ID */
+    io.graphoenix.core.StringExpression create_time = 9; /* Create Time */
+    io.graphoenix.core.StringExpression update_user_id = 10; /* Update User ID */
+    io.graphoenix.core.StringExpression update_time = 11; /* Update Time */
+    io.graphoenix.core.StringExpression create_group_id = 12; /* Create Group ID */
+    io.graphoenix.core.StringExpression intro_typename = 13; /* Type Name */
+    ReviewUserRelationExpression review_user_relation = 14; /* Relationship Object between 评论 and 用户 */
+    ReviewOrderBy order_by = 15; /* Order By */
+    repeated string group_by = 16; /* Order By */
+    bool not = 17; /* Not */
+    io.graphoenix.core.Conditional cond = 18; /* Condition */
+    repeated ReviewExpression exs = 19; /* Expressions */
+    int32 first = 20; /* First */
+    int32 last = 21; /* Last */
+    int32 offset = 22; /* Offset */
+    string after = 23; /* After */
+    string before = 24; /* Before */
 }
+/**
+* Subscription Arguments for Relationship Object between 评论 and 用户
+*/
 message ReviewUserRelationSubscriptionArguments {
-    io.graphoenix.core.StringExpression id = 1;
-    io.graphoenix.core.StringExpression review_ref = 2;
-    ReviewExpression review = 3;
-    io.graphoenix.core.IntExpression user_ref = 4;
-    demo.gp.user.UserExpression user = 5;
-    bool include_deprecated = 6;
-    io.graphoenix.core.IntExpression version = 7;
-    io.graphoenix.core.IntExpression realm_id = 8;
-    io.graphoenix.core.StringExpression create_user_id = 9;
-    io.graphoenix.core.StringExpression create_time = 10;
-    io.graphoenix.core.StringExpression update_user_id = 11;
-    io.graphoenix.core.StringExpression update_time = 12;
-    io.graphoenix.core.StringExpression create_group_id = 13;
-    io.graphoenix.core.StringExpression intro_typename = 14;
-    repeated string group_by = 15;
-    bool not = 16;
-    io.graphoenix.core.Conditional cond = 17;
-    repeated ReviewUserRelationExpression exs = 18;
+    io.graphoenix.core.StringExpression id = 1; /* ID */
+    io.graphoenix.core.StringExpression review_ref = 2; /* 评论 Reference */
+    ReviewExpression review = 3; /* 评论 */
+    io.graphoenix.core.IntExpression user_ref = 4; /* 用户 Reference */
+    demo.gp.user.UserExpression user = 5; /* 用户 */
+    bool include_deprecated = 6; /* Include Deprecated */
+    io.graphoenix.core.IntExpression version = 7; /* Version */
+    io.graphoenix.core.IntExpression realm_id = 8; /* Realm ID */
+    io.graphoenix.core.StringExpression create_user_id = 9; /* Create User ID */
+    io.graphoenix.core.StringExpression create_time = 10; /* Create Time */
+    io.graphoenix.core.StringExpression update_user_id = 11; /* Update User ID */
+    io.graphoenix.core.StringExpression update_time = 12; /* Update Time */
+    io.graphoenix.core.StringExpression create_group_id = 13; /* Create Group ID */
+    io.graphoenix.core.StringExpression intro_typename = 14; /* Type Name */
+    repeated string group_by = 15; /* Group By */
+    bool not = 16; /* Not */
+    io.graphoenix.core.Conditional cond = 17; /* Condition */
+    repeated ReviewUserRelationExpression exs = 18; /* Expressions */
 }
+/**
+* Subscription Arguments for Relationship Object between 评论 and 用户 List
+*/
 message ReviewUserRelationListSubscriptionArguments {
-    io.graphoenix.core.StringExpression id = 1;
-    io.graphoenix.core.StringExpression review_ref = 2;
-    ReviewExpression review = 3;
-    io.graphoenix.core.IntExpression user_ref = 4;
-    demo.gp.user.UserExpression user = 5;
-    bool include_deprecated = 6;
-    io.graphoenix.core.IntExpression version = 7;
-    io.graphoenix.core.IntExpression realm_id = 8;
-    io.graphoenix.core.StringExpression create_user_id = 9;
-    io.graphoenix.core.StringExpression create_time = 10;
-    io.graphoenix.core.StringExpression update_user_id = 11;
-    io.graphoenix.core.StringExpression update_time = 12;
-    io.graphoenix.core.StringExpression create_group_id = 13;
-    io.graphoenix.core.StringExpression intro_typename = 14;
-    ReviewUserRelationOrderBy order_by = 15;
-    repeated string group_by = 16;
-    bool not = 17;
-    io.graphoenix.core.Conditional cond = 18;
-    repeated ReviewUserRelationExpression exs = 19;
-    int32 first = 20;
-    int32 last = 21;
-    int32 offset = 22;
-    string after = 23;
-    string before = 24;
+    io.graphoenix.core.StringExpression id = 1; /* ID */
+    io.graphoenix.core.StringExpression review_ref = 2; /* 评论 Reference */
+    ReviewExpression review = 3; /* 评论 */
+    io.graphoenix.core.IntExpression user_ref = 4; /* 用户 Reference */
+    demo.gp.user.UserExpression user = 5; /* 用户 */
+    bool include_deprecated = 6; /* Include Deprecated */
+    io.graphoenix.core.IntExpression version = 7; /* Version */
+    io.graphoenix.core.IntExpression realm_id = 8; /* Realm ID */
+    io.graphoenix.core.StringExpression create_user_id = 9; /* Create User ID */
+    io.graphoenix.core.StringExpression create_time = 10; /* Create Time */
+    io.graphoenix.core.StringExpression update_user_id = 11; /* Update User ID */
+    io.graphoenix.core.StringExpression update_time = 12; /* Update Time */
+    io.graphoenix.core.StringExpression create_group_id = 13; /* Create Group ID */
+    io.graphoenix.core.StringExpression intro_typename = 14; /* Type Name */
+    ReviewUserRelationOrderBy order_by = 15; /* Order By */
+    repeated string group_by = 16; /* Group By */
+    bool not = 17; /* Not */
+    io.graphoenix.core.Conditional cond = 18; /* Condition */
+    repeated ReviewUserRelationExpression exs = 19; /* Expressions */
+    int32 first = 20; /* First */
+    int32 last = 21; /* Input List */
+    int32 offset = 22; /* Offset */
+    string after = 23; /* After */
+    string before = 24; /* Before */
 }
+/**
+* Subscription Arguments for Relationship Object between 评论 and 用户 List
+*/
 message ReviewUserRelationConnectionSubscriptionArguments {
-    io.graphoenix.core.StringExpression id = 1;
-    io.graphoenix.core.StringExpression review_ref = 2;
-    ReviewExpression review = 3;
-    io.graphoenix.core.IntExpression user_ref = 4;
-    demo.gp.user.UserExpression user = 5;
-    bool include_deprecated = 6;
-    io.graphoenix.core.IntExpression version = 7;
-    io.graphoenix.core.IntExpression realm_id = 8;
-    io.graphoenix.core.StringExpression create_user_id = 9;
-    io.graphoenix.core.StringExpression create_time = 10;
-    io.graphoenix.core.StringExpression update_user_id = 11;
-    io.graphoenix.core.StringExpression update_time = 12;
-    io.graphoenix.core.StringExpression create_group_id = 13;
-    io.graphoenix.core.StringExpression intro_typename = 14;
-    ReviewUserRelationOrderBy order_by = 15;
-    repeated string group_by = 16;
-    bool not = 17;
-    io.graphoenix.core.Conditional cond = 18;
-    repeated ReviewUserRelationExpression exs = 19;
-    int32 first = 20;
-    int32 last = 21;
-    int32 offset = 22;
-    string after = 23;
-    string before = 24;
+    io.graphoenix.core.StringExpression id = 1; /* ID */
+    io.graphoenix.core.StringExpression review_ref = 2; /* 评论 Reference */
+    ReviewExpression review = 3; /* 评论 */
+    io.graphoenix.core.IntExpression user_ref = 4; /* 用户 Reference */
+    demo.gp.user.UserExpression user = 5; /* 用户 */
+    bool include_deprecated = 6; /* Include Deprecated */
+    io.graphoenix.core.IntExpression version = 7; /* Version */
+    io.graphoenix.core.IntExpression realm_id = 8; /* Realm ID */
+    io.graphoenix.core.StringExpression create_user_id = 9; /* Create User ID */
+    io.graphoenix.core.StringExpression create_time = 10; /* Create Time */
+    io.graphoenix.core.StringExpression update_user_id = 11; /* Update User ID */
+    io.graphoenix.core.StringExpression update_time = 12; /* Update Time */
+    io.graphoenix.core.StringExpression create_group_id = 13; /* Create Group ID */
+    io.graphoenix.core.StringExpression intro_typename = 14; /* Type Name */
+    ReviewUserRelationOrderBy order_by = 15; /* Order By */
+    repeated string group_by = 16; /* Order By */
+    bool not = 17; /* Not */
+    io.graphoenix.core.Conditional cond = 18; /* Condition */
+    repeated ReviewUserRelationExpression exs = 19; /* Expressions */
+    int32 first = 20; /* First */
+    int32 last = 21; /* Last */
+    int32 offset = 22; /* Offset */
+    string after = 23; /* After */
+    string before = 24; /* Before */
 }

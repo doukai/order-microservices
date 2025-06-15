@@ -10,90 +10,167 @@ import java.lang.Override;
 import java.lang.String;
 import java.time.LocalDateTime;
 import org.eclipse.microprofile.graphql.DefaultValue;
+import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.Input;
 
+/**
+ * Mutation Input for Relationship Object between 产品 and 评论
+ */
 @CompiledJson
 @Input
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
-public class ProductReviewRelationInput implements MetaInput {
+@Description("Mutation Input for Relationship Object between 产品 and 评论")
+public class ProductReviewRelationInput implements MetaInput, ProductReviewRelationInputBase {
+  /**
+   * ID
+   */
+  @Description("ID")
   private String id;
 
+  /**
+   * 产品 Reference
+   */
+  @Description("产品 Reference")
   private String productRef;
 
+  /**
+   * 产品
+   */
+  @Description("产品")
   private ProductInput product;
 
+  /**
+   * 评论 Reference
+   */
+  @Description("评论 Reference")
   private Integer reviewRef;
 
+  /**
+   * 评论
+   */
+  @Description("评论")
   private ReviewInput review;
 
+  /**
+   * Is Deprecated
+   */
   @DefaultValue("false")
+  @Description("Is Deprecated")
   private Boolean isDeprecated = false;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   private Integer version;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   private Integer realmId;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   private String createUserId;
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   private LocalDateTime createTime;
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   private String updateUserId;
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   private LocalDateTime updateTime;
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   private String createGroupId;
 
-  @DefaultValue("\"ProductReviewRelation\"")
+  /**
+   * Type Name
+   */
+  @DefaultValue("ProductReviewRelation")
+  @Description("Type Name")
   private String __typename = "ProductReviewRelation";
 
+  /**
+   * Where
+   */
+  @Description("Where")
   private ProductReviewRelationExpression where;
 
+  @Override
   public String getId() {
     return this.id;
   }
 
+  @Override
   public void setId(String id) {
-    this.id = id;
+    this.id = (String)id;
   }
 
+  @Override
   public String getProductRef() {
     return this.productRef;
   }
 
+  @Override
   public void setProductRef(String productRef) {
-    this.productRef = productRef;
+    this.productRef = (String)productRef;
   }
 
+  @Override
   public ProductInput getProduct() {
     return this.product;
   }
 
+  @Override
   public void setProduct(ProductInput product) {
-    this.product = product;
+    this.product = (ProductInput)product;
   }
 
+  @Override
   public Integer getReviewRef() {
     return this.reviewRef;
   }
 
+  @Override
   public void setReviewRef(Integer reviewRef) {
-    this.reviewRef = reviewRef;
+    this.reviewRef = (Integer)reviewRef;
   }
 
+  @Override
   public ReviewInput getReview() {
     return this.review;
   }
 
+  @Override
   public void setReview(ReviewInput review) {
-    this.review = review;
+    this.review = (ReviewInput)review;
   }
 
+  @Override
   public Boolean getIsDeprecated() {
     return this.isDeprecated;
   }
 
+  @Override
   public void setIsDeprecated(Boolean isDeprecated) {
-    this.isDeprecated = isDeprecated;
+    this.isDeprecated = (Boolean)isDeprecated;
   }
 
   @Override
@@ -166,19 +243,23 @@ public class ProductReviewRelationInput implements MetaInput {
     this.createGroupId = (String)createGroupId;
   }
 
+  @Override
   public String get__typename() {
     return this.__typename;
   }
 
+  @Override
   public void set__typename(String __typename) {
-    this.__typename = __typename;
+    this.__typename = (String)__typename;
   }
 
+  @Override
   public ProductReviewRelationExpression getWhere() {
     return this.where;
   }
 
+  @Override
   public void setWhere(ProductReviewRelationExpression where) {
-    this.where = where;
+    this.where = (ProductReviewRelationExpression)where;
   }
 }

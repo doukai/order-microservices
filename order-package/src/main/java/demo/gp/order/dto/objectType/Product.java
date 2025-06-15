@@ -1,6 +1,7 @@
 package demo.gp.order.dto.objectType;
 
 import com.dslplatform.json.CompiledJson;
+import demo.gp.order.dto.inputObjectType.ProductInput;
 import demo.gp.review.dto.objectType.Review;
 import io.graphoenix.core.dto.interfaceType.Meta;
 import jakarta.annotation.Generated;
@@ -51,46 +52,130 @@ public class Product implements Meta {
   @Description("评论列表")
   private Collection<Review> reviews;
 
+  /**
+   * Is Deprecated
+   */
+  @Description("Is Deprecated")
   private Boolean isDeprecated = false;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   private Integer version;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   private Integer realmId;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   private String createUserId;
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   private LocalDateTime createTime;
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   private String updateUserId;
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   private LocalDateTime updateTime;
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   private String createGroupId;
 
+  /**
+   * Type Name
+   */
+  @Description("Type Name")
   private String __typename = "Product";
 
+  /**
+   * Relationship Object between 产品 and 评论
+   */
+  @Description("Relationship Object between 产品 and 评论")
   private Collection<ProductReviewRelation> productReviewRelation;
 
+  /**
+   * Count of 产品
+   */
+  @Description("Count of 产品")
   private Integer idCount;
 
+  /**
+   * Max of 产品ID
+   */
+  @Description("Max of 产品ID")
   private Integer idMax;
 
+  /**
+   * Min of 产品ID
+   */
+  @Description("Min of 产品ID")
   private Integer idMin;
 
+  /**
+   * Count of 产品名称
+   */
+  @Description("Count of 产品名称")
   private Integer nameCount;
 
+  /**
+   * Max of 产品名称
+   */
+  @Description("Max of 产品名称")
   private String nameMax;
 
+  /**
+   * Min of 产品名称
+   */
+  @Description("Min of 产品名称")
   private String nameMin;
 
+  /**
+   * Count of 定价
+   */
+  @Description("Count of 定价")
   private Integer priceCount;
 
+  /**
+   * Sum of 定价
+   */
+  @Description("Sum of 定价")
   private Float priceSum;
 
+  /**
+   * Avg of 定价
+   */
+  @Description("Avg of 定价")
   private Float priceAvg;
 
+  /**
+   * Max of 定价
+   */
+  @Description("Max of 定价")
   private Float priceMax;
 
+  /**
+   * Min of 定价
+   */
+  @Description("Min of 定价")
   private Float priceMin;
 
   public String getId() {
@@ -307,5 +392,22 @@ public class Product implements Meta {
 
   public void setPriceMin(Float priceMin) {
     this.priceMin = priceMin;
+  }
+
+  public ProductInput toInput() {
+    ProductInput input = new ProductInput();
+    input.setId(this.getId());
+    input.setName(this.getName());
+    input.setPrice(this.getPrice());
+    input.setIsDeprecated(this.getIsDeprecated());
+    input.setVersion(this.getVersion());
+    input.setRealmId(this.getRealmId());
+    input.setCreateUserId(this.getCreateUserId());
+    input.setCreateTime(this.getCreateTime());
+    input.setUpdateUserId(this.getUpdateUserId());
+    input.setUpdateTime(this.getUpdateTime());
+    input.setCreateGroupId(this.getCreateGroupId());
+    input.set__typename(this.get__typename());
+    return input;
   }
 }

@@ -10,103 +10,190 @@ import java.lang.Boolean;
 import java.lang.Override;
 import java.util.Collection;
 import org.eclipse.microprofile.graphql.DefaultValue;
+import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.Input;
 
+/**
+ * Query Expression Input for Relationship Object between 订单项 and 产品
+ */
 @CompiledJson
 @Input
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
-public class OrderItemProductRelationExpression implements MetaExpression {
+@Description("Query Expression Input for Relationship Object between 订单项 and 产品")
+public class OrderItemProductRelationExpression implements MetaExpression, OrderItemProductRelationExpressionBase {
+  /**
+   * ID
+   */
+  @Description("ID")
   private StringExpression id;
 
+  /**
+   * 订单项 Reference
+   */
+  @Description("订单项 Reference")
   private StringExpression orderItemRef;
 
+  /**
+   * 订单项
+   */
+  @Description("订单项")
   private OrderItemExpression orderItem;
 
+  /**
+   * 产品 Reference
+   */
+  @Description("产品 Reference")
   private StringExpression productRef;
 
+  /**
+   * 产品
+   */
+  @Description("产品")
   private ProductExpression product;
 
+  /**
+   * Include Deprecated
+   */
   @DefaultValue("false")
+  @Description("Include Deprecated")
   private Boolean includeDeprecated = false;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   private IntExpression version;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   private IntExpression realmId;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   private StringExpression createUserId;
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   private StringExpression createTime;
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   private StringExpression updateUserId;
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   private StringExpression updateTime;
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   private StringExpression createGroupId;
 
+  /**
+   * Type Name
+   */
+  @Description("Type Name")
   private StringExpression __typename;
 
+  /**
+   * Not
+   */
   @DefaultValue("false")
+  @Description("Not")
   private Boolean not = false;
 
+  /**
+   * Condition
+   */
   @DefaultValue("AND")
+  @Description("Condition")
   private Conditional cond = Conditional.AND;
 
+  /**
+   * Expressions
+   */
+  @Description("Expressions")
   private Collection<OrderItemProductRelationExpression> exs;
 
+  @Override
   public StringExpression getId() {
     return this.id;
   }
 
+  @Override
   public void setId(StringExpression id) {
-    this.id = id;
+    this.id = (StringExpression)id;
   }
 
+  @Override
   public StringExpression getOrderItemRef() {
     return this.orderItemRef;
   }
 
+  @Override
   public void setOrderItemRef(StringExpression orderItemRef) {
-    this.orderItemRef = orderItemRef;
+    this.orderItemRef = (StringExpression)orderItemRef;
   }
 
+  @Override
   public OrderItemExpression getOrderItem() {
     return this.orderItem;
   }
 
+  @Override
   public void setOrderItem(OrderItemExpression orderItem) {
-    this.orderItem = orderItem;
+    this.orderItem = (OrderItemExpression)orderItem;
   }
 
+  @Override
   public StringExpression getProductRef() {
     return this.productRef;
   }
 
+  @Override
   public void setProductRef(StringExpression productRef) {
-    this.productRef = productRef;
+    this.productRef = (StringExpression)productRef;
   }
 
+  @Override
   public ProductExpression getProduct() {
     return this.product;
   }
 
+  @Override
   public void setProduct(ProductExpression product) {
-    this.product = product;
+    this.product = (ProductExpression)product;
   }
 
+  @Override
   public Boolean getIncludeDeprecated() {
     return this.includeDeprecated;
   }
 
+  @Override
   public void setIncludeDeprecated(Boolean includeDeprecated) {
-    this.includeDeprecated = includeDeprecated;
+    this.includeDeprecated = (Boolean)includeDeprecated;
   }
 
+  @Override
   public IntExpression getVersion() {
     return this.version;
   }
 
+  @Override
   public void setVersion(IntExpression version) {
-    this.version = version;
+    this.version = (IntExpression)version;
   }
 
   @Override
@@ -169,35 +256,43 @@ public class OrderItemProductRelationExpression implements MetaExpression {
     this.createGroupId = (StringExpression)createGroupId;
   }
 
+  @Override
   public StringExpression get__typename() {
     return this.__typename;
   }
 
+  @Override
   public void set__typename(StringExpression __typename) {
-    this.__typename = __typename;
+    this.__typename = (StringExpression)__typename;
   }
 
+  @Override
   public Boolean getNot() {
     return this.not;
   }
 
+  @Override
   public void setNot(Boolean not) {
-    this.not = not;
+    this.not = (Boolean)not;
   }
 
+  @Override
   public Conditional getCond() {
     return this.cond;
   }
 
+  @Override
   public void setCond(Conditional cond) {
-    this.cond = cond;
+    this.cond = (Conditional)cond;
   }
 
+  @Override
   public Collection<OrderItemProductRelationExpression> getExs() {
     return this.exs;
   }
 
+  @Override
   public void setExs(Collection<OrderItemProductRelationExpression> exs) {
-    this.exs = exs;
+    this.exs = (Collection<OrderItemProductRelationExpression>)exs;
   }
 }

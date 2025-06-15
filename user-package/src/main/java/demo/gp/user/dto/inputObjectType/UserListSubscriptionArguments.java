@@ -12,119 +12,238 @@ import java.lang.Override;
 import java.lang.String;
 import java.util.Collection;
 import org.eclipse.microprofile.graphql.DefaultValue;
+import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.Input;
 
+/**
+ * Subscription Arguments for 用户 List
+ */
 @CompiledJson
 @Input
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
-public class UserListSubscriptionArguments implements MetaExpression {
+@Description("Subscription Arguments for 用户 List")
+public class UserListSubscriptionArguments implements MetaExpression, UserExpressionBase {
+  /**
+   * 用户ID
+   */
+  @Description("用户ID")
   private StringExpression id;
 
+  /**
+   * 用户名
+   */
+  @Description("用户名")
   private StringExpression name;
 
+  /**
+   * 电子邮箱
+   */
+  @Description("电子邮箱")
   private StringExpression email;
 
+  /**
+   * 联系方式
+   */
+  @Description("联系方式")
   private StringExpression phoneNumbers;
 
+  /**
+   * 用户类型
+   */
+  @Description("用户类型")
   private UserTypeExpression userType;
 
+  /**
+   * Include Deprecated
+   */
   @DefaultValue("false")
+  @Description("Include Deprecated")
   private Boolean includeDeprecated = false;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   private IntExpression version;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   private IntExpression realmId;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   private StringExpression createUserId;
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   private StringExpression createTime;
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   private StringExpression updateUserId;
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   private StringExpression updateTime;
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   private StringExpression createGroupId;
 
+  /**
+   * Type Name
+   */
+  @Description("Type Name")
   private StringExpression __typename;
 
+  /**
+   * Relationship Object between 用户 and 联系方式
+   */
+  @Description("Relationship Object between 用户 and 联系方式")
   private UserPhoneNumbersRelationExpression userPhoneNumbersRelation;
 
+  /**
+   * Order By
+   */
+  @Description("Order By")
   private UserOrderBy orderBy;
 
+  /**
+   * Group By
+   */
+  @Description("Group By")
   private Collection<String> groupBy;
 
+  /**
+   * Not
+   */
   @DefaultValue("false")
+  @Description("Not")
   private Boolean not = false;
 
+  /**
+   * Condition
+   */
   @DefaultValue("AND")
+  @Description("Condition")
   private Conditional cond = Conditional.AND;
 
+  /**
+   * Expressions
+   */
+  @Description("Expressions")
   private Collection<UserExpression> exs;
 
+  /**
+   * First
+   */
+  @Description("First")
   private Integer first;
 
+  /**
+   * Input List
+   */
+  @Description("Input List")
   private Integer last;
 
+  /**
+   * Offset
+   */
+  @Description("Offset")
   private Integer offset;
 
+  /**
+   * After
+   */
+  @Description("After")
   private String after;
 
+  /**
+   * Before
+   */
+  @Description("Before")
   private String before;
 
+  @Override
   public StringExpression getId() {
     return this.id;
   }
 
+  @Override
   public void setId(StringExpression id) {
-    this.id = id;
+    this.id = (StringExpression)id;
   }
 
+  @Override
   public StringExpression getName() {
     return this.name;
   }
 
+  @Override
   public void setName(StringExpression name) {
-    this.name = name;
+    this.name = (StringExpression)name;
   }
 
+  @Override
   public StringExpression getEmail() {
     return this.email;
   }
 
+  @Override
   public void setEmail(StringExpression email) {
-    this.email = email;
+    this.email = (StringExpression)email;
   }
 
+  @Override
   public StringExpression getPhoneNumbers() {
     return this.phoneNumbers;
   }
 
+  @Override
   public void setPhoneNumbers(StringExpression phoneNumbers) {
-    this.phoneNumbers = phoneNumbers;
+    this.phoneNumbers = (StringExpression)phoneNumbers;
   }
 
+  @Override
   public UserTypeExpression getUserType() {
     return this.userType;
   }
 
+  @Override
   public void setUserType(UserTypeExpression userType) {
-    this.userType = userType;
+    this.userType = (UserTypeExpression)userType;
   }
 
+  @Override
   public Boolean getIncludeDeprecated() {
     return this.includeDeprecated;
   }
 
+  @Override
   public void setIncludeDeprecated(Boolean includeDeprecated) {
-    this.includeDeprecated = includeDeprecated;
+    this.includeDeprecated = (Boolean)includeDeprecated;
   }
 
+  @Override
   public IntExpression getVersion() {
     return this.version;
   }
 
+  @Override
   public void setVersion(IntExpression version) {
-    this.version = version;
+    this.version = (IntExpression)version;
   }
 
   @Override
@@ -187,21 +306,25 @@ public class UserListSubscriptionArguments implements MetaExpression {
     this.createGroupId = (StringExpression)createGroupId;
   }
 
+  @Override
   public StringExpression get__typename() {
     return this.__typename;
   }
 
+  @Override
   public void set__typename(StringExpression __typename) {
-    this.__typename = __typename;
+    this.__typename = (StringExpression)__typename;
   }
 
+  @Override
   public UserPhoneNumbersRelationExpression getUserPhoneNumbersRelation() {
     return this.userPhoneNumbersRelation;
   }
 
+  @Override
   public void setUserPhoneNumbersRelation(
       UserPhoneNumbersRelationExpression userPhoneNumbersRelation) {
-    this.userPhoneNumbersRelation = userPhoneNumbersRelation;
+    this.userPhoneNumbersRelation = (UserPhoneNumbersRelationExpression)userPhoneNumbersRelation;
   }
 
   public UserOrderBy getOrderBy() {
@@ -220,28 +343,34 @@ public class UserListSubscriptionArguments implements MetaExpression {
     this.groupBy = groupBy;
   }
 
+  @Override
   public Boolean getNot() {
     return this.not;
   }
 
+  @Override
   public void setNot(Boolean not) {
-    this.not = not;
+    this.not = (Boolean)not;
   }
 
+  @Override
   public Conditional getCond() {
     return this.cond;
   }
 
+  @Override
   public void setCond(Conditional cond) {
-    this.cond = cond;
+    this.cond = (Conditional)cond;
   }
 
+  @Override
   public Collection<UserExpression> getExs() {
     return this.exs;
   }
 
+  @Override
   public void setExs(Collection<UserExpression> exs) {
-    this.exs = exs;
+    this.exs = (Collection<UserExpression>)exs;
   }
 
   public Integer getFirst() {

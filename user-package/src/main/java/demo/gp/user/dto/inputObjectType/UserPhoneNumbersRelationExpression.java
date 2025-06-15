@@ -10,93 +10,174 @@ import java.lang.Boolean;
 import java.lang.Override;
 import java.util.Collection;
 import org.eclipse.microprofile.graphql.DefaultValue;
+import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.Input;
 
+/**
+ * Query Expression Input for Relationship Object between 用户 and 联系方式
+ */
 @CompiledJson
 @Input
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
-public class UserPhoneNumbersRelationExpression implements MetaExpression {
+@Description("Query Expression Input for Relationship Object between 用户 and 联系方式")
+public class UserPhoneNumbersRelationExpression implements MetaExpression, UserPhoneNumbersRelationExpressionBase {
+  /**
+   * ID
+   */
+  @Description("ID")
   private StringExpression id;
 
+  /**
+   * 用户 Reference
+   */
+  @Description("用户 Reference")
   private StringExpression userRef;
 
+  /**
+   * 用户
+   */
+  @Description("用户")
   private UserExpression user;
 
+  /**
+   * 联系方式 Reference
+   */
+  @Description("联系方式 Reference")
   private StringExpression phoneNumbersRef;
 
+  /**
+   * Include Deprecated
+   */
   @DefaultValue("false")
+  @Description("Include Deprecated")
   private Boolean includeDeprecated = false;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   private IntExpression version;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   private IntExpression realmId;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   private StringExpression createUserId;
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   private StringExpression createTime;
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   private StringExpression updateUserId;
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   private StringExpression updateTime;
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   private StringExpression createGroupId;
 
+  /**
+   * Type Name
+   */
+  @Description("Type Name")
   private StringExpression __typename;
 
+  /**
+   * Not
+   */
   @DefaultValue("false")
+  @Description("Not")
   private Boolean not = false;
 
+  /**
+   * Condition
+   */
   @DefaultValue("AND")
+  @Description("Condition")
   private Conditional cond = Conditional.AND;
 
+  /**
+   * Expressions
+   */
+  @Description("Expressions")
   private Collection<UserPhoneNumbersRelationExpression> exs;
 
+  @Override
   public StringExpression getId() {
     return this.id;
   }
 
+  @Override
   public void setId(StringExpression id) {
-    this.id = id;
+    this.id = (StringExpression)id;
   }
 
+  @Override
   public StringExpression getUserRef() {
     return this.userRef;
   }
 
+  @Override
   public void setUserRef(StringExpression userRef) {
-    this.userRef = userRef;
+    this.userRef = (StringExpression)userRef;
   }
 
+  @Override
   public UserExpression getUser() {
     return this.user;
   }
 
+  @Override
   public void setUser(UserExpression user) {
-    this.user = user;
+    this.user = (UserExpression)user;
   }
 
+  @Override
   public StringExpression getPhoneNumbersRef() {
     return this.phoneNumbersRef;
   }
 
+  @Override
   public void setPhoneNumbersRef(StringExpression phoneNumbersRef) {
-    this.phoneNumbersRef = phoneNumbersRef;
+    this.phoneNumbersRef = (StringExpression)phoneNumbersRef;
   }
 
+  @Override
   public Boolean getIncludeDeprecated() {
     return this.includeDeprecated;
   }
 
+  @Override
   public void setIncludeDeprecated(Boolean includeDeprecated) {
-    this.includeDeprecated = includeDeprecated;
+    this.includeDeprecated = (Boolean)includeDeprecated;
   }
 
+  @Override
   public IntExpression getVersion() {
     return this.version;
   }
 
+  @Override
   public void setVersion(IntExpression version) {
-    this.version = version;
+    this.version = (IntExpression)version;
   }
 
   @Override
@@ -159,35 +240,43 @@ public class UserPhoneNumbersRelationExpression implements MetaExpression {
     this.createGroupId = (StringExpression)createGroupId;
   }
 
+  @Override
   public StringExpression get__typename() {
     return this.__typename;
   }
 
+  @Override
   public void set__typename(StringExpression __typename) {
-    this.__typename = __typename;
+    this.__typename = (StringExpression)__typename;
   }
 
+  @Override
   public Boolean getNot() {
     return this.not;
   }
 
+  @Override
   public void setNot(Boolean not) {
-    this.not = not;
+    this.not = (Boolean)not;
   }
 
+  @Override
   public Conditional getCond() {
     return this.cond;
   }
 
+  @Override
   public void setCond(Conditional cond) {
-    this.cond = cond;
+    this.cond = (Conditional)cond;
   }
 
+  @Override
   public Collection<UserPhoneNumbersRelationExpression> getExs() {
     return this.exs;
   }
 
+  @Override
   public void setExs(Collection<UserPhoneNumbersRelationExpression> exs) {
-    this.exs = exs;
+    this.exs = (Collection<UserPhoneNumbersRelationExpression>)exs;
   }
 }

@@ -7,8 +7,6 @@ import io.graphoenix.core.dto.inputObjectType.grpc.StringExpression;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.junit.jupiter.api.Test;
-import reactor.core.publisher.Mono;
-import reactor.test.StepVerifier;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,7 +15,6 @@ public class UserGrpcTest {
     private static final String userGrpcAddress = "localhost:50053";
     private static final ManagedChannel userManagedChannel = ManagedChannelBuilder.forTarget(userGrpcAddress).usePlaintext().build();
     private static final QueryServiceGrpc.QueryServiceBlockingStub queryServiceStub = QueryServiceGrpc.newBlockingStub(userManagedChannel);
-    private static final ReactorQueryServiceGrpc.ReactorQueryServiceStub reactorQueryServiceStub = ReactorQueryServiceGrpc.newReactorStub(userManagedChannel);
     private static final MutationServiceGrpc.MutationServiceBlockingStub mutationServiceBlockingStub = MutationServiceGrpc.newBlockingStub(userManagedChannel);
 
     @Test
@@ -38,30 +35,6 @@ public class UserGrpcTest {
                 () -> assertEquals(response.getUser().getUserType(), UserType.VIP_USER_TYPE),
                 () -> assertEquals(response.getUser().getEmail(), "")
         );
-    }
-
-    @Test
-    void reactorQueryUserTest() {
-        QueryUserRequest queryUserRequest = QueryUserRequest.newBuilder()
-                .setName(
-                        StringExpression.newBuilder()
-                                .setOpr(Operator.EQ_OPERATOR)
-                                .setVal("Bob")
-                                .build()
-                )
-                .build();
-        Mono<QueryUserResponse> responseMono = reactorQueryServiceStub.user(queryUserRequest);
-
-        StepVerifier.create(responseMono)
-                .assertNext(response ->
-                        assertAll(
-                                () -> assertEquals(response.getUser().getName(), "Bob"),
-                                () -> assertEquals(response.getUser().getEmail(), "bob@example.com"),
-                                () -> assertEquals(response.getUser().getUserType(), UserType.REGULAR_USER_TYPE)
-                        )
-                )
-                .expectComplete()
-                .verify();
     }
 
     @Test

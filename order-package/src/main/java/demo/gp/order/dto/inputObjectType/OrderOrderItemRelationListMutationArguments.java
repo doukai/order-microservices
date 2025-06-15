@@ -10,92 +10,173 @@ import java.lang.String;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import org.eclipse.microprofile.graphql.DefaultValue;
+import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.Input;
 
+/**
+ * Mutation Arguments for Relationship Object between 订单 and 订单项 List
+ */
 @CompiledJson
 @Input
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
-public class OrderOrderItemRelationListMutationArguments implements MetaInput {
+@Description("Mutation Arguments for Relationship Object between 订单 and 订单项 List")
+public class OrderOrderItemRelationListMutationArguments implements MetaInput, OrderOrderItemRelationInputBase {
+  /**
+   * ID
+   */
+  @Description("ID")
   private String id;
 
+  /**
+   * 订单 Reference
+   */
+  @Description("订单 Reference")
   private String orderRef;
 
+  /**
+   * 订单
+   */
+  @Description("订单")
   private OrderInput order;
 
+  /**
+   * 订单项 Reference
+   */
+  @Description("订单项 Reference")
   private String orderItemRef;
 
+  /**
+   * 订单项
+   */
+  @Description("订单项")
   private OrderItemInput orderItem;
 
+  /**
+   * Is Deprecated
+   */
   @DefaultValue("false")
+  @Description("Is Deprecated")
   private Boolean isDeprecated = false;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   private Integer version;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   private Integer realmId;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   private String createUserId;
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   private LocalDateTime createTime;
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   private String updateUserId;
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   private LocalDateTime updateTime;
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   private String createGroupId;
 
-  @DefaultValue("\"OrderOrderItemRelation\"")
+  /**
+   * Type Name
+   */
+  @DefaultValue("OrderOrderItemRelation")
+  @Description("Type Name")
   private String __typename = "OrderOrderItemRelation";
 
+  /**
+   * Input List
+   */
+  @Description("Input List")
   private Collection<OrderOrderItemRelationInput> list;
 
+  /**
+   * Where
+   */
+  @Description("Where")
   private OrderOrderItemRelationExpression where;
 
+  @Override
   public String getId() {
     return this.id;
   }
 
+  @Override
   public void setId(String id) {
-    this.id = id;
+    this.id = (String)id;
   }
 
+  @Override
   public String getOrderRef() {
     return this.orderRef;
   }
 
+  @Override
   public void setOrderRef(String orderRef) {
-    this.orderRef = orderRef;
+    this.orderRef = (String)orderRef;
   }
 
+  @Override
   public OrderInput getOrder() {
     return this.order;
   }
 
+  @Override
   public void setOrder(OrderInput order) {
-    this.order = order;
+    this.order = (OrderInput)order;
   }
 
+  @Override
   public String getOrderItemRef() {
     return this.orderItemRef;
   }
 
+  @Override
   public void setOrderItemRef(String orderItemRef) {
-    this.orderItemRef = orderItemRef;
+    this.orderItemRef = (String)orderItemRef;
   }
 
+  @Override
   public OrderItemInput getOrderItem() {
     return this.orderItem;
   }
 
+  @Override
   public void setOrderItem(OrderItemInput orderItem) {
-    this.orderItem = orderItem;
+    this.orderItem = (OrderItemInput)orderItem;
   }
 
+  @Override
   public Boolean getIsDeprecated() {
     return this.isDeprecated;
   }
 
+  @Override
   public void setIsDeprecated(Boolean isDeprecated) {
-    this.isDeprecated = isDeprecated;
+    this.isDeprecated = (Boolean)isDeprecated;
   }
 
   @Override
@@ -168,12 +249,14 @@ public class OrderOrderItemRelationListMutationArguments implements MetaInput {
     this.createGroupId = (String)createGroupId;
   }
 
+  @Override
   public String get__typename() {
     return this.__typename;
   }
 
+  @Override
   public void set__typename(String __typename) {
-    this.__typename = __typename;
+    this.__typename = (String)__typename;
   }
 
   public Collection<OrderOrderItemRelationInput> getList() {
@@ -184,11 +267,13 @@ public class OrderOrderItemRelationListMutationArguments implements MetaInput {
     this.list = list;
   }
 
+  @Override
   public OrderOrderItemRelationExpression getWhere() {
     return this.where;
   }
 
+  @Override
   public void setWhere(OrderOrderItemRelationExpression where) {
-    this.where = where;
+    this.where = (OrderOrderItemRelationExpression)where;
   }
 }

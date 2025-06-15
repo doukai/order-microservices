@@ -9,16 +9,33 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import org.eclipse.microprofile.graphql.Description;
 
+/**
+ * Query Expression Input for 用户类型
+ */
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
 @Documented
 @Retention(RetentionPolicy.SOURCE)
 @Target(ElementType.METHOD)
+@Description("Query Expression Input for 用户类型")
 public @interface UserTypeExpression {
+  /**
+   * Operators
+   */
+  @Description("Operators")
   Operator opr() default Operator.EQ;
 
+  /**
+   * Value
+   */
+  @Description("Value")
   UserType val() default UserType.REGULAR;
 
+  /**
+   * Array
+   */
+  @Description("Array")
   UserType[] arr() default {};
 
   String $opr() default "";

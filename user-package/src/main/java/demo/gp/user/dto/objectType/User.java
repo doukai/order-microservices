@@ -2,6 +2,7 @@ package demo.gp.user.dto.objectType;
 
 import com.dslplatform.json.CompiledJson;
 import demo.gp.user.dto.enumType.UserType;
+import demo.gp.user.dto.inputObjectType.UserInput;
 import io.graphoenix.core.dto.interfaceType.Meta;
 import jakarta.annotation.Generated;
 import java.lang.Boolean;
@@ -10,6 +11,7 @@ import java.lang.Override;
 import java.lang.String;
 import java.time.LocalDateTime;
 import java.util.Collection;
+import java.util.stream.Collectors;
 import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.Id;
 import org.eclipse.microprofile.graphql.NonNull;
@@ -56,47 +58,149 @@ public class User implements Meta {
   @Description("用户类型")
   private UserType userType;
 
+  /**
+   * Is Deprecated
+   */
+  @Description("Is Deprecated")
   private Boolean isDeprecated = false;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   private Integer version;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   private Integer realmId;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   private String createUserId;
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   private LocalDateTime createTime;
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   private String updateUserId;
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   private LocalDateTime updateTime;
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   private String createGroupId;
 
+  /**
+   * Type Name
+   */
+  @Description("Type Name")
   private String __typename = "User";
 
+  /**
+   * Relationship Object between 用户 and 联系方式
+   */
+  @Description("Relationship Object between 用户 and 联系方式")
   private Collection<UserPhoneNumbersRelation> userPhoneNumbersRelation;
 
+  /**
+   * Aggregate Field for Relationship Object between 用户 and 联系方式
+   */
+  @Description("Aggregate Field for Relationship Object between 用户 and 联系方式")
   private UserPhoneNumbersRelation userPhoneNumbersRelationAggregate;
 
+  /**
+   * Connection Field for Relationship Object between 用户 and 联系方式
+   */
+  @Description("Connection Field for Relationship Object between 用户 and 联系方式")
   private UserPhoneNumbersRelationConnection userPhoneNumbersRelationConnection;
 
+  /**
+   * Count of 用户
+   */
+  @Description("Count of 用户")
   private Integer idCount;
 
+  /**
+   * Max of 用户ID
+   */
+  @Description("Max of 用户ID")
   private Integer idMax;
 
+  /**
+   * Min of 用户ID
+   */
+  @Description("Min of 用户ID")
   private Integer idMin;
 
+  /**
+   * Count of 用户名
+   */
+  @Description("Count of 用户名")
   private Integer nameCount;
 
+  /**
+   * Max of 用户名
+   */
+  @Description("Max of 用户名")
   private String nameMax;
 
+  /**
+   * Min of 用户名
+   */
+  @Description("Min of 用户名")
   private String nameMin;
 
+  /**
+   * Count of 电子邮箱
+   */
+  @Description("Count of 电子邮箱")
   private Integer emailCount;
 
+  /**
+   * Max of 电子邮箱
+   */
+  @Description("Max of 电子邮箱")
   private String emailMax;
 
+  /**
+   * Min of 电子邮箱
+   */
+  @Description("Min of 电子邮箱")
   private String emailMin;
+
+  /**
+   * Count of 用户类型
+   */
+  @Description("Count of 用户类型")
+  private Integer userTypeCount;
+
+  /**
+   * Max of 用户类型
+   */
+  @Description("Max of 用户类型")
+  private UserType userTypeMax;
+
+  /**
+   * Min of 用户类型
+   */
+  @Description("Min of 用户类型")
+  private UserType userTypeMin;
 
   public String getId() {
     return this.id;
@@ -323,5 +427,51 @@ public class User implements Meta {
 
   public void setEmailMin(String emailMin) {
     this.emailMin = emailMin;
+  }
+
+  public Integer getUserTypeCount() {
+    return this.userTypeCount;
+  }
+
+  public void setUserTypeCount(Integer userTypeCount) {
+    this.userTypeCount = userTypeCount;
+  }
+
+  public UserType getUserTypeMax() {
+    return this.userTypeMax;
+  }
+
+  public void setUserTypeMax(UserType userTypeMax) {
+    this.userTypeMax = userTypeMax;
+  }
+
+  public UserType getUserTypeMin() {
+    return this.userTypeMin;
+  }
+
+  public void setUserTypeMin(UserType userTypeMin) {
+    this.userTypeMin = userTypeMin;
+  }
+
+  public UserInput toInput() {
+    UserInput input = new UserInput();
+    input.setId(this.getId());
+    input.setName(this.getName());
+    input.setEmail(this.getEmail());
+    input.setPhoneNumbers(this.getPhoneNumbers());
+    input.setUserType(this.getUserType());
+    input.setIsDeprecated(this.getIsDeprecated());
+    input.setVersion(this.getVersion());
+    input.setRealmId(this.getRealmId());
+    input.setCreateUserId(this.getCreateUserId());
+    input.setCreateTime(this.getCreateTime());
+    input.setUpdateUserId(this.getUpdateUserId());
+    input.setUpdateTime(this.getUpdateTime());
+    input.setCreateGroupId(this.getCreateGroupId());
+    input.set__typename(this.get__typename());
+    if(getUserPhoneNumbersRelation() != null) {
+      input.setUserPhoneNumbersRelation(this.getUserPhoneNumbersRelation().stream().map(item -> item.toInput()).collect(Collectors.toList()));
+    }
+    return input;
   }
 }

@@ -7,42 +7,111 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import org.eclipse.microprofile.graphql.Description;
 
+/**
+ * Mutation Arguments for Relationship Object between 订单项 and 产品
+ */
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
 @Documented
 @Retention(RetentionPolicy.SOURCE)
 @Target(ElementType.METHOD)
+@Description("Mutation Arguments for Relationship Object between 订单项 and 产品")
 public @interface OrderItemProductRelationMutationArguments {
+  /**
+   * ID
+   */
+  @Description("ID")
   String id() default "";
 
+  /**
+   * 订单项 Reference
+   */
+  @Description("订单项 Reference")
   String orderItemRef() default "";
 
+  /**
+   * 订单项
+   */
+  @Description("订单项")
   OrderItemInput orderItem() default @OrderItemInput;
 
+  /**
+   * 产品 Reference
+   */
+  @Description("产品 Reference")
   String productRef() default "";
 
+  /**
+   * 产品
+   */
+  @Description("产品")
   ProductInput product() default @ProductInput;
 
+  /**
+   * Is Deprecated
+   */
+  @Description("Is Deprecated")
   boolean isDeprecated() default false;
 
+  /**
+   * Version
+   */
+  @Description("Version")
   int version() default 0;
 
+  /**
+   * Realm ID
+   */
+  @Description("Realm ID")
   int realmId() default 0;
 
+  /**
+   * Create User ID
+   */
+  @Description("Create User ID")
   String createUserId() default "";
 
+  /**
+   * Create Time
+   */
+  @Description("Create Time")
   String createTime() default "";
 
+  /**
+   * Update User ID
+   */
+  @Description("Update User ID")
   String updateUserId() default "";
 
+  /**
+   * Update Time
+   */
+  @Description("Update Time")
   String updateTime() default "";
 
+  /**
+   * Create Group ID
+   */
+  @Description("Create Group ID")
   String createGroupId() default "";
 
+  /**
+   * Type Name
+   */
+  @Description("Type Name")
   String __typename() default "OrderItemProductRelation";
 
+  /**
+   * Input
+   */
+  @Description("Input")
   OrderItemProductRelationInput input() default @OrderItemProductRelationInput;
 
+  /**
+   * Where
+   */
+  @Description("Where")
   OrderItemProductRelationExpression where() default @OrderItemProductRelationExpression;
 
   String $id() default "";

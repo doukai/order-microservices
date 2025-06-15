@@ -3,22 +3,51 @@ package demo.gp.review.dto.objectType;
 import com.dslplatform.json.CompiledJson;
 import jakarta.annotation.Generated;
 import java.util.Collection;
+import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.Type;
 
+/**
+ * Subscription
+ */
 @Type
 @CompiledJson
 @Generated("io.graphoenix.java.builder.TypeSpecBuilder_Proxy")
+@Description("Subscription")
 public class Subscription {
+  /**
+   * Subscription Field for 评论
+   */
+  @Description("Subscription Field for 评论")
   private Review review;
 
+  /**
+   * Subscription Field for 评论 List
+   */
+  @Description("Subscription Field for 评论 List")
   private Collection<Review> reviewList;
 
+  /**
+   * Subscription Field for 评论 Connection
+   */
+  @Description("Subscription Field for 评论 Connection")
   private ReviewConnection reviewConnection;
 
+  /**
+   * Subscription Field for Relationship Object between 评论 and 用户
+   */
+  @Description("Subscription Field for Relationship Object between 评论 and 用户")
   private ReviewUserRelation reviewUserRelation;
 
+  /**
+   * Subscription Field for Relationship Object between 评论 and 用户 List
+   */
+  @Description("Subscription Field for Relationship Object between 评论 and 用户 List")
   private Collection<ReviewUserRelation> reviewUserRelationList;
 
+  /**
+   * Subscription Field for Relationship Object between 评论 and 用户 Connection
+   */
+  @Description("Subscription Field for Relationship Object between 评论 and 用户 Connection")
   private ReviewUserRelationConnection reviewUserRelationConnection;
 
   public Review getReview() {

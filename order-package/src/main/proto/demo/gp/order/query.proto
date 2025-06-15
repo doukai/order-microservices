@@ -12,26 +12,29 @@ import "demo/gp/order/input_objects.proto";
 import "demo/gp/order/query_requests.proto";
 import "demo/gp/order/query_responses.proto";
 
+/**
+* Query
+*/
 service QueryService {
-    rpc Product (QueryProductRequest) returns (QueryProductResponse);
-    rpc ProductList (QueryProductListRequest) returns (QueryProductListResponse);
-    rpc ProductConnection (QueryProductConnectionRequest) returns (QueryProductConnectionResponse);
-    rpc Order (QueryOrderRequest) returns (QueryOrderResponse);
-    rpc OrderList (QueryOrderListRequest) returns (QueryOrderListResponse);
-    rpc OrderConnection (QueryOrderConnectionRequest) returns (QueryOrderConnectionResponse);
-    rpc OrderItem (QueryOrderItemRequest) returns (QueryOrderItemResponse);
-    rpc OrderItemList (QueryOrderItemListRequest) returns (QueryOrderItemListResponse);
-    rpc OrderItemConnection (QueryOrderItemConnectionRequest) returns (QueryOrderItemConnectionResponse);
-    rpc OrderOrderItemRelation (QueryOrderOrderItemRelationRequest) returns (QueryOrderOrderItemRelationResponse);
-    rpc OrderOrderItemRelationList (QueryOrderOrderItemRelationListRequest) returns (QueryOrderOrderItemRelationListResponse);
-    rpc OrderOrderItemRelationConnection (QueryOrderOrderItemRelationConnectionRequest) returns (QueryOrderOrderItemRelationConnectionResponse);
-    rpc OrderItemProductRelation (QueryOrderItemProductRelationRequest) returns (QueryOrderItemProductRelationResponse);
-    rpc OrderItemProductRelationList (QueryOrderItemProductRelationListRequest) returns (QueryOrderItemProductRelationListResponse);
-    rpc OrderItemProductRelationConnection (QueryOrderItemProductRelationConnectionRequest) returns (QueryOrderItemProductRelationConnectionResponse);
-    rpc ProductReviewRelation (QueryProductReviewRelationRequest) returns (QueryProductReviewRelationResponse);
-    rpc ProductReviewRelationList (QueryProductReviewRelationListRequest) returns (QueryProductReviewRelationListResponse);
-    rpc ProductReviewRelationConnection (QueryProductReviewRelationConnectionRequest) returns (QueryProductReviewRelationConnectionResponse);
-    rpc OrderUserRelation (QueryOrderUserRelationRequest) returns (QueryOrderUserRelationResponse);
-    rpc OrderUserRelationList (QueryOrderUserRelationListRequest) returns (QueryOrderUserRelationListResponse);
-    rpc OrderUserRelationConnection (QueryOrderUserRelationConnectionRequest) returns (QueryOrderUserRelationConnectionResponse);
+    rpc Product (QueryProductRequest) returns (QueryProductResponse); /* Query Field for 产品 */
+    rpc ProductList (QueryProductListRequest) returns (QueryProductListResponse); /* Query Field for 产品 List */
+    rpc ProductConnection (QueryProductConnectionRequest) returns (QueryProductConnectionResponse); /* Query Field for 产品 Connection */
+    rpc Order (QueryOrderRequest) returns (QueryOrderResponse); /* Query Field for 订单 */
+    rpc OrderList (QueryOrderListRequest) returns (QueryOrderListResponse); /* Query Field for 订单 List */
+    rpc OrderConnection (QueryOrderConnectionRequest) returns (QueryOrderConnectionResponse); /* Query Field for 订单 Connection */
+    rpc OrderItem (QueryOrderItemRequest) returns (QueryOrderItemResponse); /* Query Field for 订单项 */
+    rpc OrderItemList (QueryOrderItemListRequest) returns (QueryOrderItemListResponse); /* Query Field for 订单项 List */
+    rpc OrderItemConnection (QueryOrderItemConnectionRequest) returns (QueryOrderItemConnectionResponse); /* Query Field for 订单项 Connection */
+    rpc OrderOrderItemRelation (QueryOrderOrderItemRelationRequest) returns (QueryOrderOrderItemRelationResponse); /* Query Field for Relationship Object between 订单 and 订单项 */
+    rpc OrderOrderItemRelationList (QueryOrderOrderItemRelationListRequest) returns (QueryOrderOrderItemRelationListResponse); /* Query Field for Relationship Object between 订单 and 订单项 List */
+    rpc OrderOrderItemRelationConnection (QueryOrderOrderItemRelationConnectionRequest) returns (QueryOrderOrderItemRelationConnectionResponse); /* Query Field for Relationship Object between 订单 and 订单项 Connection */
+    rpc OrderItemProductRelation (QueryOrderItemProductRelationRequest) returns (QueryOrderItemProductRelationResponse); /* Query Field for Relationship Object between 订单项 and 产品 */
+    rpc OrderItemProductRelationList (QueryOrderItemProductRelationListRequest) returns (QueryOrderItemProductRelationListResponse); /* Query Field for Relationship Object between 订单项 and 产品 List */
+    rpc OrderItemProductRelationConnection (QueryOrderItemProductRelationConnectionRequest) returns (QueryOrderItemProductRelationConnectionResponse); /* Query Field for Relationship Object between 订单项 and 产品 Connection */
+    rpc ProductReviewRelation (QueryProductReviewRelationRequest) returns (QueryProductReviewRelationResponse); /* Query Field for Relationship Object between 产品 and 评论 */
+    rpc ProductReviewRelationList (QueryProductReviewRelationListRequest) returns (QueryProductReviewRelationListResponse); /* Query Field for Relationship Object between 产品 and 评论 List */
+    rpc ProductReviewRelationConnection (QueryProductReviewRelationConnectionRequest) returns (QueryProductReviewRelationConnectionResponse); /* Query Field for Relationship Object between 产品 and 评论 Connection */
+    rpc OrderUserRelation (QueryOrderUserRelationRequest) returns (QueryOrderUserRelationResponse); /* Query Field for Relationship Object between 订单 and 用户 */
+    rpc OrderUserRelationList (QueryOrderUserRelationListRequest) returns (QueryOrderUserRelationListResponse); /* Query Field for Relationship Object between 订单 and 用户 List */
+    rpc OrderUserRelationConnection (QueryOrderUserRelationConnectionRequest) returns (QueryOrderUserRelationConnectionResponse); /* Query Field for Relationship Object between 订单 and 用户 Connection */
 }
